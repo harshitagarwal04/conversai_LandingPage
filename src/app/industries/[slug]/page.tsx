@@ -23,17 +23,13 @@ type IndustryData = {
   faqs: Array<{ question: string; answer: string }>;
 };
 
-type Params = {
-  slug: string;
-};
-
 // ----------- Static Slug Generation
-export function generateStaticParams(): Params[] {
+export function generateStaticParams() {
   return Object.keys(industriesData).map((slug) => ({ slug }));
 }
 
 // ----------- Metadata for SEO
-export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const industry = getIndustryFromSlug(params.slug);
   if (!industry) return {};
 
@@ -71,7 +67,7 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
 }
 
 // ----------- Main Page Component
-export default async function IndustryPage({ params }: { params: Params }) {
+export default async function IndustryPage({ params }: { params: { slug: string } }) {
   const industry = getIndustryFromSlug(params.slug);
   if (!industry) return notFound();
 
@@ -113,7 +109,5 @@ function getIndustryFromSlug(slug: string): IndustryData | null {
   const typedData = industriesData as Record<string, IndustryData>;
   const data = typedData[slug];
   if (data) return data;
-
-  // Optional: generate fallback if slug isn't found
   return null;
 }
