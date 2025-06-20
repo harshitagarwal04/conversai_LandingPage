@@ -1,0 +1,613 @@
+{
+  "healthcare-and-wellness": {
+    "name": "Healthcare & Wellness",
+    "description": "Revolutionize patient care with AI voice bots that handle appointments, medical inquiries, and provide 24/7 health support while maintaining HIPAA compliance.",
+    "color": "blue",
+    "icon": "🏥",
+    "features": [
+      "HIPAA Compliant Voice Solutions",
+      "Appointment Scheduling & Management",
+      "Medical Triage & Symptom Assessment",
+      "Patient Follow-up Automation",
+      "Insurance Verification",
+      "Prescription Reminders"
+    ],
+    "useCases": [
+      {
+        "title": "Appointment Booking",
+        "description": "Automate patient scheduling with voice-based appointment management",
+        "impact": "70% reduction in scheduling time"
+      },
+      {
+        "title": "Medical Consultation",
+        "description": "Provide preliminary health assessments and route to appropriate specialists",
+        "impact": "45% faster patient triage"
+      },
+      {
+        "title": "Patient Follow-up",
+        "description": "Automated post-treatment care calls and medication reminders",
+        "impact": "85% improvement in compliance"
+      }
+    ],
+    "stats": [
+      { "number": "78%", "label": "Reduction in No-shows" },
+      { "number": "24/7", "label": "Patient Support" },
+      { "number": "60%", "label": "Cost Savings" },
+      { "number": "95%", "label": "Patient Satisfaction" }
+    ],
+    "faqs": [
+      {
+        "question": "Are voice bots HIPAA compliant for healthcare?",
+        "answer": "Yes, our voice bots are fully HIPAA compliant with end-to-end encryption, secure data handling, and proper patient consent mechanisms."
+      },
+      {
+        "question": "Can voice bots handle medical emergencies?",
+        "answer": "Voice bots can perform initial triage and immediately route emergency cases to human medical professionals or emergency services."
+      }
+    ]
+  },
+  "education": {
+    "name": "Education",
+    "description": "Enhance learning experiences with AI voice assistants that support students, automate administrative tasks, and provide 24/7 educational guidance.",
+    "color": "purple",
+    "icon": "🎓",
+    "features": [
+      "Student Enrollment & Admissions",
+      "Course Information & Guidance",
+      "Assignment & Grade Inquiries",
+      "Campus Services Support",
+      "Parent-Teacher Communication",
+      "Multilingual Student Support"
+    ],
+    "useCases": [
+      {
+        "title": "Admissions Support",
+        "description": "Guide prospective students through admission processes and requirements",
+        "impact": "50% faster enrollment"
+      },
+      {
+        "title": "Student Services",
+        "description": "Provide instant answers to academic and administrative questions",
+        "impact": "80% query resolution"
+      },
+      {
+        "title": "Parent Communication",
+        "description": "Automated updates on student progress and school events",
+        "impact": "90% parent engagement"
+      }
+    ],
+    "stats": [
+      { "number": "65%", "label": "Admin Time Saved" },
+      { "number": "24/7", "label": "Student Support" },
+      { "number": "40%", "label": "Cost Reduction" },
+      { "number": "88%", "label": "Satisfaction Rate" }
+    ],
+    "faqs": [
+      {
+        "question": "Can voice bots help with student enrollment?",
+        "answer": "Yes, voice bots can guide students through the entire enrollment process, collect required information, and provide real-time status updates."
+      },
+      {
+        "question": "Do voice bots support multiple languages for international students?",
+        "answer": "Our voice bots support 135+ languages and dialects, making them perfect for diverse educational institutions."
+      }
+    ]
+  },
+  "home-services": {
+    "name": "Home Services",
+    "description": "Streamline home service operations with voice bots that handle bookings, dispatch technicians, and provide customer updates for plumbing, HVAC, cleaning, and repairs.",
+    "color": "orange",
+    "icon": "🏠",
+    "features": [
+      "Service Booking & Scheduling",
+      "Emergency Call Routing",
+      "Technician Dispatch",
+      "Service Reminders",
+      "Quote & Estimate Management",
+      "Customer Follow-up"
+    ],
+    "useCases": [
+      {
+        "title": "Emergency Services",
+        "description": "Handle urgent plumbing, electrical, and HVAC emergency calls",
+        "impact": "90% faster response"
+      },
+      {
+        "title": "Appointment Scheduling",
+        "description": "Automate service bookings and technician calendar management",
+        "impact": "60% booking efficiency"
+      },
+      {
+        "title": "Customer Updates",
+        "description": "Provide real-time updates on technician arrival and service progress",
+        "impact": "85% customer satisfaction"
+      }
+    ],
+    "stats": [
+      { "number": "73%", "label": "Faster Bookings" },
+      { "number": "24/7", "label": "Emergency Support" },
+      { "number": "55%", "label": "Operational Savings" },
+      { "number": "92%", "label": "Customer Satisfaction" }
+    ],
+    "faqs": [
+      {
+        "question": "Can voice bots handle emergency service calls?",
+        "answer": "Yes, voice bots can quickly assess emergency situations, prioritize urgency, and immediately dispatch the nearest available technician."
+      },
+      {
+        "question": "How do voice bots coordinate with technician schedules?",
+        "answer": "Voice bots integrate with scheduling systems to check availability, book appointments, and send automated confirmations to both customers and technicians."
+      }
+    ]
+  },
+  "finance-and-legal": {
+    "name": "Finance & Legal",
+    "description": "Secure financial and legal consultations with AI voice bots that handle client inquiries, appointment scheduling, and compliance-ready documentation.",
+    "color": "green",
+    "icon": "⚖️",
+    "features": [
+      "Client Consultation Scheduling",
+      "Financial Advisory Support",
+      "Compliance Documentation",
+      "Risk Assessment Queries",
+      "Legal Case Management",
+      "Secure Authentication"
+    ],
+    "useCases": [
+      {
+        "title": "Client Intake",
+        "description": "Automate initial client consultations and case information gathering",
+        "impact": "65% faster intake process"
+      },
+      {
+        "title": "Financial Planning",
+        "description": "Provide basic financial guidance and route complex queries to advisors",
+        "impact": "50% more client engagement"
+      },
+      {
+        "title": "Legal Consultations",
+        "description": "Schedule legal consultations and provide case status updates",
+        "impact": "40% improved efficiency"
+      }
+    ],
+    "stats": [
+      { "number": "68%", "label": "Client Response Time" },
+      { "number": "99.9%", "label": "Security Compliance" },
+      { "number": "45%", "label": "Cost Reduction" },
+      { "number": "87%", "label": "Client Satisfaction" }
+    ],
+    "faqs": [
+      {
+        "question": "Are voice bots secure for sensitive financial information?",
+        "answer": "Yes, our voice bots use bank-level encryption, secure authentication, and comply with financial regulations like SOX and PCI DSS."
+      },
+      {
+        "question": "Can voice bots provide legal advice?",
+        "answer": "Voice bots provide general information and route complex legal matters to qualified attorneys. They cannot replace professional legal counsel."
+      }
+    ]
+  },
+  "real-estate-and-housing": {
+    "name": "Real Estate & Housing",
+    "description": "Transform property management and real estate sales with voice bots that handle inquiries, schedule viewings, and provide market information 24/7.",
+    "color": "indigo",
+    "icon": "🏘️",
+    "features": [
+      "Property Inquiry Management",
+      "Viewing Appointments",
+      "Market Information",
+      "Lead Qualification",
+      "Tenant Communications",
+      "Maintenance Requests"
+    ],
+    "useCases": [
+      {
+        "title": "Property Viewings",
+        "description": "Schedule property tours and provide detailed property information",
+        "impact": "75% more viewing bookings"
+      },
+      {
+        "title": "Lead Qualification",
+        "description": "Screen potential buyers and renters based on requirements and budget",
+        "impact": "60% better lead quality"
+      },
+      {
+        "title": "Tenant Services",
+        "description": "Handle maintenance requests and tenant inquiries efficiently",
+        "impact": "80% faster resolution"
+      }
+    ],
+    "stats": [
+      { "number": "82%", "label": "Lead Conversion" },
+      { "number": "24/7", "label": "Property Support" },
+      { "number": "55%", "label": "Time Savings" },
+      { "number": "91%", "label": "Client Satisfaction" }
+    ],
+    "faqs": [
+      {
+        "question": "Can voice bots qualify real estate leads effectively?",
+        "answer": "Yes, voice bots can ask qualifying questions about budget, location preferences, and timeline to identify serious prospects."
+      },
+      {
+        "question": "How do voice bots handle property maintenance requests?",
+        "answer": "Voice bots can log maintenance requests, assess urgency, schedule repairs, and provide status updates to tenants and property managers."
+      }
+    ]
+  },
+  "travel-and-hospitality": {
+    "name": "Travel & Hospitality",
+    "description": "Elevate guest experiences with voice bots that handle bookings, provide travel assistance, and offer 24/7 concierge services across hotels, airlines, and travel agencies.",
+    "color": "cyan",
+    "icon": "✈️",
+    "features": [
+      "Booking & Reservation Management",
+      "Travel Assistance & Updates",
+      "Concierge Services",
+      "Check-in/Check-out Automation",
+      "Guest Services Support",
+      "Multilingual Guest Support"
+    ],
+    "useCases": [
+      {
+        "title": "Hotel Reservations",
+        "description": "Handle room bookings, modifications, and special requests seamlessly",
+        "impact": "70% booking efficiency"
+      },
+      {
+        "title": "Travel Updates",
+        "description": "Provide real-time flight status, gate changes, and travel alerts",
+        "impact": "85% guest satisfaction"
+      },
+      {
+        "title": "Concierge Services",
+        "description": "Offer recommendations, bookings, and local information to guests",
+        "impact": "90% service availability"
+      }
+    ],
+    "stats": [
+      { "number": "76%", "label": "Booking Conversion" },
+      { "number": "24/7", "label": "Guest Support" },
+      { "number": "48%", "label": "Cost Reduction" },
+      { "number": "94%", "label": "Guest Satisfaction" }
+    ],
+    "faqs": [
+      {
+        "question": "Can voice bots handle hotel check-in and check-out?",
+        "answer": "Yes, voice bots can manage the entire check-in process, room assignments, and express check-out services."
+      },
+      {
+        "question": "Do voice bots provide local travel recommendations?",
+        "answer": "Voice bots can suggest restaurants, attractions, events, and activities based on guest preferences and local knowledge."
+      }
+    ]
+  },
+  "retail": {
+    "name": "Retail",
+    "description": "Revolutionize retail customer experience with voice commerce bots that handle orders, provide product information, and offer personalized shopping assistance.",
+    "color": "pink",
+    "icon": "🛍️",
+    "features": [
+      "Voice Commerce & Ordering",
+      "Product Information & Search",
+      "Inventory Management",
+      "Customer Support",
+      "Order Tracking & Returns",
+      "Personalized Recommendations"
+    ],
+    "useCases": [
+      {
+        "title": "Voice Shopping",
+        "description": "Enable customers to place orders and make purchases through voice commands",
+        "impact": "65% faster checkout"
+      },
+      {
+        "title": "Product Assistance",
+        "description": "Provide detailed product information, availability, and recommendations",
+        "impact": "80% query resolution"
+      },
+      {
+        "title": "Order Management",
+        "description": "Handle order tracking, modifications, and return processes",
+        "impact": "70% support efficiency"
+      }
+    ],
+    "stats": [
+      { "number": "83%", "label": "Customer Engagement" },
+      { "number": "24/7", "label": "Shopping Support" },
+      { "number": "52%", "label": "Conversion Rate" },
+      { "number": "89%", "label": "Satisfaction Score" }
+    ],
+    "faqs": [
+      {
+        "question": "Can customers make purchases through voice bots?",
+        "answer": "Yes, voice bots support complete voice commerce including product selection, payment processing, and order confirmation."
+      },
+      {
+        "question": "How do voice bots handle returns and exchanges?",
+        "answer": "Voice bots can initiate return processes, check return policies, schedule pickups, and track return status for customers."
+      }
+    ]
+  },
+  "technology": {
+    "name": "Technology",
+    "description": "Enhance tech support and software services with AI voice bots that provide technical assistance, handle user onboarding, and resolve common issues instantly.",
+    "color": "blue",
+    "icon": "💻",
+    "features": [
+      "Technical Support & Troubleshooting",
+      "Software Onboarding",
+      "API Documentation Support",
+      "Bug Report Management",
+      "User Account Management",
+      "Product Updates & Notifications"
+    ],
+    "useCases": [
+      {
+        "title": "Technical Support",
+        "description": "Provide step-by-step troubleshooting for common technical issues",
+        "impact": "75% issue resolution"
+      },
+      {
+        "title": "User Onboarding",
+        "description": "Guide new users through software setup and feature tutorials",
+        "impact": "60% faster onboarding"
+      },
+      {
+        "title": "Account Management",
+        "description": "Handle password resets, account changes, and billing inquiries",
+        "impact": "85% automation rate"
+      }
+    ],
+    "stats": [
+      { "number": "78%", "label": "Issue Resolution" },
+      { "number": "24/7", "label": "Tech Support" },
+      { "number": "62%", "label": "Support Savings" },
+      { "number": "86%", "label": "User Satisfaction" }
+    ],
+    "faqs": [
+      {
+        "question": "Can voice bots help with software troubleshooting?",
+        "answer": "Yes, voice bots can diagnose common issues, provide step-by-step solutions, and escalate complex problems to human technicians."
+      },
+      {
+        "question": "How do voice bots assist with user onboarding?",
+        "answer": "Voice bots can guide users through account setup, feature tutorials, and initial configuration processes with interactive voice guidance."
+      }
+    ]
+  },
+  "events-and-entertainment": {
+    "name": "Events & Entertainment",
+    "description": "Create memorable experiences with voice bots that handle event bookings, provide venue information, and offer interactive entertainment support.",
+    "color": "purple",
+    "icon": "🎭",
+    "features": [
+      "Event Booking & Ticketing",
+      "Venue Information & Directions",
+      "Entertainment Recommendations",
+      "Event Check-in & Support",
+      "Group Booking Management",
+      "Live Event Assistance"
+    ],
+    "useCases": [
+      {
+        "title": "Event Ticketing",
+        "description": "Handle ticket sales, seat selection, and booking confirmations",
+        "impact": "80% booking efficiency"
+      },
+      {
+        "title": "Event Information",
+        "description": "Provide schedules, venue details, and entertainment lineups",
+        "impact": "90% information accuracy"
+      },
+      {
+        "title": "Guest Services",
+        "description": "Assist with check-in, directions, and on-site support during events",
+        "impact": "85% guest satisfaction"
+      }
+    ],
+    "stats": [
+      { "number": "79%", "label": "Booking Conversion" },
+      { "number": "24/7", "label": "Event Support" },
+      { "number": "58%", "label": "Cost Efficiency" },
+      { "number": "92%", "label": "Guest Experience" }
+    ],
+    "faqs": [
+      {
+        "question": "Can voice bots handle group event bookings?",
+        "answer": "Yes, voice bots can manage large group reservations, coordinate seating arrangements, and handle special requirements for events."
+      },
+      {
+        "question": "Do voice bots provide real-time event updates?",
+        "answer": "Voice bots can deliver live updates about schedule changes, venue modifications, and important event announcements."
+      }
+    ]
+  },
+  "social-impact": {
+    "name": "Social Impact",
+    "description": "Support community initiatives with voice bots that provide crisis assistance, resource information, and accessible communication for social service organizations.",
+    "color": "green",
+    "icon": "🤝",
+    "features": [
+      "Crisis Support & Hotlines",
+      "Resource Information",
+      "Community Outreach",
+      "Accessibility Services",
+      "Volunteer Coordination",
+      "Multilingual Support"
+    ],
+    "useCases": [
+      {
+        "title": "Crisis Support",
+        "description": "Provide immediate assistance and route callers to appropriate help",
+        "impact": "95% response availability"
+      },
+      {
+        "title": "Resource Access",
+        "description": "Connect people with social services, benefits, and community resources",
+        "impact": "70% faster assistance"
+      },
+      {
+        "title": "Community Engagement",
+        "description": "Facilitate volunteer sign-ups and community program participation",
+        "impact": "60% increased participation"
+      }
+    ],
+    "stats": [
+      { "number": "95%", "label": "Crisis Response Rate" },
+      { "number": "24/7", "label": "Support Availability" },
+      { "number": "80%", "label": "Resource Connections" },
+      { "number": "88%", "label": "Community Satisfaction" }
+    ],
+    "faqs": [
+      {
+        "question": "Can voice bots handle mental health crisis calls?",
+        "answer": "Voice bots can provide initial support and immediately connect callers to qualified mental health professionals for crisis intervention."
+      },
+      {
+        "question": "How do voice bots help with accessibility?",
+        "answer": "Voice bots offer audio-based interaction for visually impaired users and support multiple languages for diverse communities."
+      }
+    ]
+  },
+  "fitness-and-lifestyle": {
+    "name": "Fitness & Lifestyle",
+    "description": "Motivate and support healthy living with voice bots that handle fitness bookings, provide wellness guidance, and offer personalized health coaching.",
+    "color": "red",
+    "icon": "💪",
+    "features": [
+      "Class Booking & Scheduling",
+      "Fitness Coaching & Tips",
+      "Nutrition Guidance",
+      "Membership Management",
+      "Wellness Check-ins",
+      "Goal Tracking & Motivation"
+    ],
+    "useCases": [
+      {
+        "title": "Fitness Bookings",
+        "description": "Schedule gym classes, personal training, and facility reservations",
+        "impact": "75% booking efficiency"
+      },
+      {
+        "title": "Wellness Coaching",
+        "description": "Provide personalized fitness tips and motivational support",
+        "impact": "85% engagement rate"
+      },
+      {
+        "title": "Membership Support",
+        "description": "Handle membership inquiries, renewals, and account management",
+        "impact": "70% self-service rate"
+      }
+    ],
+    "stats": [
+      { "number": "81%", "label": "Member Engagement" },
+      { "number": "24/7", "label": "Wellness Support" },
+      { "number": "55%", "label": "Operational Savings" },
+      { "number": "90%", "label": "Member Satisfaction" }
+    ],
+    "faqs": [
+      {
+        "question": "Can voice bots provide personalized fitness advice?",
+        "answer": "Voice bots can offer general fitness tips and route specific health questions to qualified fitness professionals and nutritionists."
+      },
+      {
+        "question": "Do voice bots track fitness goals and progress?",
+        "answer": "Voice bots can record workout data, track progress toward goals, and provide motivational feedback based on user achievements."
+      }
+    ]
+  },
+  "public-services": {
+    "name": "Public Services",
+    "description": "Improve citizen services with voice bots that handle government inquiries, provide public information, and streamline municipal processes.",
+    "color": "blue",
+    "icon": "🏛️",
+    "features": [
+      "Citizen Inquiry Management",
+      "Public Information Access",
+      "Service Applications",
+      "Emergency Information",
+      "Permit & License Support",
+      "Multilingual Citizen Support"
+    ],
+    "useCases": [
+      {
+        "title": "Government Services",
+        "description": "Assist citizens with permit applications, tax information, and public services",
+        "impact": "65% faster service delivery"
+      },
+      {
+        "title": "Emergency Updates",
+        "description": "Provide real-time emergency information and safety instructions",
+        "impact": "90% information reach"
+      },
+      {
+        "title": "Public Assistance",
+        "description": "Guide citizens through benefit applications and eligibility checks",
+        "impact": "70% application efficiency"
+      }
+    ],
+    "stats": [
+      { "number": "77%", "label": "Citizen Satisfaction" },
+      { "number": "24/7", "label": "Service Access" },
+      { "number": "60%", "label": "Cost Reduction" },
+      { "number": "85%", "label": "Query Resolution" }
+    ],
+    "faqs": [
+      {
+        "question": "Can voice bots help with government permit applications?",
+        "answer": "Yes, voice bots can guide citizens through permit requirements, collect necessary information, and track application status."
+      },
+      {
+        "question": "How do voice bots ensure data privacy for citizen information?",
+        "answer": "Voice bots use government-grade security protocols, encryption, and comply with privacy regulations to protect citizen data."
+      }
+    ]
+  },
+  "automotive-and-transport": {
+    "name": "Automotive & Transport",
+    "description": "Streamline vehicle services and transportation with voice bots that handle bookings, provide vehicle support, and manage logistics operations.",
+    "color": "gray",
+    "icon": "🚗",
+    "features": [
+      "Vehicle Service Scheduling",
+      "Ride Booking & Management",
+      "Fleet Management Support",
+      "Insurance & Claims",
+      "Roadside Assistance",
+      "Transportation Information"
+    ],
+    "useCases": [
+      {
+        "title": "Service Appointments",
+        "description": "Schedule vehicle maintenance, repairs, and inspection appointments",
+        "impact": "80% booking efficiency"
+      },
+      {
+        "title": "Roadside Assistance",
+        "description": "Handle emergency calls and dispatch roadside help quickly",
+        "impact": "75% faster response"
+      },
+      {
+        "title": "Transportation Services",
+        "description": "Manage ride bookings, route information, and transport schedules",
+        "impact": "85% operational efficiency"
+      }
+    ],
+    "stats": [
+      { "number": "82%", "label": "Service Efficiency" },
+      { "number": "24/7", "label": "Roadside Support" },
+      { "number": "58%", "label": "Cost Savings" },
+      { "number": "87%", "label": "Customer Satisfaction" }
+    ],
+    "faqs": [
+      {
+        "question": "Can voice bots handle vehicle breakdown assistance?",
+        "answer": "Yes, voice bots can assess breakdown situations, provide immediate assistance, and dispatch appropriate roadside support services."
+      },
+      {
+        "question": "Do voice bots integrate with vehicle fleet management systems?",
+        "answer": "Voice bots can connect with fleet management platforms to track vehicles, schedule maintenance, and optimize route planning."
+      }
+    ]
+  }
+}
