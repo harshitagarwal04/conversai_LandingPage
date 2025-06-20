@@ -8,6 +8,12 @@ import StatsSection from '@/components/StatsSection';
 import FAQSection from '@/components/FAQSection';
 import industriesData from '@/data/industriesfinal.json';
 
+interface PageProps {
+  params: {
+    slug: string;
+  };
+}
+
 export function generateStaticParams() {
   return [
     { slug: 'healthcare-and-wellness' },
@@ -24,7 +30,7 @@ export function generateStaticParams() {
   ];
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const industryData = getIndustryData(params.slug);
 
   return {
@@ -131,7 +137,7 @@ const getIndustryData = (slug: string) => {
   return industry;
 };
 
-export default function IndustryPage({ params }: { params: { slug: string } }) {
+export default async function IndustryPage({ params }: PageProps) {
   const industryData = getIndustryData(params.slug);
 
   return (
