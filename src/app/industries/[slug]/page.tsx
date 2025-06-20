@@ -24,16 +24,17 @@ export function generateStaticParams() {
   ];
 }
 
-// ❗️ DO NOT use a named interface, inline the type
+// ✅ Vercel-compatible `params` type (can be a Promise)
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: { slug: string } | Promise<{ slug: string }>;
 }): Promise<Metadata> {
-  const industryData = getIndustryData(params.slug);
+  const resolvedParams = await Promise.resolve(params);
+  const industryData = getIndustryData(resolvedParams.slug);
 
   return {
-    metadataBase: new URL('https://conversai.vercel.app/'),
+    metadataBase: new URL('https://conversai.vercel.app'),
     title: `${industryData.name} Voice Bot Solutions | ConversAI Labs`,
     description: `Transform your ${industryData.name.toLowerCase()} business with AI-powered voice bots. ${industryData.description} Get 24/7 automation, reduce costs, and enhance customer experience.`,
     keywords: [
@@ -50,7 +51,7 @@ export async function generateMetadata({
       type: 'website',
       images: [
         {
-          url: `/images/industries/${params.slug}-og.jpg`,
+          url: `/images/industries/${resolvedParams.slug}-og.jpg`,
           width: 1200,
           height: 630,
           alt: `${industryData.name} Voice Bot Solutions`,
@@ -61,7 +62,7 @@ export async function generateMetadata({
       card: 'summary_large_image',
       title: `${industryData.name} Voice Bot Solutions`,
       description: `Transform your ${industryData.name.toLowerCase()} business with AI voice automation`,
-      images: [`/images/industries/${params.slug}-twitter.jpg`],
+      images: [`/images/industries/${resolvedParams.slug}-twitter.jpg`],
     },
   };
 }
@@ -137,13 +138,14 @@ const getIndustryData = (slug: string) => {
   return industry;
 };
 
-// ✅ Inline type for Vercel compatibility (DON’T reuse PageProps!)
+// ✅ Page component also accepting `params` as Promise-compatible
 export default async function IndustryPage({
   params,
 }: {
-  params: { slug: string };
+  params: { slug: string } | Promise<{ slug: string }>;
 }) {
-  const industryData = getIndustryData(params.slug);
+  const resolvedParams = await Promise.resolve(params);
+  const industryData = getIndustryData(resolvedParams.slug);
 
   return (
     <>
