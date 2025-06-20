@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   if (!industry) return {};
 
   return {
-    metadataBase: new URL('https://conversai.vercel.app'),
+    // metadataBase: new URL('https://conversai.vercel.app'),
     title: `${industry.name} Voice Bot Solutions | ConversAI Labs`,
     description: `Transform your ${industry.name.toLowerCase()} business with AI-powered voice bots. ${industry.description}`,
     keywords: [
