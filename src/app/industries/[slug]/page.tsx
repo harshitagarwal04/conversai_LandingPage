@@ -8,14 +8,7 @@ import StatsSection from '@/components/StatsSection';
 import FAQSection from '@/components/FAQSection';
 import industriesData from '@/data/industriesfinal.json';
 
-export interface PageProps {
-  params: {
-    slug: string;
-  };
-}
-
-// ✅ Vercel-safe static params
-export function generateStaticParams(): PageProps['params'][] {
+export function generateStaticParams() {
   return [
     { slug: 'healthcare-and-wellness' },
     { slug: 'education' },
@@ -31,12 +24,16 @@ export function generateStaticParams(): PageProps['params'][] {
   ];
 }
 
-// ✅ Vercel-safe metadata generation
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const industryData = await getIndustryData(params.slug);
+// ❗️ DO NOT use a named interface, inline the type
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
+  const industryData = getIndustryData(params.slug);
 
   return {
-    metadataBase: new URL("https://conversai.vercel.app/"),
+    metadataBase: new URL('https://conversai.vercel.app/'),
     title: `${industryData.name} Voice Bot Solutions | ConversAI Labs`,
     description: `Transform your ${industryData.name.toLowerCase()} business with AI-powered voice bots. ${industryData.description} Get 24/7 automation, reduce costs, and enhance customer experience.`,
     keywords: [
@@ -45,7 +42,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       'voice AI solutions',
       'customer service automation',
       'conversational AI',
-      industryData.name.toLowerCase()
+      industryData.name.toLowerCase(),
     ].join(', '),
     openGraph: {
       title: `${industryData.name} Voice Bot Solutions | ConversAI Labs`,
@@ -69,8 +66,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-// ✅ Now an async helper
-const getIndustryData = async (slug: string) => {
+const getIndustryData = (slug: string) => {
   const typedIndustriesData = industriesData as Record<
     string,
     {
@@ -141,9 +137,13 @@ const getIndustryData = async (slug: string) => {
   return industry;
 };
 
-// ✅ Page component
-export default async function IndustryPage({ params }: PageProps) {
-  const industryData = await getIndustryData(params.slug);
+// ✅ Inline type for Vercel compatibility (DON’T reuse PageProps!)
+export default async function IndustryPage({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  const industryData = getIndustryData(params.slug);
 
   return (
     <>
