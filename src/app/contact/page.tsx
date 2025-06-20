@@ -6,7 +6,7 @@ const Contact: React.FC = () => {
       <h1 className="text-3xl font-bold mb-6">Contact Us</h1>
 
       <p className="mb-4">
-        We'd love to hear from you! For questions, support, or business inquiries, feel free to reach out to us using the details below.
+        We&apos;d love to hear from you! For questions, support, or business inquiries, feel free to reach out to us using the details below.
       </p>
 
       <div className="space-y-4 text-lg">
@@ -35,7 +35,7 @@ const Contact: React.FC = () => {
       </div>
 
       <p className="mt-8 text-sm text-gray-500 italic">
-        We're committed to responding to all queries within 24–48 hours.
+        We&apos;re committed to responding to all queries within 24–48 hours.
       </p>
     </div>
   );

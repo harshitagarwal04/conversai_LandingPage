@@ -189,7 +189,7 @@ export function ContactModal({ isOpen, onClose, industry }: ContactModalProps) {
                       onChange={(e) => handleInputChange('message', e.target.value)}
                       rows={4}
                       className="w-full resize-none"
-                      placeholder="Describe your current challenges and what you're looking to achieve..."
+                      placeholder="Describe your current challenges and what you&apos;re looking to achieve..."
                     />
                   </div>
 

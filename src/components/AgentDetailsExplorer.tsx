@@ -12,25 +12,29 @@ interface UseCase {
   workflow: string;
 }
 
-interface AgentDetailsExplorerProps {
-  agentName: string;
-  onBack?: () => void;
-  isMobile?: boolean;
+interface AgentType {
+  name: string;
+  role: string;
+  description: string;
+  functionality: {
+    primary_functions: string[];
+  };
+  use_cases: UseCase[];
 }
 
-const AgentDetailsExplorer: React.FC<AgentDetailsExplorerProps> = ({
-  agentName,
-  onBack,
-  isMobile = false,
-}) => {
-  const [agent, setAgent] = useState<any | null>(null);
+interface AgentDetailsExplorerProps {
+  agentName: string;
+}
+
+const AgentDetailsExplorer: React.FC<AgentDetailsExplorerProps> = ({ agentName }) => {
+  const [agent, setAgent] = useState<AgentType | null>(null);
 
   useEffect(() => {
-    const allAgents: any[] = [];
+    const allAgents: AgentType[] = [];
 
     Object.values(agentsData).forEach((category: any) => {
-      Object.values(category.agents).forEach((agent: any) => {
-        allAgents.push(agent);
+      Object.values(category.agents).forEach((agent: unknown) => {
+        allAgents.push(agent as AgentType);
       });
     });
 
@@ -121,7 +125,6 @@ const AgentDetailsExplorer: React.FC<AgentDetailsExplorerProps> = ({
             <h1 className="text-2xl font-bold text-white">{agent.name}</h1>
             <p className="text-sm text-white/70">{agent.role}</p>
 
-            {/* Demo Call Button */}
             <button
               className="mt-2 px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm rounded-full shadow transition"
               onClick={() => alert(`Starting a demo call with ${agent.name}...`)}
@@ -148,14 +151,12 @@ const AgentDetailsExplorer: React.FC<AgentDetailsExplorerProps> = ({
             <div className="bg-white/10 backdrop-blur-md p-4 rounded-xl border border-white/20">
               <h2 className="text-sm font-semibold mb-3 text-white">Primary Functions</h2>
               <ul className="space-y-2">
-                {agent.functionality.primary_functions.map(
-                  (func: string, index: number) => (
-                    <li key={index} className="flex items-center gap-2">
-                      <div className="w-2 h-2 rounded-full bg-white/50" />
-                      <span className="text-xs text-white/85">{func}</span>
-                    </li>
-                  )
-                )}
+                {agent.functionality.primary_functions.map((func, index) => (
+                  <li key={index} className="flex items-center gap-2">
+                    <div className="w-2 h-2 rounded-full bg-white/50" />
+                    <span className="text-xs text-white/85">{func}</span>
+                  </li>
+                ))}
               </ul>
             </div>
           )}
@@ -163,7 +164,7 @@ const AgentDetailsExplorer: React.FC<AgentDetailsExplorerProps> = ({
           {agent.use_cases?.length > 0 && (
             <div className="bg-white/10 backdrop-blur-md p-4 rounded-xl border border-white/20">
               <h2 className="text-sm font-semibold mb-3 text-white">Use Cases</h2>
-              {agent.use_cases.map((uc: UseCase, index: number) => (
+              {agent.use_cases.map((uc, index) => (
                 <div key={index} className="mb-4">
                   <h3 className="text-xs font-semibold text-white mb-1">{uc.title}</h3>
                   <p className="text-xs text-white/85 mb-1">{uc.description}</p>

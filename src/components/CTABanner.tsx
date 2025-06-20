@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Sparkles, CheckCircle } from 'lucide-react';
+import { ArrowRight,CheckCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { ContactModal } from './ContactModal';
 

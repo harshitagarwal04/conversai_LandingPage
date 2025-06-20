@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowDown, Phone, MessageSquare, Users } from 'lucide-react';
@@ -92,7 +91,7 @@ const Hero = () => {
               
               <div className="mt-6 p-3 bg-gray-50 rounded-lg">
                 <div className="flex justify-between items-center text-sm">
-                  <span className="text-gray-600">Today's Qualified Leads</span>
+                  <span className="text-gray-600">Today&apos;s Qualified Leads</span>
                   <span className="font-bold text-2xl text-green-600">47</span>
                 </div>
               </div>

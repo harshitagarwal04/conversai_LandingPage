@@ -3,13 +3,11 @@ import { HeroSection } from '@/components/HeroSection';
 import { FeaturesSection } from '@/components/FeaturesSection';
 import { CTABanner } from '@/components/CTABanner';
 import  UseCaseSection  from '@/components/UseCaseSection';
-// import { StatsSection } from '@/components/StatsSection';
-// import { FAQSection } from '@/components/FAQSection';
+
 
 // Import the industries data
 import industriesData from '@/data/industriesfinal.json';
 import  Header  from '@/components/Header';
-import UseCase from '@/components/UseCase';
 import StatsSection from '@/components/StatsSection';
 import FAQSection from '@/components/FAQSection';
 

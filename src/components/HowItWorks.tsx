@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { ArrowDown, Phone, MessageSquare, Users, FileText, Search, Check } from 'lucide-react';
+import {  Phone, MessageSquare, Users, FileText, Search, Check } from 'lucide-react';
 
 const HowItWorks = () => {
   const [activeStep, setActiveStep] = useState(0);
