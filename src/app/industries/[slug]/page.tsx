@@ -8,13 +8,14 @@ import StatsSection from '@/components/StatsSection';
 import FAQSection from '@/components/FAQSection';
 import industriesData from '@/data/industriesfinal.json';
 
-interface PageProps {
+export interface PageProps {
   params: {
     slug: string;
   };
 }
 
-export function generateStaticParams() {
+// ✅ Vercel-safe static params
+export function generateStaticParams(): PageProps['params'][] {
   return [
     { slug: 'healthcare-and-wellness' },
     { slug: 'education' },
@@ -30,11 +31,12 @@ export function generateStaticParams() {
   ];
 }
 
+// ✅ Vercel-safe metadata generation
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const industryData = getIndustryData(params.slug);
+  const industryData = await getIndustryData(params.slug);
 
   return {
-    metadataBase: new URL("http://localhost:3000/"),
+    metadataBase: new URL("https://conversai.vercel.app/"),
     title: `${industryData.name} Voice Bot Solutions | ConversAI Labs`,
     description: `Transform your ${industryData.name.toLowerCase()} business with AI-powered voice bots. ${industryData.description} Get 24/7 automation, reduce costs, and enhance customer experience.`,
     keywords: [
@@ -67,7 +69,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-const getIndustryData = (slug: string) => {
+// ✅ Now an async helper
+const getIndustryData = async (slug: string) => {
   const typedIndustriesData = industriesData as Record<
     string,
     {
@@ -97,7 +100,7 @@ const getIndustryData = (slug: string) => {
   if (!industry) {
     const fallbackName = slug
       .split('-')
-      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
       .join(' ');
 
     return {
@@ -128,7 +131,8 @@ const getIndustryData = (slug: string) => {
       faqs: [
         {
           question: `How can voice bots help ${fallbackName.toLowerCase()} businesses?`,
-          answer: 'Voice bots can automate customer interactions, reduce operational costs, and provide 24/7 support tailored to your industry needs.',
+          answer:
+            'Voice bots can automate customer interactions, reduce operational costs, and provide 24/7 support tailored to your industry needs.',
         },
       ],
     };
@@ -137,8 +141,9 @@ const getIndustryData = (slug: string) => {
   return industry;
 };
 
+// ✅ Page component
 export default async function IndustryPage({ params }: PageProps) {
-  const industryData = getIndustryData(params.slug);
+  const industryData = await getIndustryData(params.slug);
 
   return (
     <>
@@ -171,7 +176,7 @@ export default async function IndustryPage({ params }: PageProps) {
           }
           stats={industryData.stats.map((stat) => ({
             label: stat.label,
-            value: stat.number
+            value: stat.number,
           }))}
         />
         <FAQSection industry={industryData.name} faqs={industryData.faqs} />
