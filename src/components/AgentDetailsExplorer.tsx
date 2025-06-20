@@ -22,6 +22,10 @@ interface AgentType {
   use_cases: UseCase[];
 }
 
+interface AgentCategory {
+  agents: Record<string, AgentType>;
+}
+
 interface AgentDetailsExplorerProps {
   agentName: string;
 }
@@ -32,9 +36,9 @@ const AgentDetailsExplorer: React.FC<AgentDetailsExplorerProps> = ({ agentName }
   useEffect(() => {
     const allAgents: AgentType[] = [];
 
-    Object.values(agentsData).forEach((category: any) => {
-      Object.values(category.agents).forEach((agent: unknown) => {
-        allAgents.push(agent as AgentType);
+    Object.values(agentsData as Record<string, AgentCategory>).forEach((category) => {
+      Object.values(category.agents).forEach((agent) => {
+        allAgents.push(agent);
       });
     });
 
@@ -101,7 +105,6 @@ const AgentDetailsExplorer: React.FC<AgentDetailsExplorerProps> = ({ agentName }
           transition={{ duration: 0.5 }}
           className="flex flex-col justify-center items-center space-y-6"
         >
-          {/* Avatar */}
           <motion.div
             initial={{ scale: 0, rotate: -180 }}
             animate={{ scale: 1, rotate: 0 }}
@@ -120,11 +123,9 @@ const AgentDetailsExplorer: React.FC<AgentDetailsExplorerProps> = ({ agentName }
             </Avatar>
           </motion.div>
 
-          {/* Name and Role */}
           <div className="text-center">
             <h1 className="text-2xl font-bold text-white">{agent.name}</h1>
             <p className="text-sm text-white/70">{agent.role}</p>
-
             <button
               className="mt-2 px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm rounded-full shadow transition"
               onClick={() => alert(`Starting a demo call with ${agent.name}...`)}
@@ -133,7 +134,6 @@ const AgentDetailsExplorer: React.FC<AgentDetailsExplorerProps> = ({ agentName }
             </button>
           </div>
 
-          {/* Description */}
           <div className="bg-white/10 backdrop-blur-md p-4 rounded-xl border border-white/20 w-full">
             <h2 className="text-sm font-semibold mb-2 text-white">Description</h2>
             <p className="text-xs text-white/85">{agent.description}</p>
