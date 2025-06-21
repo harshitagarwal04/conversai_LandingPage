@@ -82,7 +82,7 @@ const FAQSection: React.FC<FAQSectionProps> = ({
             </h2>
           </div>
           <p className={`text-lg ${selectedColors.text} opacity-70`}>
-            Got questions about {industry} AI solutions? We've got answers.
+            Got questions about {industry} AI solutions? We&apos;ve got answers.
           </p>
         </div>
 

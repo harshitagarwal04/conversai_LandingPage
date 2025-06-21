@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Star, Quote } from 'lucide-react';
 
@@ -40,7 +39,7 @@ const Testimonials = () => {
               </div>
               
               <p className="text-lg text-gray-700 mb-6 italic">
-                "{testimonial.quote}"
+                &quot;{testimonial.quote}&quot;
               </p>
               
               <div>

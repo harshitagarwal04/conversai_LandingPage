@@ -56,7 +56,9 @@ export async function POST(req: NextRequest) {
 
     const data = await callRes.json(); // { call_id, access_token, expires_at }
     return NextResponse.json(data, { status: 200 });
-  } catch (err: any) {
-    return NextResponse.json({ error: err.message }, { status: 500 });
+  } catch (err: unknown) {
+    const message =
+      err instanceof Error ? err.message : "Unknown server error";
+    return NextResponse.json({ error: message }, { status: 500 });
   }
 }

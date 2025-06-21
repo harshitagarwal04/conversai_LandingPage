@@ -1,86 +1,97 @@
 "use client";
-import React from 'react';
-import { MessageSquare, ChevronDown } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { scrollToElement } from '@/utils/scrollToElement';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+
+import React, { useState } from "react";
+import { MessageSquare, ChevronDown, Menu, X } from "lucide-react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { scrollToElement } from "@/utils/scrollToElement";
+import { Button } from "@/components/ui/button";
+
+const industries = [
+  "Healthcare & Wellness",
+  "Education",
+  "Home Services",
+  "Finance & Legal",
+  "Real Estate & Housing",
+  "Travel & Hospitality",
+  "Retail",
+  "Technology",
+  "Fitness & Wellness",
+  "Public Services",
+  "Automotive & Transport",
+];
 
 const Header = () => {
-  const handleConnectWithUs = () => {
-    window.open('https://wa.me/919953053281', '_blank');
-  };
-  
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileIndustryOpen, setMobileIndustryOpen] = useState(false);
   const pathname = usePathname();
-  
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
-    if (pathname === '/') {
+
+  const handleConnectWithUs = () => {
+    window.open("https://wa.me/919953053281", "_blank");
+  };
+
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    sectionId: string
+  ) => {
+    if (pathname === "/") {
       e.preventDefault();
       scrollToElement(sectionId);
     }
+    setMobileOpen(false);
   };
-
-  const industries = [
-    'Healthcare & Wellness',
-    'Education',
-    'Home Services',
-    'Finance & Legal',
-    'Real Estate & Housing',
-    'Travel & Hospitality',
-    'Retail',
-    'Technology',
-    // 'Events & Entertainment',
-    // 'Social Impact',
-    'Fitness & Wellness',
-    'Public Services',
-    'Automotive & Transport'
-  ];
 
   return (
     <header className="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-md border-b border-gray-200 z-50">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-16">
-          {/* Logo Section */}
-          <Link href="/" className="flex items-center space-x-2 hover:opacity-80 transition-opacity">
+          {/* Logo */}
+          <Link
+            href="/"
+            className="flex items-center space-x-2 hover:opacity-80 transition-opacity"
+          >
             <div className="relative">
               <MessageSquare className="w-8 h-8 text-blue-600" />
-              <div className="absolute -top-1 -right-1 w-3 h-3 bg-purple-500 rounded-full animate-pulse"></div>
+              <div className="absolute -top-1 -right-1 w-3 h-3 bg-purple-500 rounded-full animate-pulse" />
             </div>
             <div className="flex flex-col">
-              <span className="text-2xl font-bold text-gray-900 leading-tight">ConversAI Labs</span>
-              <span className="text-xs text-gray-500 -mt-1">AI-Powered Conversations</span>
+              <span className="text-2xl font-bold text-gray-900 leading-tight">
+                ConversAI Labs
+              </span>
+              <span className="text-xs text-gray-500 -mt-1">
+                AI-Powered Conversations
+              </span>
             </div>
           </Link>
-          
+
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
-            <Link 
+            <Link
               href="/#features"
-              onClick={(e) => handleNavClick(e, 'features')}
+              onClick={(e) => handleNavClick(e, "features")}
               className="text-gray-600 hover:text-blue-600 transition-colors font-medium relative group"
             >
               Features
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full" />
             </Link>
-            
-            <Link 
+
+            <Link
               href="/#how-it-works"
-              onClick={(e) => handleNavClick(e, 'how-it-works')}
+              onClick={(e) => handleNavClick(e, "how-it-works")}
               className="text-gray-600 hover:text-blue-600 transition-colors font-medium relative group"
             >
               How It Works
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full" />
             </Link>
-            
+
             {/* Industries Dropdown */}
             <div className="relative group">
               <div className="flex items-center space-x-1 text-gray-600 hover:text-blue-600 transition-colors cursor-pointer font-medium">
                 <span>Industries</span>
                 <ChevronDown className="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" />
               </div>
-              
-              {/* Dropdown Menu */}
-              <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-80 bg-white rounded-lg shadow-2xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+
+              <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-80 bg-white rounded-lg shadow-2xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0 z-40">
                 <div className="py-3">
                   <div className="px-4 py-2 text-xs font-semibold text-gray-400 uppercase tracking-wider border-b border-gray-100">
                     Industries We Serve
@@ -88,105 +99,123 @@ const Header = () => {
                   {industries.map((industry, index) => (
                     <Link
                       key={index}
-                      href={`/industries/${industry.toLowerCase().replace(/\s+/g, '-').replace('&', 'and')}`}
-                      className="block px-4 py-3 text-sm text-gray-700 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 hover:text-blue-600 transition-all duration-200 border-l-2 border-transparent hover:border-blue-400"
+                      href={`/industries/${industry
+                        .toLowerCase()
+                        .replace(/\s+/g, "-")
+                        .replace("&", "and")}`}
+                      className="block px-4 py-3 text-sm text-gray-700 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 hover:text-blue-600 border-l-2 border-transparent hover:border-blue-400 transition-all"
                     >
-                      <div className="flex items-center justify-between">
-                        <span>{industry}</span>
-                        <span className="text-xs text-gray-400">→</span>
-                      </div>
+                      {industry}
                     </Link>
                   ))}
                 </div>
               </div>
             </div>
-            
+
             <Link
-              href="/#why-conversai" 
-              onClick={(e) => handleNavClick(e, 'why-conversai')}
+              href="/#why-conversai"
+              onClick={(e) => handleNavClick(e, "why-conversai")}
               className="text-gray-600 hover:text-blue-600 transition-colors font-medium relative group"
             >
               Why ConversAI
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full" />
             </Link>
-            
-            <Button 
+
+            <Button
               onClick={handleConnectWithUs}
               className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6 py-2 rounded-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
             >
               Connect with Us
             </Button>
           </nav>
-          
-          {/* Tablet Navigation (md to lg) */}
-          <nav className="hidden md:flex lg:hidden items-center space-x-6">
-            <div className="relative group">
-              <div className="flex items-center space-x-1 text-gray-600 hover:text-blue-600 transition-colors cursor-pointer text-sm">
-                <span>Menu</span>
-                <ChevronDown className="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" />
-              </div>
-              
-              {/* Tablet Dropdown Menu */}
-              <div className="absolute top-full right-0 mt-2 w-48 bg-white rounded-xl shadow-2xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
-                <div className="py-2">
-                  <Link 
-                    href="/#features"
-                    onClick={(e) => handleNavClick(e, 'features')}
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600"
-                  >
-                    Features
-                  </Link>
-                  <Link 
-                    href="/#how-it-works"
-                    onClick={(e) => handleNavClick(e, 'how-it-works')}
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600"
-                  >
-                    How It Works
-                  </Link>
-                  <Link
-                    href="/#why-conversai" 
-                    onClick={(e) => handleNavClick(e, 'why-conversai')}
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600"
-                  >
-                    Why ConversAI
-                  </Link>
-                  <div className="border-t border-gray-100 mt-2 pt-2">
-                    <div className="px-4 py-1 text-xs text-gray-400 uppercase tracking-wider">Industries</div>
-                    {industries.slice(0, 6).map((industry, index) => (
-                      <Link
-                        key={index}
-                        href={`/industries/${industry.toLowerCase().replace(/\s+/g, '-').replace('&', 'and')}`}
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600"
-                      >
-                        {industry}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <Button 
-              onClick={handleConnectWithUs}
-              size="sm"
-              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
+
+          {/* Mobile Hamburger Icon */}
+          <div className="lg:hidden">
+            <button
+              onClick={() => setMobileOpen(!mobileOpen)}
+              aria-label="Toggle menu"
+              className="text-black p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             >
-              Connect
-            </Button>
-          </nav>
-          
-          {/* Mobile Navigation */}
-          <div className="md:hidden flex items-center space-x-3">
-            <Button 
-              onClick={handleConnectWithUs}
-              size="sm"
-              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-xs px-3 py-2"
-            >
-              Connect
-            </Button>
+              {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
           </div>
         </div>
       </div>
+
+      {/* Mobile Navigation */}
+      {mobileOpen && (
+        <div className="lg:hidden bg-white border-t border-gray-200 shadow-md">
+          <div className="flex flex-col px-6 py-4 space-y-2 text-sm">
+            <Link
+              href="/#features"
+              onClick={(e) => handleNavClick(e, "features")}
+              className="text-gray-800 hover:text-blue-600"
+            >
+              Features
+            </Link>
+            <Link
+              href="/#how-it-works"
+              onClick={(e) => handleNavClick(e, "how-it-works")}
+              className="text-gray-800 hover:text-blue-600"
+            >
+              How It Works
+            </Link>
+            <Link
+              href="/#why-conversai"
+              onClick={(e) => handleNavClick(e, "why-conversai")}
+              className="text-gray-800 hover:text-blue-600"
+            >
+              Why ConversAI
+            </Link>
+
+            {/* Expandable Industries in Mobile */}
+            <div>
+              <button
+                className="flex items-center justify-between w-full text-gray-800 font-medium hover:text-blue-600"
+                onClick={() => setMobileIndustryOpen(!mobileIndustryOpen)}
+              >
+                <span>Industries</span>
+                <ChevronDown
+                  className={`w-4 h-4 transform transition-transform duration-200 ${
+                    mobileIndustryOpen ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+              {mobileIndustryOpen && (
+                <ul className="mt-2 pl-4 border-l border-gray-200 space-y-2">
+                  {industries.map((industry, index) => (
+                    <li key={index}>
+                      <Link
+                        href={`/industries/${industry
+                          .toLowerCase()
+                          .replace(/\s+/g, "-")
+                          .replace("&", "and")}`}
+                        className="block px-2 py-1 text-sm text-gray-700 
+    hover:bg-blue-100 hover:text-blue-700 
+    active:bg-blue-200 active:text-blue-800 
+    focus:bg-blue-100 focus:text-blue-700 
+    border-l-2 border-transparent 
+    hover:border-blue-500 active:border-blue-700 
+    transition-all"
+                        onClick={() => setMobileOpen(false)}
+                      >
+                        {industry}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+
+            <Button
+              onClick={handleConnectWithUs}
+              className="w-full mt-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white"
+            >
+              Connect with Us
+            </Button>
+          </div>
+        </div>
+      )}
     </header>
   );
 };

@@ -12,8 +12,29 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { X, Phone, PhoneOff, Mic, MicOff } from "lucide-react";
+import {
+  Phone,
+  PhoneOff,
+  Mic,
+  MicOff,
+  Star,
+  Target,
+  Zap,
+} from "lucide-react";
 import agentsData from "@/data/usecases1.json";
+
+interface Agent {
+  name: string;
+  role: string;
+  agentId: string;
+  functionality?: {
+    primary_functions?: string[];
+  };
+}
+
+interface Category {
+  agents: Record<string, Agent>;
+}
 
 interface AgentDetailsExplorerProps {
   agentName: string;
@@ -24,7 +45,7 @@ interface AgentDetailsExplorerProps {
 const AgentDetailsExplorer: React.FC<AgentDetailsExplorerProps> = ({
   agentName,
 }) => {
-  const [agent, setAgent] = useState<any | null>(null);
+  const [agent, setAgent] = useState<Agent | null>(null);
   const [showCallDialog, setShowCallDialog] = useState(false);
   const [isCallActive, setIsCallActive] = useState(false);
   const [isConnecting, setIsConnecting] = useState(false);
@@ -34,13 +55,19 @@ const AgentDetailsExplorer: React.FC<AgentDetailsExplorerProps> = ({
   const [currentSpeaker, setCurrentSpeaker] = useState<"agent" | "user" | null>(
     null
   );
-  const retellClientRef = useRef<any>(null);
+  // Import type only for type safety
+  type RetellWebClientType = {
+    stopCall: () => void;
+    // Add other methods/events if needed
+  };
+  const retellClientRef = useRef<RetellWebClientType | null>(null);
   const callTimerRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
-    const allAgents: any[] = [];
-    Object.values(agentsData).forEach((category: any) => {
-      Object.values(category.agents).forEach((agent: any) =>
+    const allAgents: Agent[] = [];
+    Object.values(agentsData).forEach((category: unknown) => {
+      const castCategory = category as Category;
+      Object.values(castCategory.agents).forEach((agent: Agent) =>
         allAgents.push(agent)
       );
     });
@@ -87,7 +114,7 @@ const AgentDetailsExplorer: React.FC<AgentDetailsExplorerProps> = ({
       const res = await fetch("/api/createWebCall", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ agentId: agent.agentId }),
+        body: JSON.stringify({ agentId: agent?.agentId }),
       });
 
       if (!res.ok) throw new Error(await res.text());
@@ -129,7 +156,7 @@ const AgentDetailsExplorer: React.FC<AgentDetailsExplorerProps> = ({
         if (!isAgentSpeaking) setCurrentSpeaker(null);
       });
 
-      retell.on("error", (error) => {
+      retell.on("error", (error: unknown) => {
         console.error("Call error:", error);
         setIsCallActive(false);
         setIsConnecting(false);
@@ -137,8 +164,9 @@ const AgentDetailsExplorer: React.FC<AgentDetailsExplorerProps> = ({
       });
 
       await retell.startCall({ accessToken: access_token });
-    } catch (err: any) {
-      console.error("Failed to start call:", err);
+    } catch (err: unknown) {
+      const error = err as Error;
+      console.error("Failed to start call:", error.message);
       setIsConnecting(false);
     }
   };
@@ -167,6 +195,8 @@ const AgentDetailsExplorer: React.FC<AgentDetailsExplorerProps> = ({
     setCallDuration(0);
   };
 
+  const functionIcons = [Star, Target, Zap];
+
   if (!agent) {
     return (
       <div className="text-center text-gray-500 py-10">
@@ -177,75 +207,71 @@ const AgentDetailsExplorer: React.FC<AgentDetailsExplorerProps> = ({
 
   return (
     <>
-      <Card className="p-8 bg-gradient-to-br text-xs from-slate-900 via-slate-800 to-slate-900 text-white relative overflow-hidden h-[600px] w-full shadow-2xl border-0">
-        <div className="relative z-10 grid md:grid-cols-2 gap-8 h-full">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            className="flex flex-col justify-center items-center space-y-6"
-          >
-            <motion.div
-              initial={{ scale: 0, rotate: -180 }}
-              animate={{ scale: 1, rotate: 0 }}
-              transition={{ type: "spring", stiffness: 200, damping: 15 }}
-              className="w-24 h-24 rounded-full bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 p-1 shadow-2xl"
-            >
-              <Avatar className="w-full h-full border-2 border-white/20">
-                <AvatarImage src="/placeholder.svg?height=80&width=80" />
-                <AvatarFallback className="bg-white text-gray-900 text-2xl font-bold">
-                  {agent.name.charAt(0)}
-                </AvatarFallback>
-              </Avatar>
-            </motion.div>
-            <div className="text-center">
-              <h1 className="text-2xl font-bold text-white">{agent.name}</h1>
-              <p className="text-sm text-white/70">{agent.role}</p>
-              <Button
-                className="mt-3 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700"
-                onClick={() => setShowCallDialog(true)}
-              >
-                <Phone className="w-4 h-4 mr-2" />
-                Demo Call
-              </Button>
-            </div>
-            <div className="bg-white/10 backdrop-blur-md p-4 rounded-xl border border-white/20 w-full">
-              <h2 className="text-sm font-semibold mb-2 text-white">
-                Description
-              </h2>
-              <p className="text-xs text-white/85">{agent.description}</p>
-            </div>
-          </motion.div>
+   <Card className="p-4 sm:p-8 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white relative overflow-hidden h-[auto] sm:h-[530px] w-full shadow-2xl border-0" id="agent-details-explorer">
+  <div className="relative z-10 flex flex-col items-center justify-center h-full">
+    {/* Avatar + Info Centered */}
+    <motion.div
+      initial={{ opacity: 0, y: -40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="flex flex-col items-center justify-center space-y-6 mb-6"
+    >
+      <motion.div
+        initial={{ scale: 0, rotate: -180 }}
+        animate={{ scale: 1, rotate: 0 }}
+        transition={{ type: "spring", stiffness: 200, damping: 15 }}
+        className="w-20 h-20 rounded-full bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 p-1 shadow-2xl"
+      >
+        <Avatar className="w-full h-full border-2 border-white/20">
+          <AvatarImage src="/placeholder.svg?height=80&width=80" />
+          <AvatarFallback className="bg-white text-gray-900 text-4xl font-bold">
+            {agent.name.charAt(0)}
+          </AvatarFallback>
+        </Avatar>
+      </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="space-y-6 overflow-y-auto max-h-full pr-2"
-          >
-            {agent.functionality?.primary_functions?.length > 0 && (
-              <div className="bg-white/10 backdrop-blur-md p-4 rounded-xl border border-white/20">
-                <h2 className="text-sm font-semibold mb-3 text-white">
-                  Primary Functions
-                </h2>
-                <ul className="space-y-2">
-                  {agent.functionality.primary_functions.map(
-                    (func: string, idx: number) => (
-                      <li key={idx} className="flex items-center gap-2">
-                        <div className="w-2 h-2 rounded-full bg-white/50" />
-                        <span className="text-xs text-white/85">{func}</span>
-                      </li>
-                    )
-                  )}
-                </ul>
-              </div>
-            )}
-          </motion.div>
-        </div>
-      </Card>
+      <div className="text-center">
+        <h1 className="text-3xl font-bold text-white mb-2">{agent.name}</h1>
+        <p className="text-sm text-white/70 mb-4">{agent.role}</p>
+        <Button
+          className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700"
+          onClick={() => setShowCallDialog(true)}
+        >
+          <Phone className="w-4 h-4 mr-2" />
+          Demo Call
+        </Button>
+      </div>
+    </motion.div>
+
+    {/* Two-Column Function List */}
+    {(agent.functionality?.primary_functions?.length ?? 0) > 0 && (
+      <motion.ul
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-4xl px-2 sm:px-4"
+      >
+        {agent.functionality?.primary_functions?.map((func: string, idx: number) => {
+          const IconComponent = functionIcons[idx % functionIcons.length];
+          return (
+            <li
+              key={idx}
+              className="flex items-center space-x-3 bg-white/10 rounded-xl p-3 transition-all hover:bg-white/20 list-none"
+            >
+              <IconComponent className="w-5 h-5 text-blue-400 flex-shrink-0" />
+              <span className="text-sm text-white/85">{func}</span>
+            </li>
+          );
+        })}
+      </motion.ul>
+    )}
+  </div>
+</Card>
+
+
 
       <Dialog open={showCallDialog} onOpenChange={closeDialog}>
-        <DialogContent className="max-w-lg h-[500px] p-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 border-0">
+        <DialogContent className="w-full max-w-xs sm:max-w-lg h-[90vh] sm:h-[500px] p-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 border-0 overflow-y-auto">
           <DialogHeader className="p-6 pb-0">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
@@ -293,7 +319,7 @@ const AgentDetailsExplorer: React.FC<AgentDetailsExplorerProps> = ({
           </DialogHeader>
 
           {/* Microphone Visualization */}
-          <div className="flex-1 flex flex-col items-center justify-center px-6">
+          <div className="flex-1 flex flex-col items-center justify-center px-2 sm:px-6">
             <div className="relative flex items-center justify-center">
               {/* Outer Pulse Rings */}
               <AnimatePresence>

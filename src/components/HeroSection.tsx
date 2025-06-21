@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { ArrowRight} from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 interface HeroSectionProps {

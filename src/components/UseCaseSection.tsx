@@ -127,15 +127,15 @@ const UseCaseSection: React.FC<UseCaseSectionProps> = ({
       </div>
 
       {/* Mobile Agent Viewer */}
-      {selectedUseCase && (
-        <div className="md:hidden fixed inset-0 z-50 bg-white overflow-y-auto">
+      <div className="md:hidden mt-8">
+        {selectedUseCase && (
           <AgentDetailsExplorer
             agentName={getAgentName(selectedUseCase)}
             onBack={() => setSelectedUseCase(null)}
             isMobile={true}
           />
-        </div>
-      )}
+        )}
+      </div>
     </div>
   );
 };

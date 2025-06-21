@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet-async';
+import Head from 'next/head';
 
 interface SEOHeadProps {
   title?: string;
@@ -14,7 +14,7 @@ const SEOHead = ({
   ogImage = '/placeholder.svg',
 }: SEOHeadProps) => {
   return (
-    <Helmet>
+    <Head>
       {/* Standard metadata */}
       <title>{title}</title>
       <meta name="description" content={description} />
@@ -33,7 +33,7 @@ const SEOHead = ({
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={ogImage} />
-    </Helmet>
+    </Head>
   );
 };
 

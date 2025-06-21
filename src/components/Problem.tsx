@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Clock, Users, MessageSquare, TrendingDown } from 'lucide-react';
 
@@ -31,7 +30,7 @@ const Problem = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-6">
-            Don't Let Leads Slip Through the Cracks
+            Don&apos;t Let Leads Slip Through the Cracks
           </h2>
         </div>
         
