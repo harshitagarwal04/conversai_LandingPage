@@ -139,14 +139,22 @@ export function CTABanner({ industry, color }: CTABannerProps) {
             viewport={{ once: true }}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
+         
             <Button
               size="lg"
-              onClick={() => setIsModalOpen(true)}
+              onClick={() => {
+                const el = document.getElementById('agent-details-explorer');
+                if (el) {
+                  el.scrollIntoView({ behavior: 'smooth' });
+                }
+                // setIsModalOpen(true); // Remove or comment out if you don't want the modal
+              }}
               className="bg-white text-gray-900 cursor-pointer hover:bg-gray-100 px-8 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-200 "
             >
               Get Your Free Demo
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
+        
             
             <div className="text-white/80 text-sm">
               No credit card required • Setup in minutes

@@ -28,7 +28,7 @@ const Index = () => {
     addStructuredData(createWebsiteStructuredData());
   }, []);
   return (
-    <div className="min-h-screen">
+    <div className="w-full overflow-x-hidden">
       <Header />
       <Hero />
       <Problem />
