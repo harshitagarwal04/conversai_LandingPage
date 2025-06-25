@@ -23,15 +23,16 @@ const PricingPage: React.FC = () => {
       name: 'Starter',
       price: isAnnual ? '$239' : '$299',
       priceMonthly: isAnnual ? 239 : 299,
-      description: 'Perfect for small businesses getting started with AI conversations',
+      description: 'Perfect for small businesses getting started with AI agent building',
       features: [
         'Up to 1,000 conversations/month',
         '1 AI agent (Voice, WhatsApp, or Email)',
-        'Basic analytics dashboard',
+        'YAML prompt builder access',
+        'Basic industry templates',
+        'Voice selection (6 options)',
         '5 CRM integrations',
         'Email support',
-        '14-day free trial',
-        'Basic customization'
+        '14-day free trial'
       ],
       buttonText: 'Start Free Trial',
       buttonVariant: 'outline'
@@ -40,17 +41,18 @@ const PricingPage: React.FC = () => {
       name: 'Professional',
       price: isAnnual ? '$799' : '$999',
       priceMonthly: isAnnual ? 799 : 999,
-      description: 'Ideal for growing businesses ready to scale their customer interactions',
+      description: 'Ideal for growing businesses ready to scale with multiple AI agents',
       features: [
         'Up to 10,000 conversations/month',
         '3 AI agents (Voice + WhatsApp + Email)',
-        'Advanced analytics & reporting',
+        'Full admin panel access',
+        'All industry templates',
+        'Advanced voice options',
+        'Script upload & website import',
+        'Custom call cycling rules',
         '50+ CRM integrations',
         'Priority support',
-        'Custom workflows',
-        'A/B testing',
-        'Lead scoring',
-        'Multi-language support'
+        'A/B testing & lead scoring'
       ],
       popular: true,
       buttonText: 'Get Started',
@@ -60,18 +62,18 @@ const PricingPage: React.FC = () => {
       name: 'Enterprise',
       price: 'Custom',
       priceMonthly: 0,
-      description: 'Tailored solutions for large organizations with complex needs',
+      description: 'Tailored agent building platform for large organizations',
       features: [
         'Unlimited conversations',
         'Unlimited AI agents',
-        'White-label solution',
-        'Custom integrations',
+        'White-label admin panel',
+        'Custom agent templates',
+        'Voice cloning & custom voices',
+        'Advanced prompt engineering',
+        'Custom integrations & APIs',
         'Dedicated account manager',
         'SLA guarantees',
-        'Advanced security & compliance',
-        'Custom training & onboarding',
-        'API access',
-        'Phone support'
+        'Advanced security & compliance'
       ],
       buttonText: 'Contact Sales',
       buttonVariant: 'outline'
@@ -82,22 +84,22 @@ const PricingPage: React.FC = () => {
     {
       name: 'Additional Agent',
       price: '$199/month',
-      description: 'Add more AI agents for different channels or use cases'
+      description: 'Add more AI agents with unique templates and voices'
     },
     {
-      name: 'Extra Conversations',
-      price: '$0.50 per 100',
-      description: 'Additional conversations beyond your plan limit'
+      name: 'Custom Voice Training',
+      price: '$499/month',
+      description: 'Train AI voices to match your brand or specific personas'
     },
     {
-      name: 'Premium Integrations',
-      price: '$99/month',
-      description: 'Advanced CRM and marketing tool integrations'
+      name: 'Advanced Analytics',
+      price: '$149/month',
+      description: 'Detailed conversation analysis and ROI tracking'
     },
     {
-      name: 'Priority Support',
-      price: '$299/month',
-      description: '24/7 phone support and dedicated success manager'
+      name: 'White-label Admin',
+      price: '$999/month',
+      description: 'Branded admin panel for agencies and resellers'
     }
   ];
 
@@ -220,32 +222,32 @@ const PricingPage: React.FC = () => {
                 <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <MessageSquare className="w-8 h-8 text-blue-600" />
                 </div>
-                <h3 className="font-semibold mb-2">Multi-Channel</h3>
-                <p className="text-sm text-gray-600">Voice, WhatsApp, Email, and more</p>
+                <h3 className="font-semibold mb-2">No-Code Builder</h3>
+                <p className="text-sm text-gray-600">YAML editor with visual interface</p>
               </div>
               
               <div className="text-center">
                 <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Zap className="w-8 h-8 text-green-600" />
                 </div>
-                <h3 className="font-semibold mb-2">AI-Powered</h3>
-                <p className="text-sm text-gray-600">Advanced natural language processing</p>
+                <h3 className="font-semibold mb-2">Industry Templates</h3>
+                <p className="text-sm text-gray-600">Pre-built agents for every sector</p>
               </div>
               
               <div className="text-center">
                 <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <BarChart3 className="w-8 h-8 text-purple-600" />
                 </div>
-                <h3 className="font-semibold mb-2">Analytics</h3>
-                <p className="text-sm text-gray-600">Detailed conversation insights</p>
+                <h3 className="font-semibold mb-2">Voice Selection</h3>
+                <p className="text-sm text-gray-600">Multiple languages and accents</p>
               </div>
               
               <div className="text-center">
                 <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Shield className="w-8 h-8 text-orange-600" />
                 </div>
-                <h3 className="font-semibold mb-2">Secure</h3>
-                <p className="text-sm text-gray-600">Enterprise-grade security</p>
+                <h3 className="font-semibold mb-2">Smart Cycling</h3>
+                <p className="text-sm text-gray-600">Automated retry and follow-up logic</p>
               </div>
             </div>
           </div>

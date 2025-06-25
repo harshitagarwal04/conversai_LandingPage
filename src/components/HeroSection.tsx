@@ -71,11 +71,11 @@ export function HeroSection({ industry, description, color }: HeroSectionProps) 
           transition={{ duration: 0.6, delay: 0.1 }}
           className="text-4xl sm:text-5xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight"
         >
-          Transform Your{' '}
+          AI Agents Built for{' '}
           <span className={`bg-gradient-to-r ${gradientClass} bg-clip-text text-transparent`}>
             {industry}
           </span>{' '}
-          Business
+          Success
         </motion.h1>
 
         <motion.p
@@ -95,17 +95,19 @@ export function HeroSection({ industry, description, color }: HeroSectionProps) 
         >
           <Button 
             size="lg"
+            onClick={() => window.open('/demo', '_blank')}
             className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-200"
           >
-            Get Started Today
+            Try {industry} Agent Template
             <ArrowRight className="ml-2 w-5 h-5" />
           </Button>
           <Button 
             variant="outline" 
             size="lg"
-            className="px-8 py-3 rounded-full font-semibold border-2  bg-black hover:bg-gray-500"
+            onClick={() => window.open('https://admin.conversailabs.com/', '_blank')}
+            className="px-8 py-3 rounded-full font-semibold border-2 hover:bg-gray-50"
           >
-            Watch Demo
+            Build Custom Agent
           </Button>
         </motion.div>
 
@@ -118,9 +120,9 @@ export function HeroSection({ industry, description, color }: HeroSectionProps) 
         >
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
             {[
-              { number: '500+', label: 'Companies Trust Us' },
-              { number: '99.9%', label: 'Uptime Guarantee' },
-              { number: '24/7', label: 'Expert Support' }
+              { number: '85%', label: 'Lead Qualification Rate' },
+              { number: '<10min', label: 'Agent Setup Time' },
+              { number: '24/7', label: 'AI Availability' }
             ].map((stat, index) => (
               <motion.div
                 key={index}
