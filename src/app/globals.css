@@ -24,3 +24,26 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Fix Chrome color rendering issues */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Ensure gradients render properly in Chrome */
+.bg-gradient-to-r,
+.bg-gradient-to-br,
+.bg-gradient-to-l,
+.bg-gradient-to-t,
+.bg-gradient-to-b {
+  background-attachment: scroll;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+/* Force hardware acceleration for smooth rendering */
+.bg-gradient-to-r {
+  will-change: background;
+}
