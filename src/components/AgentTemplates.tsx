@@ -84,7 +84,7 @@ const AgentTemplates = () => {
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6">
+            <h2 className="text-4xl font-bold mb-6 text-gray-900">
               Pre-Built Agent Templates
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -195,7 +195,7 @@ const AgentTemplates = () => {
           {/* Custom Template CTA */}
           <div className="text-center mt-16">
             <div className="bg-gray-50 rounded-2xl p-8 max-w-2xl mx-auto">
-              <h3 className="text-2xl font-bold mb-4">Don&apos;t See Your Industry?</h3>
+              <h3 className="text-2xl font-bold mb-4 text-gray-900">Don&apos;t See Your Industry?</h3>
               <p className="text-gray-600 mb-6">
                 Our AI can create custom agents for any business. Upload your script or describe your process, and we&apos;ll build a template that fits your exact needs.
               </p>

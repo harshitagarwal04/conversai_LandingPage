@@ -52,6 +52,17 @@ body {
 h1, h2, h3, h4, h5, h6 {
   -webkit-text-fill-color: initial;
   text-rendering: optimizeLegibility;
+  color: #111827; /* Explicit dark color fallback */
+}
+
+/* Ensure headings without explicit color classes are visible */
+h1:not([class*="text-"]):not([class*="bg-clip-text"]),
+h2:not([class*="text-"]):not([class*="bg-clip-text"]),
+h3:not([class*="text-"]):not([class*="bg-clip-text"]),
+h4:not([class*="text-"]):not([class*="bg-clip-text"]),
+h5:not([class*="text-"]):not([class*="bg-clip-text"]),
+h6:not([class*="text-"]):not([class*="bg-clip-text"]) {
+  color: #111827 !important;
 }
 
 /* Ensure gradient text renders properly */
