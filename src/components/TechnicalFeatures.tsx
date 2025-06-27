@@ -105,7 +105,7 @@ const TechnicalFeatures = () => {
               <div className="w-8 h-8 bg-purple-500 rounded-full border-2 border-white"></div>
             </div>
             <span className="text-gray-700 font-medium">
-              Join 500+ businesses already using ConversAI to automate their conversations
+              Join 50+ businesses already using ConversAI to automate their conversations
             </span>
           </div>
         </div>

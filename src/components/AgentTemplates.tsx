@@ -164,7 +164,7 @@ const AgentTemplates = () => {
               <div>
                 <div className="flex items-center justify-center mb-2">
                   <Users className="w-6 h-6 mr-2" />
-                  <span className="text-3xl font-bold">500+</span>
+                  <span className="text-3xl font-bold">50+</span>
                 </div>
                 <p className="text-blue-100">Active Businesses</p>
               </div>
