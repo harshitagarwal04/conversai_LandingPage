@@ -3,9 +3,6 @@ import { Button } from '@/components/ui/button';
 import { ArrowDown, Phone, MessageSquare, Users } from 'lucide-react';
 
 const Hero = () => {
-  const handleConnectWithUs = () => {
-    window.open('https://wa.me/919953053281', '_blank');
-  };
 
   const handleSeeHowItWorks = () => {
     window.open('https://admin.conversailabs.com/', '_blank');
@@ -47,11 +44,11 @@ const Hero = () => {
               <Button 
                 variant="outline" 
                 size="lg" 
-                onClick={handleConnectWithUs}
+                onClick={() => window.open('/schedule-demo', '_self')}
                 className="border-2 border-gray-300 hover:border-blue-500 px-8 py-4 text-lg font-semibold text-black"
                 style={{ cursor: 'pointer' }}
               >
-                See 5-Minute Demo
+                Schedule Live Demo
               </Button>
             </div>
             
@@ -103,12 +100,6 @@ const Hero = () => {
                   </div>
                 </div>
                 
-                <div className="mt-4 sm:mt-6 p-2 sm:p-3 bg-gray-50 rounded-lg">
-                  <div className="flex justify-between items-center text-xs sm:text-sm">
-                    <span className="text-gray-600">Active AI Agents</span>
-                    <span className="font-bold text-xl sm:text-2xl text-blue-600">3</span>
-                  </div>
-                </div>
               </div>
             </div>
             

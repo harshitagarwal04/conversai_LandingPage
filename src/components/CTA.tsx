@@ -10,7 +10,7 @@ const CTA = () => {
   const router = useRouter();
   
   const handleConnectWithUs = () => {
-    window.open('https://wa.me/919953053281', '_blank');
+    window.open('https://wa.me/918076018082', '_blank');
   };
   
   const handleTryDemo = () => {
@@ -26,7 +26,7 @@ const CTA = () => {
       <div className="container mx-auto px-6">
         <div className="text-center text-white">
           <h2 className="text-4xl font-bold mb-6">
-            Ready to Build Your First AI Agent?
+            Ready to Transform Your Business?
           </h2>
           <p className="text-xl mb-12 opacity-90 max-w-2xl mx-auto">
             Join 50+ businesses already using ConversAI to automate conversations and never miss another lead.

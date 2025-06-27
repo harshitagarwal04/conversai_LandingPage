@@ -27,7 +27,7 @@ const Header = () => {
   const pathname = usePathname();
 
   const handleConnectWithUs = () => {
-    window.open("https://wa.me/919953053281", "_blank");
+    window.open("https://wa.me/918076018082", "_blank");
   };
 
   const handleNavClick = (
@@ -127,11 +127,11 @@ const Header = () => {
             </Link>
 
             <Button
-              onClick={handleConnectWithUs}
+              onClick={() => window.open('/schedule-demo', '_self')}
               className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6 py-2 rounded-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
               style={{ cursor: 'pointer' }}
             >
-              Connect with Us
+              Schedule Demo
             </Button>
           </nav>
 

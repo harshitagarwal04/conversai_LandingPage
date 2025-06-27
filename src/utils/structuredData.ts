@@ -31,7 +31,7 @@ export const createOrganizationStructuredData = () => {
     "description": "ConversAI Labs helps businesses automate conversations with AI across voice, WhatsApp, email and more.",
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+91-9953053281",
+      "telephone": "+91-8076018082",
       "contactType": "customer service"
     },
     "sameAs": [

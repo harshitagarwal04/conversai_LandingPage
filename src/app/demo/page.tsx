@@ -48,7 +48,7 @@ const DemoPage = () => {
   };
 
   const handleConnectWithUs = () => {
-    window.open('https://wa.me/919953053281', '_blank');
+    window.open('https://wa.me/918076018082', '_blank');
   };
 
   return (
