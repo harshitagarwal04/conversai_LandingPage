@@ -1,7 +1,7 @@
 interface Window {
   clarity?: {
-    (action: string, ...args: any[]): void;
-    q?: any[];
+    (action: string, ...args: unknown[]): void;
+    q?: Array<[string, ...unknown[]]>;
   };
-  dataLayer?: any[];
+  dataLayer?: Array<Record<string, unknown>>;
 }
