@@ -72,7 +72,7 @@ const ProblemSolution = () => {
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6">
+            <h2 className="text-4xl font-bold mb-6 text-gray-900">
               Stop Losing Leads to Slow Response Times
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -82,7 +82,7 @@ const ProblemSolution = () => {
 
           {/* Problems Section */}
           <div className="mb-20">
-            <h3 className="text-3xl font-bold text-center mb-12">
+            <h3 className="text-3xl font-bold text-center mb-12 text-gray-900">
               The Problems Costing You Revenue
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -129,7 +129,7 @@ const ProblemSolution = () => {
 
           {/* Solutions Section */}
           <div>
-            <h3 className="text-3xl font-bold text-center mb-12">
+            <h3 className="text-3xl font-bold text-center mb-12 text-gray-900">
               How We Fix Every Problem
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -164,7 +164,7 @@ const ProblemSolution = () => {
 
           {/* ROI Comparison */}
           <div className="mt-20 bg-white rounded-2xl p-8 shadow-xl">
-            <h3 className="text-2xl font-bold text-center mb-8">
+            <h3 className="text-2xl font-bold text-center mb-8 text-gray-900">
               The Math is Simple
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

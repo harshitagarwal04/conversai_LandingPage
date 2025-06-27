@@ -46,7 +46,8 @@ const CTA = () => {
               variant="outline" 
               size="lg" 
               onClick={handleTryDemo}
-              className="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 text-lg font-semibold"
+              className="border-2 border-white bg-transparent text-white hover:bg-white hover:text-blue-600 px-8 py-4 text-lg font-semibold transition-all duration-300"
+              style={{ backgroundColor: 'transparent', color: '#ffffff' }}
             >
               <Play className="w-5 h-5 mr-2" />
               See 5-Minute Demo

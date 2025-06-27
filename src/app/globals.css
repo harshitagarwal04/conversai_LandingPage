@@ -47,3 +47,29 @@ body {
 .bg-gradient-to-r {
   will-change: background;
 }
+
+/* Fix text contrast issues in Chrome */
+h1, h2, h3, h4, h5, h6 {
+  -webkit-text-fill-color: initial;
+  text-rendering: optimizeLegibility;
+}
+
+/* Ensure gradient text renders properly */
+.bg-gradient-to-r.from-blue-600.to-purple-600.bg-clip-text {
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: contrast(1.1);
+}
+
+/* Fix button visibility on gradient backgrounds */
+button[class*="border-white"] {
+  background-color: transparent !important;
+  color: white !important;
+  border-color: white !important;
+}
+
+button[class*="border-white"]:hover {
+  background-color: white !important;
+  color: #2563eb !important;
+}
