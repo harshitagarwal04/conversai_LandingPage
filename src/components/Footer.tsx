@@ -9,7 +9,6 @@ const Footer = () => {
       links: [
         { name: "Features", path: "/#features" },
         { name: "Pricing", path: "/pricing" },
-        { name: "Demo", path: "/demo" },
         { name: "Agent Templates", path: "/#agent-templates" },
         { name: "Industries", path: "/#industries" },
       ],
@@ -17,8 +16,6 @@ const Footer = () => {
     {
       title: "Resources",
       links: [
-        { name: "How It Works", path: "/#how-it-works" },
-        { name: "Case Studies", path: "/#testimonials" },
         { name: "Help Center", path: "/contact" },
         { name: "Admin Panel", path: "https://admin.conversailabs.com/" },
         { name: "API Docs", path: "/contact" },

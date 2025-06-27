@@ -1,96 +1,20 @@
 'use client';
 
-import React, { useState } from 'react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Textarea } from '@/components/ui/textarea';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Mail, Phone, MapPin, Clock, Send, Building, User, MessageSquare } from 'lucide-react';
-import { useToast } from '@/hooks/use-toast';
-
-interface FormData {
-  name: string;
-  email: string;
-  phone: string;
-  company: string;
-  companySize: string;
-  message: string;
-}
+import React from 'react';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import { Mail, Phone, MapPin, Clock, MessageSquare } from 'lucide-react';
 
 const ContactPage: React.FC = () => {
-  const { toast } = useToast();
-  const [formData, setFormData] = useState<FormData>({
-    name: '',
-    email: '',
-    phone: '',
-    company: '',
-    companySize: '',
-    message: '',
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleInputChange = (field: keyof FormData, value: string) => {
-    setFormData(prev => ({ ...prev, [field]: value }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          ...formData,
-          source: 'contact-page',
-        }),
-      });
-
-      const data = await response.json();
-
-      if (response.ok) {
-        toast({
-          title: 'Message sent successfully!',
-          description: data.message,
-        });
-        
-        // Reset form
-        setFormData({
-          name: '',
-          email: '',
-          phone: '',
-          company: '',
-          companySize: '',
-          message: '',
-        });
-      } else {
-        toast({
-          title: 'Error',
-          description: data.error || 'Something went wrong. Please try again.',
-          variant: 'destructive',
-        });
-      }
-    } catch {
-      toast({
-        title: 'Error',
-        description: 'Failed to send message. Please try again later.',
-        variant: 'destructive',
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
 
   const handleWhatsApp = () => {
     window.open('https://wa.me/919953053281', '_blank');
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 pt-20">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
+      <Header />
+      <div className="pt-20">
       <div className="container mx-auto px-4 py-12">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
@@ -104,124 +28,6 @@ const ContactPage: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Contact Form */}
-            <div className="bg-white rounded-2xl shadow-xl p-8">
-              <h2 className="text-2xl font-bold mb-6">Send us a message</h2>
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <Label htmlFor="name" className="flex items-center gap-2 mb-2">
-                      <User className="w-4 h-4" />
-                      Full Name *
-                    </Label>
-                    <Input
-                      id="name"
-                      type="text"
-                      required
-                      placeholder="John Doe"
-                      value={formData.name}
-                      onChange={(e) => handleInputChange('name', e.target.value)}
-                    />
-                  </div>
-                  <div>
-                    <Label htmlFor="email" className="flex items-center gap-2 mb-2">
-                      <Mail className="w-4 h-4" />
-                      Email *
-                    </Label>
-                    <Input
-                      id="email"
-                      type="email"
-                      required
-                      placeholder="john@company.com"
-                      value={formData.email}
-                      onChange={(e) => handleInputChange('email', e.target.value)}
-                    />
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <Label htmlFor="phone" className="flex items-center gap-2 mb-2">
-                      <Phone className="w-4 h-4" />
-                      Phone
-                    </Label>
-                    <Input
-                      id="phone"
-                      type="tel"
-                      placeholder="+1 (555) 123-4567"
-                      value={formData.phone}
-                      onChange={(e) => handleInputChange('phone', e.target.value)}
-                    />
-                  </div>
-                  <div>
-                    <Label htmlFor="company" className="flex items-center gap-2 mb-2">
-                      <Building className="w-4 h-4" />
-                      Company
-                    </Label>
-                    <Input
-                      id="company"
-                      type="text"
-                      placeholder="Company Name"
-                      value={formData.company}
-                      onChange={(e) => handleInputChange('company', e.target.value)}
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <Label className="flex items-center gap-2 mb-2">
-                    <Building className="w-4 h-4" />
-                    Company Size
-                  </Label>
-                  <Select
-                    value={formData.companySize}
-                    onValueChange={(value) => handleInputChange('companySize', value)}
-                  >
-                    <SelectTrigger>
-                      <SelectValue placeholder="Select company size" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="1-10">1-10 employees</SelectItem>
-                      <SelectItem value="11-50">11-50 employees</SelectItem>
-                      <SelectItem value="51-200">51-200 employees</SelectItem>
-                      <SelectItem value="201-1000">201-1000 employees</SelectItem>
-                      <SelectItem value="1000+">1000+ employees</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-
-                <div>
-                  <Label htmlFor="message" className="flex items-center gap-2 mb-2">
-                    <MessageSquare className="w-4 h-4" />
-                    Message *
-                  </Label>
-                  <Textarea
-                    id="message"
-                    required
-                    rows={5}
-                    placeholder="Tell us about your needs..."
-                    value={formData.message}
-                    onChange={(e) => handleInputChange('message', e.target.value)}
-                  />
-                </div>
-
-                <Button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
-                >
-                  {isSubmitting ? (
-                    <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                  ) : (
-                    <>
-                      Send Message
-                      <Send className="ml-2 w-4 h-4" />
-                    </>
-                  )}
-                </Button>
-              </form>
-            </div>
-
             {/* Contact Information */}
             <div className="space-y-8">
               {/* Quick Contact Card */}
@@ -315,6 +121,8 @@ const ContactPage: React.FC = () => {
           </div>
         </div>
       </div>
+      </div>
+      <Footer />
     </div>
   );
 };

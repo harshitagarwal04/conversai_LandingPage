@@ -39,7 +39,6 @@ const Features = () => {
         "Analyzes all calls, chats, and emails to extract signals",
         "Automatically segments leads: hot, warm, cold",
         "Parses unstructured conversation to structured CRM fields",
-        "Pulls missing data from emails, LinkedIn, company sites"
       ]
     },
     {

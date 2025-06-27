@@ -75,14 +75,6 @@ const Header = () => {
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full" />
             </Link>
 
-            <Link
-              href="/#how-it-works"
-              onClick={(e) => handleNavClick(e, "how-it-works")}
-              className="text-gray-600 hover:text-blue-600 transition-colors font-medium relative group"
-            >
-              How It Works
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full" />
-            </Link>
 
             {/* Industries Dropdown */}
             <div className="relative group">
@@ -152,13 +144,6 @@ const Header = () => {
               className="text-gray-800 hover:text-blue-600"
             >
               Features
-            </Link>
-            <Link
-              href="/#how-it-works"
-              onClick={(e) => handleNavClick(e, "how-it-works")}
-              className="text-gray-800 hover:text-blue-600"
-            >
-              How It Works
             </Link>
             <Link
               href="/#why-conversai"

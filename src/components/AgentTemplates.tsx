@@ -74,8 +74,8 @@ const AgentTemplates = () => {
   ];
 
   const handleTryDemo = () => {
-    // In a real implementation, this would open a specific demo for that template
-    window.open('/demo', '_blank');
+    // Redirect to admin panel
+    window.open('https://admin.conversailabs.com/', '_blank');
   };
 
   return (

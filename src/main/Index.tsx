@@ -6,9 +6,7 @@ import ProblemSolution from '@/components/ProblemSolution';
 import InteractiveDemo from '@/components/InteractiveDemo';
 import TechnicalFeatures from '@/components/TechnicalFeatures';
 import AgentTemplates from '@/components/AgentTemplates';
-import HowItWorks from '@/components/HowItWorks';
 import Features from '@/components/Features';
-import Testimonials from '@/components/Testimonials';
 import CTA from '@/components/CTA';
 import Footer from '@/components/Footer';
 import { updateSEO } from '@/utils/seo';
@@ -36,9 +34,7 @@ const Index = () => {
       <InteractiveDemo />
       <TechnicalFeatures />
       <AgentTemplates />
-      <HowItWorks />
       <Features />
-      <Testimonials />
       <CTA />
       <Footer />
     </div>

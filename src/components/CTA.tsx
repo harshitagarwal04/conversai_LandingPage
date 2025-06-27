@@ -14,7 +14,7 @@ const CTA = () => {
   };
   
   const handleTryDemo = () => {
-    router.push('/demo');
+    window.open('https://admin.conversailabs.com/', '_blank');
   };
   
   const handleContactSales = () => {
