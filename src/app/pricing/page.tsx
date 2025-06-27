@@ -3,6 +3,8 @@
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Check, Star, MessageSquare, Phone, Zap, BarChart3, Shield } from 'lucide-react';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 interface PricingPlan {
   name: string;
@@ -21,11 +23,11 @@ const PricingPage: React.FC = () => {
   const plans: PricingPlan[] = [
     {
       name: 'Starter',
-      price: isAnnual ? '$239' : '$299',
-      priceMonthly: isAnnual ? 239 : 299,
-      description: 'Perfect for small businesses getting started with AI agent building',
+      price: isAnnual ? '$119' : '$149',
+      priceMonthly: isAnnual ? 119 : 149,
+      description: 'Perfect for small businesses getting started with AI conversations',
       features: [
-        'Up to 1,000 conversations/month',
+        'Up to 500 conversations/month',
         '1 AI agent (Voice, WhatsApp, or Email)',
         'YAML prompt builder access',
         'Basic industry templates',
@@ -39,20 +41,20 @@ const PricingPage: React.FC = () => {
     },
     {
       name: 'Professional',
-      price: isAnnual ? '$799' : '$999',
-      priceMonthly: isAnnual ? 799 : 999,
+      price: isAnnual ? '$319' : '$399',
+      priceMonthly: isAnnual ? 319 : 399,
       description: 'Ideal for growing businesses ready to scale with multiple AI agents',
       features: [
-        'Up to 10,000 conversations/month',
+        'Up to 2,500 conversations/month',
         '3 AI agents (Voice + WhatsApp + Email)',
         'Full admin panel access',
         'All industry templates',
         'Advanced voice options',
         'Script upload & website import',
         'Custom call cycling rules',
-        '50+ CRM integrations',
+        '20+ CRM integrations',
         'Priority support',
-        'A/B testing & lead scoring'
+        'Basic analytics & reporting'
       ],
       popular: true,
       buttonText: 'Get Started',
@@ -60,11 +62,11 @@ const PricingPage: React.FC = () => {
     },
     {
       name: 'Enterprise',
-      price: 'Custom',
-      priceMonthly: 0,
-      description: 'Tailored agent building platform for large organizations',
+      price: isAnnual ? '$999' : '$1,249',
+      priceMonthly: isAnnual ? 999 : 1249,
+      description: 'Complete AI agent platform for established businesses',
       features: [
-        'Unlimited conversations',
+        'Up to 10,000 conversations/month',
         'Unlimited AI agents',
         'White-label admin panel',
         'Custom agent templates',
@@ -72,8 +74,8 @@ const PricingPage: React.FC = () => {
         'Advanced prompt engineering',
         'Custom integrations & APIs',
         'Dedicated account manager',
-        'SLA guarantees',
-        'Advanced security & compliance'
+        'Advanced analytics & A/B testing',
+        'SLA guarantees & priority support'
       ],
       buttonText: 'Contact Sales',
       buttonVariant: 'outline'
@@ -82,24 +84,24 @@ const PricingPage: React.FC = () => {
 
   const addOns = [
     {
+      name: 'Extra Conversations',
+      price: '$0.25/conversation',
+      description: 'Pay only for conversations beyond your plan limit'
+    },
+    {
       name: 'Additional Agent',
-      price: '$199/month',
+      price: '$99/month',
       description: 'Add more AI agents with unique templates and voices'
     },
     {
       name: 'Custom Voice Training',
-      price: '$499/month',
+      price: '$299/month',
       description: 'Train AI voices to match your brand or specific personas'
     },
     {
       name: 'Advanced Analytics',
-      price: '$149/month',
+      price: '$79/month',
       description: 'Detailed conversation analysis and ROI tracking'
-    },
-    {
-      name: 'White-label Admin',
-      price: '$999/month',
-      description: 'Branded admin panel for agencies and resellers'
     }
   ];
 
@@ -108,8 +110,9 @@ const PricingPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 pt-20">
-      <div className="container mx-auto px-4 py-12">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
+      <Header />
+      <div className="container mx-auto px-4 py-12 pt-24">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16">
@@ -282,7 +285,7 @@ const PricingPage: React.FC = () => {
           <div className="text-center bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-2xl p-12">
             <h2 className="text-3xl font-bold mb-4">Ready to get started?</h2>
             <p className="text-xl mb-8 opacity-90">
-              Join thousands of businesses already using ConversAI to transform their customer interactions.
+              Join 50+ businesses already using ConversAI to transform their customer interactions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
@@ -307,6 +310,7 @@ const PricingPage: React.FC = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
