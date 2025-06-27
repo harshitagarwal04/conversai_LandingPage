@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 
 export default function ClarityTestPage() {
   const [clarityStatus, setClarityStatus] = useState<string>('Checking...')
-  const [clarityDetails, setClarityDetails] = useState<any>(null)
+  const [clarityDetails, setClarityDetails] = useState<Record<string, unknown> | null>(null)
 
   useEffect(() => {
     // Check if Clarity is loaded
@@ -61,7 +61,7 @@ export default function ClarityTestPage() {
           <ol className="list-decimal list-inside space-y-2">
             <li>Open Developer Tools (F12 or right-click → Inspect)</li>
             <li>Go to the Network tab</li>
-            <li>Filter by "clarity" or look for requests to clarity.ms</li>
+            <li>Filter by &quot;clarity&quot; or look for requests to clarity.ms</li>
             <li>In the Console, type: <code className="bg-gray-100 px-2 py-1 rounded">window.clarity</code></li>
             <li>Check for any Clarity-related errors in the Console</li>
           </ol>

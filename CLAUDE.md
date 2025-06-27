@@ -81,6 +81,10 @@ npm run vercel-build
 
 7. **Toast Notifications**: The app includes toast notifications via the Toaster component in the layout. Use the `useToast` hook for user feedback.
 
+## Git Workflow
+
+**IMPORTANT**: Do NOT commit changes automatically. Only commit when explicitly asked by the user. The user will tell you when to commit changes.
+
 ## Code Style Patterns
 
 - Components use function declarations with explicit return types
