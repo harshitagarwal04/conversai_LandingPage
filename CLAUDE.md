@@ -85,6 +85,8 @@ npm run vercel-build
 
 **IMPORTANT**: Do NOT commit changes automatically. Only commit when explicitly asked by the user. The user will tell you when to commit changes.
 
+**BEFORE PUSHING TO GITHUB**: Always run `npm run build` to check the production build is working correctly. Only push if the build succeeds without errors.
+
 ## Code Style Patterns
 
 - Components use function declarations with explicit return types

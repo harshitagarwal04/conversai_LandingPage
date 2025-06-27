@@ -69,18 +69,22 @@ const Header = () => {
             <Link
               href="/#features"
               onClick={(e) => handleNavClick(e, "features")}
-              className="text-gray-600 hover:text-blue-600 transition-colors font-medium relative group"
+              className="text-gray-600 hover:text-blue-600 transition-all duration-300 font-medium relative group px-3 py-2 rounded-md hover:bg-blue-50"
+              style={{ cursor: 'pointer' }}
             >
               Features
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full" />
+              <span className="absolute -bottom-1 left-3 right-3 h-0.5 bg-blue-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
             </Link>
 
 
             {/* Industries Dropdown */}
             <div className="relative group">
-              <div className="flex items-center space-x-1 text-gray-600 hover:text-blue-600 transition-colors cursor-pointer font-medium">
+              <div 
+                className="flex items-center space-x-1 text-gray-600 hover:text-blue-600 transition-all duration-300 font-medium px-3 py-2 rounded-md hover:bg-blue-50"
+                style={{ cursor: 'pointer' }}
+              >
                 <span>Industries</span>
-                <ChevronDown className="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" />
+                <ChevronDown className="w-4 h-4 transition-transform duration-300 group-hover:rotate-180" />
               </div>
 
               <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-80 bg-white rounded-lg shadow-2xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0 z-40">
@@ -105,17 +109,27 @@ const Header = () => {
             </div>
 
             <Link
-              href="/#why-conversai"
-              onClick={(e) => handleNavClick(e, "why-conversai")}
-              className="text-gray-600 hover:text-blue-600 transition-colors font-medium relative group"
+              href="/pricing"
+              className="text-gray-600 hover:text-blue-600 transition-all duration-300 font-medium relative group px-3 py-2 rounded-md hover:bg-blue-50"
+              style={{ cursor: 'pointer' }}
             >
-              Why ConversAI
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full" />
+              Pricing
+              <span className="absolute -bottom-1 left-3 right-3 h-0.5 bg-blue-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+            </Link>
+
+            <Link
+              href="/about"
+              className="text-gray-600 hover:text-blue-600 transition-all duration-300 font-medium relative group px-3 py-2 rounded-md hover:bg-blue-50"
+              style={{ cursor: 'pointer' }}
+            >
+              About
+              <span className="absolute -bottom-1 left-3 right-3 h-0.5 bg-blue-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
             </Link>
 
             <Button
               onClick={handleConnectWithUs}
               className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6 py-2 rounded-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+              style={{ cursor: 'pointer' }}
             >
               Connect with Us
             </Button>
@@ -146,11 +160,18 @@ const Header = () => {
               Features
             </Link>
             <Link
-              href="/#why-conversai"
-              onClick={(e) => handleNavClick(e, "why-conversai")}
+              href="/pricing"
               className="text-gray-800 hover:text-blue-600"
+              onClick={() => setMobileOpen(false)}
             >
-              Why ConversAI
+              Pricing
+            </Link>
+            <Link
+              href="/about"
+              className="text-gray-800 hover:text-blue-600"
+              onClick={() => setMobileOpen(false)}
+            >
+              About
             </Link>
 
             {/* Expandable Industries in Mobile */}

@@ -9,26 +9,25 @@ const Footer = () => {
       links: [
         { name: "Features", path: "/#features" },
         { name: "Pricing", path: "/pricing" },
-        { name: "Agent Templates", path: "/#agent-templates" },
-        { name: "Industries", path: "/#industries" },
-      ],
-    },
-    {
-      title: "Resources",
-      links: [
-        { name: "Help Center", path: "/contact" },
+        { name: "Industries", path: "/industries" },
         { name: "Admin Panel", path: "https://admin.conversailabs.com/" },
-        { name: "API Docs", path: "/contact" },
       ],
     },
     {
       title: "Company",
       links: [
+        { name: "About Us", path: "/about" },
+        { name: "Contact Us", path: "/contact" },
         { name: "Privacy Policy", path: "/policy" },
-        { name: "Terms and Conditions", path: "/terms" },
+        { name: "Terms & Conditions", path: "/terms" },
+      ],
+    },
+    {
+      title: "Support",
+      links: [
+        { name: "Help Center", path: "/contact" },
         { name: "Cancellation & Refund", path: "/refund" },
         { name: "Shipping & Delivery", path: "/shipping" },
-        { name: "Contact Us", path: "/contact" },
       ],
     },
   ];
@@ -94,22 +93,8 @@ const Footer = () => {
           <p className="text-gray-400 text-sm text-center md:text-left">
             © 2024 ConversAI Labs. All rights reserved.
           </p>
-          <div className="flex flex-wrap justify-center md:justify-end gap-x-6 gap-y-2">
-            <Link href="/policy" className="text-gray-400 hover:text-white transition-colors text-sm">
-              Privacy Policy
-            </Link>
-            <Link href="/terms" className="text-gray-400 hover:text-white transition-colors text-sm">
-              Terms & Conditions
-            </Link>
-            <Link href="/refund" className="text-gray-400 hover:text-white transition-colors text-sm">
-              Cancellation & Refund
-            </Link>
-            <Link href="/shipping" className="text-gray-400 hover:text-white transition-colors text-sm">
-              Shipping & Delivery
-            </Link>
-            <Link href="/contact" className="text-gray-400 hover:text-white transition-colors text-sm">
-              Contact Us
-            </Link>
+          <div className="text-gray-400 text-sm text-center md:text-right">
+            Built with ❤️ for businesses everywhere
           </div>
         </div>
       </div>
