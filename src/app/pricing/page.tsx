@@ -285,7 +285,7 @@ const PricingPage: React.FC = () => {
           <div className="text-center bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-2xl p-12">
             <h2 className="text-3xl font-bold mb-4">Ready to get started?</h2>
             <p className="text-xl mb-8 opacity-90">
-              Join 50+ businesses already using ConversAI to transform their customer interactions.
+              Join 50+ businesses already using ConversAI Labs to transform their customer interactions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button

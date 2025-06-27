@@ -76,7 +76,7 @@ const ProblemSolution = () => {
               Stop Losing Leads to Slow Response Times
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              While you&apos;re sleeping, your competitors are capturing the leads you&apos;re missing. Here&apos;s how ConversAI solves the biggest challenges in lead management.
+              While you&apos;re sleeping, your competitors are capturing the leads you&apos;re missing. Here&apos;s how ConversAI Labs solves the biggest challenges in lead management.
             </p>
           </div>
 
@@ -119,7 +119,7 @@ const ProblemSolution = () => {
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-4 bg-white rounded-full px-8 py-4 shadow-lg">
               <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                ConversAI Solution
+                ConversAI Labs Solution
               </span>
               <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center">
                 <CheckCircle className="w-5 h-5 text-white" />
@@ -170,7 +170,7 @@ const ProblemSolution = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* Without ConversAI */}
               <div className="bg-red-50 rounded-xl p-6 border-2 border-red-200">
-                <h4 className="text-xl font-bold text-red-800 mb-4">Without ConversAI</h4>
+                <h4 className="text-xl font-bold text-red-800 mb-4">Without ConversAI Labs</h4>
                 <div className="space-y-3">
                   <div className="flex justify-between">
                     <span className="text-gray-700">2 Sales Reps (salary + benefits)</span>
@@ -193,10 +193,10 @@ const ProblemSolution = () => {
 
               {/* With ConversAI */}
               <div className="bg-green-50 rounded-xl p-6 border-2 border-green-200">
-                <h4 className="text-xl font-bold text-green-800 mb-4">With ConversAI</h4>
+                <h4 className="text-xl font-bold text-green-800 mb-4">With ConversAI Labs</h4>
                 <div className="space-y-3">
                   <div className="flex justify-between">
-                    <span className="text-gray-700">ConversAI Professional Plan</span>
+                    <span className="text-gray-700">ConversAI Labs Professional Plan</span>
                     <span className="font-semibold text-green-700">$12,000/year</span>
                   </div>
                   <div className="flex justify-between">
@@ -219,7 +219,7 @@ const ProblemSolution = () => {
             <div className="mt-8 text-center bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl p-6">
               <h4 className="text-2xl font-bold mb-2">Total ROI: 1,567%</h4>
               <p className="text-blue-100">
-                ConversAI pays for itself in the first month and generates $508,000 in additional value annually
+                ConversAI Labs pays for itself in the first month and generates $508,000 in additional value annually
               </p>
             </div>
           </div>

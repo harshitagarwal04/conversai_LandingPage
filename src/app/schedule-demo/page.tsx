@@ -92,7 +92,7 @@ export default function ScheduleDemoPage() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
             >
-              See ConversAI in Action
+              See ConversAI Labs in Action
             </motion.h1>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}

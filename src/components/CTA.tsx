@@ -29,7 +29,7 @@ const CTA = () => {
             Ready to Transform Your Business?
           </h2>
           <p className="text-xl mb-12 opacity-90 max-w-2xl mx-auto">
-            Join 50+ businesses already using ConversAI to automate conversations and never miss another lead.
+            Join 50+ businesses already using ConversAI Labs to automate conversations and never miss another lead.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">

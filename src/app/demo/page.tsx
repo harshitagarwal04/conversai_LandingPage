@@ -7,17 +7,17 @@ import Link from 'next/link';
 
 const DemoPage = () => {
   const [messages, setMessages] = useState([
-    { role: 'bot', content: 'Hello! I\'m ConversAI. I can help you understand how our AI agents can transform your lead management. What would you like to know?' }
+    { role: 'bot', content: 'Hello! I\'m ConversAI Labs. I can help you understand how our AI agents can transform your lead management. What would you like to know?' }
   ]);
   const [input, setInput] = useState('');
   const [selectedChannel, setSelectedChannel] = useState<'voice' | 'whatsapp' | 'email'>('voice');
 
   const demoResponses: Record<string, string> = {
     'pricing': 'Our pricing starts at $299/month for small businesses. Enterprise plans are customized based on your needs. All plans include a 14-day free trial!',
-    'features': 'ConversAI offers: 🎯 24/7 AI agents, 📞 Voice/WhatsApp/Email support, 🔄 200+ CRM integrations, 📊 Real-time analytics, 🚀 85% lead qualification rate!',
+    'features': 'ConversAI Labs offers: 🎯 24/7 AI agents, 📞 Voice/WhatsApp/Email support, 🔄 200+ CRM integrations, 📊 Real-time analytics, 🚀 85% lead qualification rate!',
     'demo': 'I\'d be happy to show you a personalized demo! Click the "Connect with Us" button below to schedule a call with our team.',
     'integration': 'We integrate with 200+ tools including Salesforce, HubSpot, Pipedrive, Zapier, and more. Setup takes less than 10 minutes!',
-    'default': 'That\'s a great question! Our AI agents can handle that and much more. Would you like to schedule a personalized demo to see how ConversAI can work for your specific use case?'
+    'default': 'That\'s a great question! Our AI agents can handle that and much more. Would you like to schedule a personalized demo to see how ConversAI Labs can work for your specific use case?'
   };
 
   const handleSend = () => {
@@ -56,7 +56,7 @@ const DemoPage = () => {
       <div className="container mx-auto px-4 py-8">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-4xl font-bold text-center mb-8 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-            ConversAI Interactive Demo
+            ConversAI Labs Interactive Demo
           </h1>
           
           {/* Channel Selector */}
@@ -95,7 +95,7 @@ const DemoPage = () => {
             <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-4">
               <h2 className="text-lg font-semibold flex items-center gap-2">
                 <Bot className="w-5 h-5" />
-                ConversAI {selectedChannel === 'voice' ? 'Voice' : selectedChannel === 'whatsapp' ? 'WhatsApp' : 'Email'} Agent
+                ConversAI Labs {selectedChannel === 'voice' ? 'Voice' : selectedChannel === 'whatsapp' ? 'WhatsApp' : 'Email'} Agent
               </h2>
             </div>
             

@@ -60,7 +60,7 @@ const TechnicalFeatures = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-            Why ConversAI is Different
+            Why ConversAI Labs is Different
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Unlike generic chatbots, we&apos;re built specifically for businesses that need real AI agents that convert leads and handle complex conversations.
@@ -105,7 +105,7 @@ const TechnicalFeatures = () => {
               <div className="w-8 h-8 bg-purple-500 rounded-full border-2 border-white"></div>
             </div>
             <span className="text-gray-700 font-medium">
-              Join 50+ businesses already using ConversAI to automate their conversations
+              Join 50+ businesses already using ConversAI Labs to automate their conversations
             </span>
           </div>
         </div>
