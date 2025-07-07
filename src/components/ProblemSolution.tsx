@@ -16,7 +16,7 @@ const ProblemSolution = () => {
       icon: <Users className="w-8 h-8" />,
       title: "Human Agents Can't Scale",
       description: "Hiring and training sales staff is expensive and time-consuming",
-      stat: "Average cost per hire: $4,700",
+      stat: "Average cost per hire: ₹3,95,000",
       color: "from-orange-500 to-orange-600"
     },
     {
@@ -174,11 +174,11 @@ const ProblemSolution = () => {
                 <div className="space-y-3">
                   <div className="flex justify-between">
                     <span className="text-gray-700">2 Sales Reps (salary + benefits)</span>
-                    <span className="font-semibold text-red-700">$120,000/year</span>
+                    <span className="font-semibold text-red-700">₹1,00,00,000/year</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-700">Missed calls (27%)</span>
-                    <span className="font-semibold text-red-700">-$200,000 lost revenue</span>
+                    <span className="font-semibold text-red-700">-₹1,68,00,000 lost revenue</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-700">Inconsistent qualification</span>
@@ -186,7 +186,7 @@ const ProblemSolution = () => {
                   </div>
                   <div className="border-t pt-3 flex justify-between">
                     <span className="text-lg font-bold text-red-800">Total Annual Impact</span>
-                    <span className="text-lg font-bold text-red-700">-$320,000</span>
+                    <span className="text-lg font-bold text-red-700">-₹2,68,00,000</span>
                   </div>
                 </div>
               </div>
@@ -197,11 +197,11 @@ const ProblemSolution = () => {
                 <div className="space-y-3">
                   <div className="flex justify-between">
                     <span className="text-gray-700">ConversAI Labs Professional Plan</span>
-                    <span className="font-semibold text-green-700">$12,000/year</span>
+                    <span className="font-semibold text-green-700">₹10,00,000/year</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-700">24/7 availability</span>
-                    <span className="font-semibold text-green-700">+$200,000 captured revenue</span>
+                    <span className="font-semibold text-green-700">+₹1,68,00,000 captured revenue</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-700">Perfect qualification</span>
@@ -209,7 +209,7 @@ const ProblemSolution = () => {
                   </div>
                   <div className="border-t pt-3 flex justify-between">
                     <span className="text-lg font-bold text-green-800">Total Annual Impact</span>
-                    <span className="text-lg font-bold text-green-700">+$188,000</span>
+                    <span className="text-lg font-bold text-green-700">+₹1,58,00,000</span>
                   </div>
                 </div>
               </div>
@@ -219,7 +219,7 @@ const ProblemSolution = () => {
             <div className="mt-8 text-center bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl p-6">
               <h4 className="text-2xl font-bold mb-2">Total ROI: 1,567%</h4>
               <p className="text-blue-100">
-                ConversAI Labs pays for itself in the first month and generates $508,000 in additional value annually
+                ConversAI Labs pays for itself in the first month and generates ₹4,26,00,000 in additional value annually
               </p>
             </div>
           </div>

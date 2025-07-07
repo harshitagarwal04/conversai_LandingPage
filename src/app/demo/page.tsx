@@ -13,7 +13,7 @@ const DemoPage = () => {
   const [selectedChannel, setSelectedChannel] = useState<'voice' | 'whatsapp' | 'email'>('voice');
 
   const demoResponses: Record<string, string> = {
-    'pricing': 'Our pricing starts at $299/month for small businesses. Enterprise plans are customized based on your needs. All plans include a 14-day free trial!',
+    'pricing': 'Our pricing starts at ₹24,999/month for small businesses. Enterprise plans are customized based on your needs. All plans include a 14-day free trial!',
     'features': 'ConversAI Labs offers: 🎯 24/7 AI agents, 📞 Voice/WhatsApp/Email support, 🔄 200+ CRM integrations, 📊 Real-time analytics, 🚀 85% lead qualification rate!',
     'demo': 'I\'d be happy to show you a personalized demo! Click the "Connect with Us" button below to schedule a call with our team.',
     'integration': 'We integrate with 200+ tools including Salesforce, HubSpot, Pipedrive, Zapier, and more. Setup takes less than 10 minutes!',
