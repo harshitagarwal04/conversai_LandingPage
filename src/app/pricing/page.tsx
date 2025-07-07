@@ -23,8 +23,8 @@ const PricingPage: React.FC = () => {
   const plans: PricingPlan[] = [
     {
       name: 'Starter',
-      price: isAnnual ? '$119' : '$149',
-      priceMonthly: isAnnual ? 119 : 149,
+      price: isAnnual ? '₹9,999' : '₹12,499',
+      priceMonthly: isAnnual ? 9999 : 12499,
       description: 'Perfect for small businesses getting started with AI conversations',
       features: [
         'Up to 500 conversations/month',
@@ -41,8 +41,8 @@ const PricingPage: React.FC = () => {
     },
     {
       name: 'Professional',
-      price: isAnnual ? '$319' : '$399',
-      priceMonthly: isAnnual ? 319 : 399,
+      price: isAnnual ? '₹26,999' : '₹33,999',
+      priceMonthly: isAnnual ? 26999 : 33999,
       description: 'Ideal for growing businesses ready to scale with multiple AI agents',
       features: [
         'Up to 2,500 conversations/month',
@@ -62,8 +62,8 @@ const PricingPage: React.FC = () => {
     },
     {
       name: 'Enterprise',
-      price: isAnnual ? '$999' : '$1,249',
-      priceMonthly: isAnnual ? 999 : 1249,
+      price: isAnnual ? '₹83,999' : '₹1,04,999',
+      priceMonthly: isAnnual ? 83999 : 104999,
       description: 'Complete AI agent platform for established businesses',
       features: [
         'Up to 10,000 conversations/month',
@@ -85,22 +85,22 @@ const PricingPage: React.FC = () => {
   const addOns = [
     {
       name: 'Extra Conversations',
-      price: '$0.25/conversation',
+      price: '₹21/conversation',
       description: 'Pay only for conversations beyond your plan limit'
     },
     {
       name: 'Additional Agent',
-      price: '$99/month',
+      price: '₹8,299/month',
       description: 'Add more AI agents with unique templates and voices'
     },
     {
       name: 'Custom Voice Training',
-      price: '$299/month',
+      price: '₹24,999/month',
       description: 'Train AI voices to match your brand or specific personas'
     },
     {
       name: 'Advanced Analytics',
-      price: '$79/month',
+      price: '₹6,599/month',
       description: 'Detailed conversation analysis and ROI tracking'
     }
   ];
