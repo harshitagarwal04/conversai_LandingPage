@@ -104,7 +104,7 @@ const SmartDeskPage = () => {
               SmartDesk
             </h1>
             <p className="text-2xl md:text-3xl font-semibold text-gray-800 mb-4 animate-slide-up-delayed">
-              Reply to 90% of WhatsApp queries instantly
+              AI-powered responses convert 90% of WhatsApp queries into sales opportunities
             </p>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8 animate-fade-in-delayed">
               Your AI Employee that drafts perfect responses in WhatsApp Web, helping growing businesses respond 10x faster and never miss a sale.

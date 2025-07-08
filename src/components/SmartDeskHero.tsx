@@ -30,7 +30,7 @@ const SmartDeskHero = () => {
           </h2>
           
           <p className="text-xl md:text-2xl font-semibold text-gray-800 mb-4">
-            Reply to 90% of WhatsApp queries instantly
+            AI-powered responses convert 90% of WhatsApp queries into sales opportunities
           </p>
           
           <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
