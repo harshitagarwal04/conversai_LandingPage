@@ -34,7 +34,7 @@ const Header = () => {
     e: React.MouseEvent<HTMLAnchorElement>,
     sectionId: string
   ) => {
-    if (pathname === "/") {
+    if (pathname === "/" || pathname === "/smartdesk") {
       e.preventDefault();
       scrollToElement(sectionId);
     }
@@ -67,7 +67,7 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
             <Link
-              href="/#features"
+              href={pathname === "/smartdesk" ? "#features" : "/#features"}
               onClick={(e) => handleNavClick(e, "features")}
               className="text-gray-600 hover:text-blue-600 transition-all duration-300 font-medium relative group px-3 py-2 rounded-md hover:bg-blue-50"
               style={{ cursor: 'pointer' }}
@@ -118,7 +118,8 @@ const Header = () => {
             </Link>
 
             <Link
-              href="/pricing"
+              href={pathname === "/smartdesk" ? "#pricing" : "/pricing"}
+              onClick={pathname === "/smartdesk" ? (e) => handleNavClick(e, "pricing") : undefined}
               className="text-gray-600 hover:text-blue-600 transition-all duration-300 font-medium relative group px-3 py-2 rounded-md hover:bg-blue-50"
               style={{ cursor: 'pointer' }}
             >
@@ -162,7 +163,7 @@ const Header = () => {
         <div className="lg:hidden bg-white border-t border-gray-200 shadow-md">
           <div className="flex flex-col px-6 py-4 space-y-2 text-sm">
             <Link
-              href="/#features"
+              href={pathname === "/smartdesk" ? "#features" : "/#features"}
               onClick={(e) => handleNavClick(e, "features")}
               className="text-gray-800 hover:text-blue-600"
             >
@@ -176,9 +177,9 @@ const Header = () => {
               SmartDesk
             </Link>
             <Link
-              href="/pricing"
+              href={pathname === "/smartdesk" ? "#pricing" : "/pricing"}
+              onClick={pathname === "/smartdesk" ? (e) => handleNavClick(e, "pricing") : () => setMobileOpen(false)}
               className="text-gray-800 hover:text-blue-600"
-              onClick={() => setMobileOpen(false)}
             >
               Pricing
             </Link>

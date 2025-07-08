@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { Check, Clock, MessageSquare, TrendingUp, Users, Zap, Bot, Shield, ChevronRight, Sparkles, Star, Play, Lock, Award } from 'lucide-react';
+import { Check, Clock, MessageSquare, TrendingUp, Users, Zap, Bot, Shield, ChevronRight, Sparkles, Star, Play, Award } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
@@ -138,10 +138,6 @@ const SmartDeskPage = () => {
               <span className="text-sm font-semibold">Powered by GPT-4</span>
             </div>
             <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-md">
-              <Lock className="w-5 h-5 text-blue-600" />
-              <span className="text-sm font-semibold">Bank-grade Security</span>
-            </div>
-            <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-md">
               <Award className="w-5 h-5 text-purple-600" />
               <span className="text-sm font-semibold">14-day Money Back</span>
             </div>
@@ -150,7 +146,7 @@ const SmartDeskPage = () => {
       </section>
 
       {/* Visual Demo Section */}
-      <section className="py-20 bg-white relative z-10">
+      <section id="features" className="py-20 bg-white relative z-10">
         <div className="container mx-auto px-6 max-w-7xl">
           <h2 className="text-3xl font-bold text-center mb-12">
             See SmartDesk in Action
@@ -539,7 +535,7 @@ const SmartDeskPage = () => {
       </section>
 
       {/* Pricing Section */}
-      <section className="py-20 bg-white relative z-10">
+      <section id="pricing" className="py-20 bg-white relative z-10">
         <div className="container mx-auto px-6 max-w-7xl">
           <h2 className="text-3xl font-bold text-center mb-4">
             Simple, transparent pricing

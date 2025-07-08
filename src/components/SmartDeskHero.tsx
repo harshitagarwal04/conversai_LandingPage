@@ -64,7 +64,10 @@ const SmartDeskHero = () => {
 
         {/* Key benefits */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
-          <div className="bg-white rounded-xl p-6 shadow-lg text-center transform hover:scale-105 transition-all">
+          <div 
+            className="bg-white rounded-xl p-6 shadow-lg text-center transform hover:scale-105 transition-all cursor-pointer"
+            onClick={() => window.open('/smartdesk', '_self')}
+          >
             <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
               <Zap className="w-6 h-6 text-green-600" />
             </div>
@@ -72,7 +75,10 @@ const SmartDeskHero = () => {
             <p className="text-sm text-gray-600">Get suggested replies in seconds</p>
           </div>
           
-          <div className="bg-white rounded-xl p-6 shadow-lg text-center transform hover:scale-105 transition-all">
+          <div 
+            className="bg-white rounded-xl p-6 shadow-lg text-center transform hover:scale-105 transition-all cursor-pointer"
+            onClick={() => window.open('/smartdesk', '_self')}
+          >
             <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
               <MessageSquare className="w-6 h-6 text-blue-600" />
             </div>
@@ -80,7 +86,10 @@ const SmartDeskHero = () => {
             <p className="text-sm text-gray-600">Works directly in WhatsApp Web</p>
           </div>
           
-          <div className="bg-white rounded-xl p-6 shadow-lg text-center transform hover:scale-105 transition-all">
+          <div 
+            className="bg-white rounded-xl p-6 shadow-lg text-center transform hover:scale-105 transition-all cursor-pointer"
+            onClick={() => window.open('/smartdesk', '_self')}
+          >
             <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
               <Sparkles className="w-6 h-6 text-purple-600" />
             </div>
