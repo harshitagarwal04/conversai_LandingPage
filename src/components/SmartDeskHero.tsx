@@ -34,7 +34,7 @@ const SmartDeskHero = () => {
           </p>
           
           <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
-            Your AI side-kick that drafts perfect responses in WhatsApp Web, helping small merchants respond 10x faster and never miss a sale.
+            Your AI Employee that drafts perfect responses in WhatsApp Web, helping growing businesses respond 10x faster and never miss a sale.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

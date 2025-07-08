@@ -77,36 +77,38 @@ const Header = () => {
             </Link>
 
 
-            {/* Industries Dropdown */}
-            <div className="relative group">
-              <div 
-                className="flex items-center space-x-1 text-gray-600 hover:text-blue-600 transition-all duration-300 font-medium px-3 py-2 rounded-md hover:bg-blue-50"
-                style={{ cursor: 'pointer' }}
-              >
-                <span>Industries</span>
-                <ChevronDown className="w-4 h-4 transition-transform duration-300 group-hover:rotate-180" />
-              </div>
+            {/* Industries Dropdown - Hidden on SmartDesk page */}
+            {pathname !== "/smartdesk" && (
+              <div className="relative group">
+                <div 
+                  className="flex items-center space-x-1 text-gray-600 hover:text-blue-600 transition-all duration-300 font-medium px-3 py-2 rounded-md hover:bg-blue-50"
+                  style={{ cursor: 'pointer' }}
+                >
+                  <span>Industries</span>
+                  <ChevronDown className="w-4 h-4 transition-transform duration-300 group-hover:rotate-180" />
+                </div>
 
-              <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-80 bg-white rounded-lg shadow-2xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0 z-40">
-                <div className="py-3">
-                  <div className="px-4 py-2 text-xs font-semibold text-gray-400 uppercase tracking-wider border-b border-gray-100">
-                    Industries We Serve
+                <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-80 bg-white rounded-lg shadow-2xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0 z-40">
+                  <div className="py-3">
+                    <div className="px-4 py-2 text-xs font-semibold text-gray-400 uppercase tracking-wider border-b border-gray-100">
+                      Industries We Serve
+                    </div>
+                    {industries.map((industry, index) => (
+                      <Link
+                        key={index}
+                        href={`/industries/${industry
+                          .toLowerCase()
+                          .replace(/\s+/g, "-")
+                          .replace("&", "and")}`}
+                        className="block px-4 py-3 text-sm text-gray-700 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 hover:text-blue-600 border-l-2 border-transparent hover:border-blue-400 transition-all"
+                      >
+                        {industry}
+                      </Link>
+                    ))}
                   </div>
-                  {industries.map((industry, index) => (
-                    <Link
-                      key={index}
-                      href={`/industries/${industry
-                        .toLowerCase()
-                        .replace(/\s+/g, "-")
-                        .replace("&", "and")}`}
-                      className="block px-4 py-3 text-sm text-gray-700 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 hover:text-blue-600 border-l-2 border-transparent hover:border-blue-400 transition-all"
-                    >
-                      {industry}
-                    </Link>
-                  ))}
                 </div>
               </div>
-            </div>
+            )}
 
             <Link
               href="/smartdesk"
@@ -191,44 +193,46 @@ const Header = () => {
               About
             </Link>
 
-            {/* Expandable Industries in Mobile */}
-            <div>
-              <button
-                className="flex items-center justify-between w-full text-gray-800 font-medium hover:text-blue-600"
-                onClick={() => setMobileIndustryOpen(!mobileIndustryOpen)}
-              >
-                <span>Industries</span>
-                <ChevronDown
-                  className={`w-4 h-4 transform transition-transform duration-200 ${
-                    mobileIndustryOpen ? "rotate-180" : ""
-                  }`}
-                />
-              </button>
-              {mobileIndustryOpen && (
-                <ul className="mt-2 pl-4 border-l border-gray-200 space-y-2">
-                  {industries.map((industry, index) => (
-                    <li key={index}>
-                      <Link
-                        href={`/industries/${industry
-                          .toLowerCase()
-                          .replace(/\s+/g, "-")
-                          .replace("&", "and")}`}
-                        className="block px-2 py-1 text-sm text-gray-700 
-    hover:bg-blue-100 hover:text-blue-700 
-    active:bg-blue-200 active:text-blue-800 
-    focus:bg-blue-100 focus:text-blue-700 
-    border-l-2 border-transparent 
-    hover:border-blue-500 active:border-blue-700 
-    transition-all"
-                        onClick={() => setMobileOpen(false)}
-                      >
-                        {industry}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </div>
+            {/* Expandable Industries in Mobile - Hidden on SmartDesk page */}
+            {pathname !== "/smartdesk" && (
+              <div>
+                <button
+                  className="flex items-center justify-between w-full text-gray-800 font-medium hover:text-blue-600"
+                  onClick={() => setMobileIndustryOpen(!mobileIndustryOpen)}
+                >
+                  <span>Industries</span>
+                  <ChevronDown
+                    className={`w-4 h-4 transform transition-transform duration-200 ${
+                      mobileIndustryOpen ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
+                {mobileIndustryOpen && (
+                  <ul className="mt-2 pl-4 border-l border-gray-200 space-y-2">
+                    {industries.map((industry, index) => (
+                      <li key={index}>
+                        <Link
+                          href={`/industries/${industry
+                            .toLowerCase()
+                            .replace(/\s+/g, "-")
+                            .replace("&", "and")}`}
+                          className="block px-2 py-1 text-sm text-gray-700 
+      hover:bg-blue-100 hover:text-blue-700 
+      active:bg-blue-200 active:text-blue-800 
+      focus:bg-blue-100 focus:text-blue-700 
+      border-l-2 border-transparent 
+      hover:border-blue-500 active:border-blue-700 
+      transition-all"
+                          onClick={() => setMobileOpen(false)}
+                        >
+                          {industry}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            )}
 
             <Button
               onClick={handleConnectWithUs}

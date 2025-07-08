@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Check, Clock, MessageSquare, TrendingUp, Users, Zap, Bot, Shield, ChevronRight, Sparkles, Star, Play, Award } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import CountdownTimer from '@/components/CountdownTimer';
 
 const SmartDeskPage = () => {
   const [selectedPlan, setSelectedPlan] = useState<'starter' | 'growth' | 'scale'>('growth');
@@ -106,7 +107,7 @@ const SmartDeskPage = () => {
               Reply to 90% of WhatsApp queries instantly
             </p>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8 animate-fade-in-delayed">
-              Your AI side-kick that drafts perfect responses in WhatsApp Web, helping small merchants respond 10x faster and never miss a sale.
+              Your AI Employee that drafts perfect responses in WhatsApp Web, helping growing businesses respond 10x faster and never miss a sale.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-delayed">
               <Button 
@@ -428,7 +429,7 @@ const SmartDeskPage = () => {
       <section className="py-20 bg-white relative z-10">
         <div className="container mx-auto px-6 max-w-7xl">
           <h2 className="text-3xl font-bold text-center mb-12">
-            WhatsApp is overwhelming your small team
+            WhatsApp is overwhelming your team
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center group hover:scale-105 transition-transform">
@@ -538,9 +539,12 @@ const SmartDeskPage = () => {
       <section id="pricing" className="py-20 bg-white relative z-10">
         <div className="container mx-auto px-6 max-w-7xl">
           <h2 className="text-3xl font-bold text-center mb-4">
-            Simple, transparent pricing
+            Limited-Time July Pricing 🔥
           </h2>
-          <p className="text-xl text-gray-600 text-center mb-12">
+          <p className="text-xl text-gray-600 text-center mb-4">
+            Save up to ₹2,000/month - offer expires July 31st!
+          </p>
+          <p className="text-lg text-gray-500 text-center mb-12">
             Choose the plan that fits your team size
           </p>
 
@@ -599,7 +603,8 @@ const SmartDeskPage = () => {
               <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-green-600 text-white px-4 py-1 rounded-full text-sm font-semibold">
                 Most Popular
               </div>
-              <h3 className="text-2xl font-bold mb-2">Growth</h3>
+              <h3 className="text-2xl font-bold mb-4">Growth</h3>
+              <CountdownTimer />
               <div className="mb-4">
                 <div className="flex items-center gap-2 mb-2">
                   <p className="text-4xl font-bold text-green-600">₹999<span className="text-lg font-normal">/month</span></p>
@@ -607,7 +612,7 @@ const SmartDeskPage = () => {
                 </div>
                 <p className="text-lg text-gray-500 line-through">₹2,999/month</p>
               </div>
-              <p className="text-gray-600 mb-6">For small teams (4-5 people)</p>
+              <p className="text-gray-600 mb-6">For growing teams (4-5 people)</p>
               <ul className="space-y-3 mb-8">
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
@@ -691,6 +696,15 @@ const SmartDeskPage = () => {
           <p className="text-center text-gray-600 mt-8">
             All plans include 14-day free trial • No credit card required
           </p>
+          
+          <div className="bg-gradient-to-r from-red-50 to-orange-50 border-2 border-red-200 rounded-xl p-6 mt-8 text-center">
+            <p className="text-lg font-semibold text-red-800 mb-2">
+              ⚠️ July Special Pricing Ends Soon!
+            </p>
+            <p className="text-gray-700">
+              After July 31st, Growth plan returns to ₹2,999/month. Lock in your savings today!
+            </p>
+          </div>
         </div>
       </section>
 
@@ -747,7 +761,7 @@ const SmartDeskPage = () => {
             Ready to 10x your WhatsApp response speed?
           </h2>
           <p className="text-xl mb-8 text-green-100">
-            Join 100+ small merchants already using SmartDesk to delight customers
+            Join 100+ growing businesses already using SmartDesk to delight customers
           </p>
           <Button 
             size="lg"
