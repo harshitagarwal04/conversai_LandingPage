@@ -36,10 +36,10 @@ const SmartDeskPage = () => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          animateValue(setMessageCount, 0, 50000, 2000);
-          animateValue(setResponseTime, 0, 30, 1500);
-          animateValue(setSatisfaction, 0, 95, 1800);
-          animateValue(setRevenueSaved, 0, 10, 2000);
+          animateValue(setMessageCount, 0, 5000, 2000);
+          animateValue(setResponseTime, 0, 15, 1500);
+          animateValue(setSatisfaction, 0, 98, 1800);
+          animateValue(setRevenueSaved, 0, 2, 2000);
         }
       });
     });
@@ -59,8 +59,8 @@ const SmartDeskPage = () => {
       name: "Priya Sharma",
       business: "Sharma Boutique",
       image: "/api/placeholder/60/60",
-      quote: "SmartDesk reduced our response time by 85%. We never miss a customer query now!",
-      metric: "85% faster responses"
+      quote: "SmartDesk reduced our response time by 90%. We never miss a customer query now!",
+      metric: "90% faster responses"
     },
     {
       name: "Rajesh Kumar",
@@ -103,7 +103,7 @@ const SmartDeskPage = () => {
               SmartDesk
             </h1>
             <p className="text-2xl md:text-3xl font-semibold text-gray-800 mb-4 animate-slide-up-delayed">
-              Reply to 70% of WhatsApp queries instantly
+              Reply to 90% of WhatsApp queries instantly
             </p>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8 animate-fade-in-delayed">
               Your AI side-kick that drafts perfect responses in WhatsApp Web, helping small merchants respond 10x faster and never miss a sale.
@@ -250,12 +250,12 @@ const SmartDeskPage = () => {
       <section id="metrics-section" className="py-20 bg-gradient-to-r from-green-600 to-teal-600 text-white relative z-10">
         <div className="container mx-auto px-6 max-w-7xl">
           <h2 className="text-3xl font-bold text-center mb-12">
-            The Numbers Speak for Themselves
+            Early Results from Beta Testing
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="text-center">
               <p className="text-5xl font-bold mb-2">{messageCount.toLocaleString()}+</p>
-              <p className="text-green-100">Messages Processed</p>
+              <p className="text-green-100">Messages Tested</p>
             </div>
             <div className="text-center">
               <p className="text-5xl font-bold mb-2">&lt;{responseTime}s</p>
@@ -263,11 +263,11 @@ const SmartDeskPage = () => {
             </div>
             <div className="text-center">
               <p className="text-5xl font-bold mb-2">{satisfaction}%</p>
-              <p className="text-green-100">Customer Satisfaction</p>
+              <p className="text-green-100">Success Rate</p>
             </div>
             <div className="text-center">
-              <p className="text-5xl font-bold mb-2">₹{revenueSaved}Cr+</p>
-              <p className="text-green-100">Revenue Saved</p>
+              <p className="text-5xl font-bold mb-2">₹{revenueSaved}L+</p>
+              <p className="text-green-100">Cost Savings (Monthly)</p>
             </div>
           </div>
         </div>
@@ -320,66 +320,43 @@ const SmartDeskPage = () => {
             SmartDesk learns from your past conversations and creates an AI assistant that responds just like you would
           </p>
           
-          <div className="relative">
-            {/* Timeline Line */}
-            <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-green-600 to-teal-600"></div>
-            
-            <div className="space-y-12">
-              {/* Step 1 */}
-              <div className="flex flex-col md:flex-row items-center gap-8">
-                <div className="flex-1 text-right">
-                  <h3 className="text-xl font-bold mb-2">Upload Your Data</h3>
-                  <p className="text-gray-600">Connect WhatsApp Business and upload past chats</p>
-                </div>
-                <div className="relative">
-                  <div className="w-16 h-16 bg-gradient-to-r from-green-600 to-teal-600 rounded-full flex items-center justify-center text-white font-bold text-xl z-10 relative">
-                    1
-                  </div>
-                </div>
-                <div className="flex-1">
-                  <div className="bg-green-50 rounded-lg p-4">
-                    <Check className="w-6 h-6 text-green-600 mb-2" />
-                    <p className="text-sm font-semibold">5-minute setup</p>
-                  </div>
-                </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Step 1 */}
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-r from-green-600 to-teal-600 rounded-full flex items-center justify-center text-white font-bold text-2xl mx-auto mb-6">
+                1
               </div>
-
-              {/* Step 2 */}
-              <div className="flex flex-col md:flex-row items-center gap-8">
-                <div className="flex-1 text-right order-2 md:order-1">
-                  <div className="bg-blue-50 rounded-lg p-4">
-                    <Bot className="w-6 h-6 text-blue-600 mb-2" />
-                    <p className="text-sm font-semibold">Auto-learns your style</p>
-                  </div>
-                </div>
-                <div className="relative order-1 md:order-2">
-                  <div className="w-16 h-16 bg-gradient-to-r from-green-600 to-teal-600 rounded-full flex items-center justify-center text-white font-bold text-xl z-10 relative">
-                    2
-                  </div>
-                </div>
-                <div className="flex-1 order-3">
-                  <h3 className="text-xl font-bold mb-2">AI Learns Your Style</h3>
-                  <p className="text-gray-600">Creates instant responses in your brand voice</p>
-                </div>
+              <h3 className="text-xl font-bold mb-4">Upload Your Data</h3>
+              <p className="text-gray-600 mb-4">Connect WhatsApp Business and upload past chats</p>
+              <div className="bg-green-50 rounded-lg p-4">
+                <Check className="w-6 h-6 text-green-600 mb-2 mx-auto" />
+                <p className="text-sm font-semibold">5-minute setup</p>
               </div>
+            </div>
 
-              {/* Step 3 */}
-              <div className="flex flex-col md:flex-row items-center gap-8">
-                <div className="flex-1 text-right">
-                  <h3 className="text-xl font-bold mb-2">Start Responding</h3>
-                  <p className="text-gray-600">Get AI suggestions in WhatsApp Web instantly</p>
-                </div>
-                <div className="relative">
-                  <div className="w-16 h-16 bg-gradient-to-r from-green-600 to-teal-600 rounded-full flex items-center justify-center text-white font-bold text-xl z-10 relative">
-                    3
-                  </div>
-                </div>
-                <div className="flex-1">
-                  <div className="bg-purple-50 rounded-lg p-4">
-                    <Zap className="w-6 h-6 text-purple-600 mb-2" />
-                    <p className="text-sm font-semibold">10x faster replies</p>
-                  </div>
-                </div>
+            {/* Step 2 */}
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-r from-green-600 to-teal-600 rounded-full flex items-center justify-center text-white font-bold text-2xl mx-auto mb-6">
+                2
+              </div>
+              <h3 className="text-xl font-bold mb-4">AI Learns Your Style</h3>
+              <p className="text-gray-600 mb-4">Creates instant responses in your brand voice</p>
+              <div className="bg-blue-50 rounded-lg p-4">
+                <Bot className="w-6 h-6 text-blue-600 mb-2 mx-auto" />
+                <p className="text-sm font-semibold">Auto-learns your style</p>
+              </div>
+            </div>
+
+            {/* Step 3 */}
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-r from-green-600 to-teal-600 rounded-full flex items-center justify-center text-white font-bold text-2xl mx-auto mb-6">
+                3
+              </div>
+              <h3 className="text-xl font-bold mb-4">Start Responding</h3>
+              <p className="text-gray-600 mb-4">Get AI suggestions in WhatsApp Web instantly</p>
+              <div className="bg-purple-50 rounded-lg p-4">
+                <Zap className="w-6 h-6 text-purple-600 mb-2 mx-auto" />
+                <p className="text-sm font-semibold">10x faster replies</p>
               </div>
             </div>
           </div>
@@ -431,7 +408,7 @@ const SmartDeskPage = () => {
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
                   <Check className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" />
-                  <p className="text-gray-700">70% queries answered instantly</p>
+                  <p className="text-gray-700">90% queries answered instantly</p>
                 </div>
                 <div className="flex items-start gap-3">
                   <Check className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" />
@@ -582,7 +559,7 @@ const SmartDeskPage = () => {
               onClick={() => setSelectedPlan('starter')}
             >
               <h3 className="text-2xl font-bold mb-2">Starter</h3>
-              <p className="text-4xl font-bold mb-4">₹4,999<span className="text-lg font-normal">/month</span></p>
+              <p className="text-4xl font-bold mb-4">₹999<span className="text-lg font-normal">/month</span></p>
               <p className="text-gray-600 mb-6">For solo entrepreneurs</p>
               <ul className="space-y-3 mb-8">
                 <li className="flex items-start gap-2">
@@ -627,7 +604,13 @@ const SmartDeskPage = () => {
                 Most Popular
               </div>
               <h3 className="text-2xl font-bold mb-2">Growth</h3>
-              <p className="text-4xl font-bold mb-4">₹9,999<span className="text-lg font-normal">/month</span></p>
+              <div className="mb-4">
+                <div className="flex items-center gap-2 mb-2">
+                  <p className="text-4xl font-bold text-green-600">₹999<span className="text-lg font-normal">/month</span></p>
+                  <span className="bg-red-100 text-red-800 px-2 py-1 rounded-full text-xs font-semibold">July Only!</span>
+                </div>
+                <p className="text-lg text-gray-500 line-through">₹2,999/month</p>
+              </div>
               <p className="text-gray-600 mb-6">For small teams (4-5 people)</p>
               <ul className="space-y-3 mb-8">
                 <li className="flex items-start gap-2">
@@ -672,7 +655,7 @@ const SmartDeskPage = () => {
               onClick={() => setSelectedPlan('scale')}
             >
               <h3 className="text-2xl font-bold mb-2">Scale</h3>
-              <p className="text-4xl font-bold mb-4">₹19,999<span className="text-lg font-normal">/month</span></p>
+              <p className="text-4xl font-bold mb-4">₹9,999<span className="text-lg font-normal">/month</span></p>
               <p className="text-gray-600 mb-6">For growing businesses</p>
               <ul className="space-y-3 mb-8">
                 <li className="flex items-start gap-2">

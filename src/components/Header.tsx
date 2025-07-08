@@ -109,6 +109,15 @@ const Header = () => {
             </div>
 
             <Link
+              href="/smartdesk"
+              className="text-gray-600 hover:text-green-600 transition-all duration-300 font-medium relative group px-3 py-2 rounded-md hover:bg-green-50"
+              style={{ cursor: 'pointer' }}
+            >
+              SmartDesk
+              <span className="absolute -bottom-1 left-3 right-3 h-0.5 bg-green-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+            </Link>
+
+            <Link
               href="/pricing"
               className="text-gray-600 hover:text-blue-600 transition-all duration-300 font-medium relative group px-3 py-2 rounded-md hover:bg-blue-50"
               style={{ cursor: 'pointer' }}
@@ -158,6 +167,13 @@ const Header = () => {
               className="text-gray-800 hover:text-blue-600"
             >
               Features
+            </Link>
+            <Link
+              href="/smartdesk"
+              className="text-gray-800 hover:text-green-600"
+              onClick={() => setMobileOpen(false)}
+            >
+              SmartDesk
             </Link>
             <Link
               href="/pricing"
