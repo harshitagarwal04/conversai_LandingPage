@@ -1,0 +1,217 @@
+[
+  {
+    "slug": "real-estate",
+    "name": "Real Estate",
+    "description": "Complete AI sales automation from lead capture to deal closure - handle inquiries, schedule showings, negotiate offers, and manage transactions",
+    "color": "bg-blue-600",
+    "icon": "🏠",
+    "autopilotFeatures": [
+      "Capture and qualify property inquiries across all channels",
+      "Automatically schedule showings and manage agent calendars",
+      "Nurture leads through the entire buying journey",
+      "Handle negotiations, counteroffers, and contract discussions",
+      "Manage transaction timelines and coordinate with all parties",
+      "Automate client onboarding and post-sale follow-up"
+    ],
+    "painPoints": [
+      "Leads fall through cracks during long sales cycles",
+      "Manual follow-up processes lose prospects", 
+      "Deal pipeline stalls without consistent nurturing",
+      "Administrative tasks consume selling time"
+    ],
+    "roiMetrics": {
+      "leadResponse": "Instant response vs 4 hours industry average",
+      "conversionRate": "45% increase in deals closed",
+      "timesSaved": "25 hours/week on sales activities"
+    },
+    "useCases": [
+      {
+        "title": "End-to-End Deal Management",
+        "description": "AI manages entire sales process from first inquiry to closing documents",
+        "impact": "Complete deal automation increases close rate by 60%"
+      },
+      {
+        "title": "Smart Pipeline Progression", 
+        "description": "AI automatically moves prospects through sales stages based on engagement",
+        "impact": "Deals close 40% faster with automated nurturing"
+      },
+      {
+        "title": "Post-Sale Relationship Building",
+        "description": "AI maintains client relationships for referrals and repeat business",
+        "impact": "75% of new business comes from existing client network"
+      }
+    ]
+  },
+  {
+    "slug": "insurance", 
+    "name": "Insurance",
+    "description": "Complete insurance CRM automation from prospect inquiry to policy management, claims resolution, and lifetime customer relationships",
+    "color": "bg-green-600",
+    "icon": "🛡️",
+    "autopilotFeatures": [
+      "Capture insurance inquiries and assess coverage needs automatically",
+      "Generate personalized quotes and handle policy applications end-to-end",
+      "Manage entire claims lifecycle from filing to settlement",
+      "Automate policy renewals with risk assessment and pricing optimization",
+      "Cross-sell additional coverage based on life events and risk changes",
+      "Maintain long-term customer relationships for referrals and family coverage"
+    ],
+    "painPoints": [
+      "Complex sales cycles with multiple touchpoints and stakeholders",
+      "Claims processing bottlenecks damage customer relationships",
+      "Policy renewals lost due to poor communication and timing",
+      "Missed opportunities for coverage expansion and family policies"
+    ],
+    "roiMetrics": {
+      "leadResponse": "Instant quotes vs 48-hour industry delays",
+      "conversionRate": "55% increase in policy applications completed",
+      "timesSaved": "30 hours/week on claims administration and renewals"
+    },
+    "useCases": [
+      {
+        "title": "Complete Policy Lifecycle Management",
+        "description": "AI manages customer journey from initial quote through claims and renewals",
+        "impact": "90% policy retention rate with proactive relationship management"
+      },
+      {
+        "title": "Intelligent Claims Automation",
+        "description": "AI handles entire claims process including documentation, assessment, and settlement",
+        "impact": "Claims resolved 70% faster with higher customer satisfaction"
+      },
+      {
+        "title": "Family Coverage Expansion",
+        "description": "AI identifies life events and proactively offers appropriate coverage to family members",
+        "impact": "300% increase in household policy value through intelligent cross-selling"
+      }
+    ]
+  },
+  {
+    "slug": "home-services",
+    "name": "Home Services",
+    "description": "Complete service business automation from emergency calls to maintenance scheduling - handle HVAC, plumbing, contractors, and home repairs",
+    "color": "bg-orange-600",
+    "icon": "🔧",
+    "autopilotFeatures": [
+      "Capture and qualify emergency service calls with instant response and scheduling",
+      "Manage complete service lifecycle from initial call to job completion and follow-up",
+      "Automate maintenance reminders and seasonal service campaigns for recurring revenue",
+      "Handle estimates, scheduling, technician dispatch, and customer communication seamlessly",
+      "Build long-term customer relationships for repeat business and home service expansions",
+      "Generate referrals and manage warranty follow-up and satisfaction surveys"
+    ],
+    "painPoints": [
+      "Emergency calls require immediate response but often go to voicemail",
+      "Seasonal business fluctuations create revenue unpredictability",
+      "Customer relationships end after job completion instead of building ongoing value",
+      "Manual scheduling and dispatch creates inefficiencies and missed opportunities"
+    ],
+    "roiMetrics": {
+      "leadResponse": "Instant emergency response vs 2-hour callback delays",
+      "conversionRate": "65% increase in service call-to-job conversion",
+      "timesSaved": "40 hours/week on scheduling and customer communication"
+    },
+    "useCases": [
+      {
+        "title": "Emergency Response Optimization",
+        "description": "AI handles urgent service calls with immediate scheduling and technician dispatch",
+        "impact": "90% first-call resolution with instant emergency response and customer satisfaction"
+      },
+      {
+        "title": "Recurring Revenue Development",
+        "description": "AI manages maintenance schedules and proactively books seasonal services and inspections",
+        "impact": "400% increase in recurring revenue through systematic maintenance relationship management"
+      },
+      {
+        "title": "Whole-Home Service Expansion",
+        "description": "AI identifies opportunities for additional home services and manages multi-trade relationships",
+        "impact": "300% growth in customer lifetime value through comprehensive home service partnerships"
+      }
+    ]
+  },
+  {
+    "slug": "saas-technology",
+    "name": "SaaS & Technology",
+    "description": "Complete customer lifecycle automation from prospect to advocate - trial conversion, usage optimization, expansion revenue, and community building",
+    "color": "bg-purple-600", 
+    "icon": "💻",
+    "autopilotFeatures": [
+      "Capture and qualify prospects based on ideal customer profile and use case fit",
+      "Optimize trial-to-paid conversion with personalized onboarding journeys",
+      "Maximize customer success through usage monitoring and proactive support",
+      "Drive expansion revenue via intelligent upselling and feature recommendations",
+      "Build customer advocacy through success stories and referral programs",
+      "Automate churn prevention with predictive health scoring and intervention"
+    ],
+    "painPoints": [
+      "Complex customer journey spans multiple touchpoints and stakeholders",
+      "Revenue lost due to poor trial experience and onboarding friction",
+      "Customer success requires ongoing relationship management at scale",
+      "Expansion opportunities missed without systematic account monitoring"
+    ],
+    "roiMetrics": {
+      "leadResponse": "Instant demo scheduling vs 24-hour sales delays",
+      "conversionRate": "75% increase in qualified trial-to-paid conversion",
+      "timesSaved": "40 hours/week on customer success and support activities"
+    },
+    "useCases": [
+      {
+        "title": "Revenue Lifecycle Optimization",
+        "description": "AI manages complete customer journey from prospect to expansion and advocacy",
+        "impact": "200% increase in customer lifetime value through systematic journey optimization"
+      },
+      {
+        "title": "Predictive Success Management",
+        "description": "AI monitors usage patterns and proactively ensures customer success and retention",
+        "impact": "85% reduction in churn with predictive intervention and personalized support"
+      },
+      {
+        "title": "Intelligent Expansion Engine",
+        "description": "AI identifies upsell opportunities and manages upgrade conversations automatically",
+        "impact": "300% increase in expansion revenue through systematic account growth"
+      }
+    ]
+  },
+  {
+    "slug": "healthcare-wellness",
+    "name": "Healthcare & Wellness", 
+    "description": "Complete patient relationship management from initial inquiry to ongoing care coordination, treatment compliance, and family health optimization",
+    "color": "bg-red-600",
+    "icon": "🏥",
+    "autopilotFeatures": [
+      "Manage complete patient journey from initial contact to care completion",
+      "Automate treatment plan adherence with personalized care coaching",
+      "Coordinate complex care teams and specialist referrals seamlessly",
+      "Handle insurance authorization, billing, and payment processes end-to-end",
+      "Build long-term patient relationships for preventive care and family health",
+      "Automate follow-up care, medication management, and health monitoring"
+    ],
+    "painPoints": [
+      "Patient relationships fragmented across multiple care episodes",
+      "Treatment non-compliance leads to poor outcomes and readmissions",
+      "Complex care coordination overwhelms administrative staff",
+      "Missed opportunities for preventive care and family health management"
+    ],
+    "roiMetrics": {
+      "leadResponse": "Immediate triage vs 2-hour callback delays",
+      "conversionRate": "65% improvement in treatment plan completion",
+      "timesSaved": "35 hours/week on care coordination and admin"
+    },
+    "useCases": [
+      {
+        "title": "Complete Care Journey Management",
+        "description": "AI manages patient relationships from first contact through long-term wellness",
+        "impact": "90% patient satisfaction with coordinated, personalized care experience"
+      },
+      {
+        "title": "Treatment Adherence Optimization",
+        "description": "AI coaches patients through treatment plans with personalized support and reminders",
+        "impact": "80% improvement in treatment compliance and health outcomes"
+      },
+      {
+        "title": "Family Health Ecosystem",
+        "description": "AI manages health needs for entire families, coordinating care and preventive services",
+        "impact": "250% increase in practice revenue through comprehensive family care"
+      }
+    ]
+  }
+]

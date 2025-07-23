@@ -1,0 +1,167 @@
+{
+  "currencies": {
+    "USD": {
+      "symbol": "$",
+      "code": "USD",
+      "name": "US Dollar"
+    },
+    "GBP": {
+      "symbol": "£", 
+      "code": "GBP",
+      "name": "British Pound"
+    },
+    "INR": {
+      "symbol": "₹",
+      "code": "INR", 
+      "name": "Indian Rupee"
+    }
+  },
+  "plans": {
+    "starter": {
+      "name": "Starter",
+      "description": "Perfect for small businesses getting started with AI automation",
+      "pricing": {
+        "USD": 79,
+        "GBP": 69,
+        "INR": 2999
+      },
+      "features": {
+        "seats": 3,
+        "leads": 300,
+        "credits": {
+          "USD": 1000,
+          "GBP": 800,
+          "INR": 2000
+        },
+        "channels": ["Web Chat", "Email", "WhatsApp", "Voice Calls"],
+        "pipeline": true,
+        "basicCampaigns": true,
+        "support": "Email Support",
+        "integrations": "Basic (Zapier, Google Sheets)"
+      },
+      "highlighted": false
+    },
+    "professional": {
+      "name": "Professional",
+      "description": "Complete AI CRM automation for growing businesses",
+      "pricing": {
+        "USD": 249,
+        "GBP": 199, 
+        "INR": 7999
+      },
+      "features": {
+        "seats": 10,
+        "leads": 1500,
+        "credits": {
+          "USD": 5000,
+          "GBP": 4000,
+          "INR": 10000
+        },
+        "channels": ["Web Chat", "Email", "WhatsApp", "Voice Calls", "SMS"],
+        "pipeline": true,
+        "advancedCampaigns": true,
+        "analytics": "Advanced Analytics & AI Insights",
+        "support": "Priority Support",
+        "integrations": "Advanced (CRM, Marketing Tools)"
+      },
+      "highlighted": true
+    },
+    "enterprise": {
+      "name": "Enterprise", 
+      "description": "Custom AI CRM solution for large teams and complex workflows",
+      "pricing": {
+        "USD": "Contact Us",
+        "GBP": "Contact Us",
+        "INR": "Contact Us"
+      },
+      "features": {
+        "seats": "Custom",
+        "leads": "Custom", 
+        "credits": "Custom",
+        "channels": ["All Channels", "Custom Integrations"],
+        "pipeline": true,
+        "customCampaigns": true,
+        "analytics": "Custom Dashboards",
+        "support": "Dedicated Account Manager",
+        "integrations": "White-label & Custom APIs"
+      },
+      "highlighted": false,
+      "contactSales": true
+    }
+  },
+  "creditSystem": {
+    "description": "1 unified credit system for all communications",
+    "creditUsage": {
+      "USD": {
+        "voiceMinute": 10,
+        "whatsappUtility": 1,
+        "whatsappMarketing": 5,
+        "sms": 2,
+        "email": 0.5
+      },
+      "GBP": {
+        "voiceMinute": 12,
+        "whatsappUtility": 3,
+        "whatsappMarketing": 8,
+        "sms": 3,
+        "email": 0.5
+      },
+      "INR": {
+        "voiceMinute": 5,
+        "whatsappUtility": 0.5,
+        "whatsappMarketing": 2,
+        "sms": 1,
+        "email": 0.25
+      }
+    },
+    "additionalCredits": {
+      "USD": {
+        "1000_credits": 79,
+        "3000_credits": 199,
+        "10000_credits": 599
+      },
+      "GBP": {
+        "1000_credits": 69,
+        "3000_credits": 179,
+        "10000_credits": 499
+      },
+      "INR": {
+        "1000_credits": 999,
+        "5000_credits": 3999,
+        "20000_credits": 9999
+      }
+    }
+  },
+  "autopilotBenefits": [
+    {
+      "title": "Complete Sales Automation",
+      "description": "AI handles entire sales process from lead capture to deal closure",
+      "icon": "🎯"
+    },
+    {
+      "title": "24/7 Revenue Generation", 
+      "description": "AI nurtures prospects and closes deals while you sleep",
+      "icon": "🌙"
+    },
+    {
+      "title": "Smart Deal Progression",
+      "description": "AI moves prospects through sales stages based on engagement",
+      "icon": "🔄"
+    },
+    {
+      "title": "Relationship Building at Scale",
+      "description": "AI maintains customer relationships for repeat business and referrals",
+      "icon": "📈"
+    }
+  ],
+  "roiCalculator": {
+    "leadValue": {
+      "low": 50,
+      "medium": 200, 
+      "high": 1000
+    },
+    "conversionImprovement": 0.35,
+    "timesSavedHoursPerWeek": 15,
+    "costPerHour": 25
+  }
+}

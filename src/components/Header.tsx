@@ -130,6 +130,15 @@ const Header = () => {
             </Link>
 
             <Link
+              href="/ai-crm"
+              className="text-gray-600 hover:text-purple-600 transition-all duration-300 font-medium relative group px-3 py-2 rounded-md hover:bg-purple-50"
+              style={{ cursor: 'pointer' }}
+            >
+              AI CRM
+              <span className="absolute -bottom-1 left-3 right-3 h-0.5 bg-purple-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+            </Link>
+
+            <Link
               href="/about"
               className="text-gray-600 hover:text-blue-600 transition-all duration-300 font-medium relative group px-3 py-2 rounded-md hover:bg-blue-50"
               style={{ cursor: 'pointer' }}
@@ -184,6 +193,13 @@ const Header = () => {
               className="text-gray-800 hover:text-blue-600"
             >
               Pricing
+            </Link>
+            <Link
+              href="/ai-crm"
+              className="text-gray-800 hover:text-purple-600"
+              onClick={() => setMobileOpen(false)}
+            >
+              AI CRM
             </Link>
             <Link
               href="/about"
