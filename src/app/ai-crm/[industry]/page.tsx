@@ -11,7 +11,6 @@ import { Badge } from '@/components/ui/badge'
 import { ArrowLeft, CheckCircle, TrendingUp, Clock, Target, Zap, Users, Phone, MessageSquare, Star, AlertTriangle } from 'lucide-react'
 import aiCrmIndustries from '@/data/ai-crm-industries.json'
 import aiCrmPricing from '@/data/ai-crm-pricing.json'
-import DemoRequestForm from '@/components/DemoRequestForm'
 
 export default function IndustryPage() {
   const params = useParams()
@@ -71,14 +70,14 @@ export default function IndustryPage() {
                 size="lg" 
                 className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 text-lg font-semibold"
               >
-                Start Free Trial for {industry.name}
+                Contact Us
               </Button>
               <Button 
                 size="lg" 
                 variant="outline"
                 className="border-2 border-gray-300 hover:border-blue-500 px-8 py-4 text-lg font-semibold"
               >
-                Watch {industry.name} Demo
+                Contact Us
               </Button>
             </div>
           </div>
@@ -307,7 +306,7 @@ export default function IndustryPage() {
                     </div>
                   </div>
                   <Button className="w-full mt-8 py-3 text-lg font-semibold border-2 border-gray-300 hover:border-blue-500 bg-white text-gray-900" variant="outline">
-                    Start Free Trial
+                    Contact Us
                   </Button>
                 </CardContent>
               </Card>
@@ -350,7 +349,7 @@ export default function IndustryPage() {
                     </div>
                   </div>
                   <Button className="w-full mt-8 py-3 text-lg font-semibold bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white">
-                    Start Free Trial
+                    Contact Us
                   </Button>
                 </CardContent>
               </Card>
@@ -394,26 +393,6 @@ export default function IndustryPage() {
         </div>
       </section>
 
-      {/* Demo Request */}
-      <section className="py-20 bg-gradient-to-br from-purple-50 to-blue-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              See {industry.name} AI CRM in Action
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Get a personalized demo showing exactly how AI CRM automates your 
-              {industry.name.toLowerCase()} business from lead capture to deal closure.
-            </p>
-          </div>
-          
-          <DemoRequestForm 
-            industry={industry.slug}
-            title={`Request ${industry.name} Demo`}
-            description={`See AI automation designed specifically for ${industry.name.toLowerCase()} businesses`}
-          />
-        </div>
-      </section>
 
       {/* Final CTA */}
       <section className="py-20 bg-white">
@@ -444,7 +423,7 @@ export default function IndustryPage() {
                   variant="outline" 
                   className="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 text-lg font-semibold"
                 >
-                  Schedule Demo
+                  Contact Us
                 </Button>
               </div>
             </div>
