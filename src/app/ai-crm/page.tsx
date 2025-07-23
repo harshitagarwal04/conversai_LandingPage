@@ -1,8 +1,10 @@
 'use client'
 
+import { useState } from 'react'
 import Link from 'next/link'
 import AICRMHeader from '@/components/AICRMHeader'
 import Footer from '@/components/Footer'
+import ContactModal from '@/components/ContactModal'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -13,6 +15,7 @@ import aiCrmPricing from '@/data/ai-crm-pricing.json'
 // Note: Metadata export removed due to 'use client' directive
 
 export default function AICRMPage() {
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false)
   return (
     <div className="w-full overflow-x-hidden">
       <AICRMHeader />
@@ -49,6 +52,7 @@ export default function AICRMPage() {
                 <Button 
                   size="lg" 
                   className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 text-lg font-semibold"
+                  onClick={() => setIsContactModalOpen(true)}
                 >
                   Contact Us
                 </Button>
@@ -305,6 +309,7 @@ export default function AICRMPage() {
                         : 'border-2 border-gray-300 hover:border-blue-500 bg-white text-gray-900'
                     }`}
                     variant={plan.highlighted ? 'default' : 'outline'}
+                    onClick={() => setIsContactModalOpen(true)}
                   >
                     Contact Us
                   </Button>
@@ -372,6 +377,7 @@ export default function AICRMPage() {
                 <Button 
                   size="lg" 
                   className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 text-lg font-semibold"
+                  onClick={() => setIsContactModalOpen(true)}
                 >
                   Contact Us
                 </Button>
@@ -396,6 +402,12 @@ export default function AICRMPage() {
         </div>
       </section>
       <Footer />
+      
+      <ContactModal 
+        isOpen={isContactModalOpen}
+        onClose={() => setIsContactModalOpen(false)}
+        title="Get Started with AI CRM"
+      />
     </div>
   )
 }

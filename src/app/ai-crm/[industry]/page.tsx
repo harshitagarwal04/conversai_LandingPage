@@ -1,10 +1,12 @@
 'use client'
 
+import { useState } from 'react'
 import { notFound } from 'next/navigation'
 import { useParams } from 'next/navigation'
 import Link from 'next/link'
 import AICRMHeader from '@/components/AICRMHeader'
 import Footer from '@/components/Footer'
+import ContactModal from '@/components/ContactModal'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -13,6 +15,7 @@ import aiCrmIndustries from '@/data/ai-crm-industries.json'
 import aiCrmPricing from '@/data/ai-crm-pricing.json'
 
 export default function IndustryPage() {
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false)
   const params = useParams()
   const industrySlug = params.industry as string
   const industry = aiCrmIndustries.find(ind => ind.slug === industrySlug)
@@ -69,6 +72,7 @@ export default function IndustryPage() {
               <Button 
                 size="lg" 
                 className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 text-lg font-semibold"
+                onClick={() => setIsContactModalOpen(true)}
               >
                 Contact Us
               </Button>
@@ -76,6 +80,7 @@ export default function IndustryPage() {
                 size="lg" 
                 variant="outline"
                 className="border-2 border-gray-300 hover:border-blue-500 px-8 py-4 text-lg font-semibold"
+                onClick={() => setIsContactModalOpen(true)}
               >
                 Contact Us
               </Button>
@@ -305,7 +310,11 @@ export default function IndustryPage() {
                       <span className="text-sm">All channels: Voice, WhatsApp, Email, SMS</span>
                     </div>
                   </div>
-                  <Button className="w-full mt-8 py-3 text-lg font-semibold border-2 border-gray-300 hover:border-blue-500 bg-white text-gray-900" variant="outline">
+                  <Button 
+                    className="w-full mt-8 py-3 text-lg font-semibold border-2 border-gray-300 hover:border-blue-500 bg-white text-gray-900" 
+                    variant="outline"
+                    onClick={() => setIsContactModalOpen(true)}
+                  >
                     Contact Us
                   </Button>
                 </CardContent>
@@ -348,7 +357,10 @@ export default function IndustryPage() {
                       <span className="text-sm">All channels + Priority Support</span>
                     </div>
                   </div>
-                  <Button className="w-full mt-8 py-3 text-lg font-semibold bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white">
+                  <Button 
+                    className="w-full mt-8 py-3 text-lg font-semibold bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white"
+                    onClick={() => setIsContactModalOpen(true)}
+                  >
                     Contact Us
                   </Button>
                 </CardContent>
@@ -431,6 +443,13 @@ export default function IndustryPage() {
         </div>
       </section>
       <Footer />
+      
+      <ContactModal 
+        isOpen={isContactModalOpen}
+        onClose={() => setIsContactModalOpen(false)}
+        industry={industry.slug}
+        title={`Get Started with ${industry.name} AI CRM`}
+      />
     </div>
   )
 }
