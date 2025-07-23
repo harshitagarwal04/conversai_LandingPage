@@ -8,14 +8,16 @@ import ContactModal from '@/components/ContactModal'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-import { ArrowRight, CheckCircle, TrendingUp, Clock, Target, Zap, Users, Phone, MessageSquare, Mail, Star } from 'lucide-react'
+import { ArrowRight, CheckCircle, TrendingUp, Clock, Target, Zap, Users, Phone, MessageSquare, Mail, Star, Globe } from 'lucide-react'
 import aiCrmIndustries from '@/data/ai-crm-industries.json'
 import aiCrmPricing from '@/data/ai-crm-pricing.json'
+import { useCurrency, Currency } from '@/hooks/use-currency'
 
 // Note: Metadata export removed due to 'use client' directive
 
 export default function AICRMPage() {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false)
+  const { currency, formatPrice, formatCredits, currencies, setCurrency } = useCurrency()
   return (
     <div className="w-full overflow-x-hidden">
       <AICRMHeader />
@@ -247,9 +249,30 @@ export default function AICRMPage() {
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               Simple, Transparent Pricing
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-gray-600 mb-6">
               Pay for results, not seats. Your AI CRM scales with your business.
             </p>
+            
+            {/* Currency Selector */}
+            <div className="flex items-center justify-center gap-2 mb-8">
+              <Globe className="w-5 h-5 text-gray-500" />
+              <span className="text-sm text-gray-600 mr-3">Currency:</span>
+              <div className="flex bg-gray-100 rounded-lg p-1">
+                {Object.entries(currencies).map(([code, info]) => (
+                  <button
+                    key={code}
+                    onClick={() => setCurrency(code as Currency)}
+                    className={`px-3 py-1 rounded-md text-sm font-medium transition-all ${
+                      currency === code 
+                        ? 'bg-blue-600 text-white shadow-sm' 
+                        : 'text-gray-600 hover:text-gray-900'
+                    }`}
+                  >
+                    {info.symbol} {code}
+                  </button>
+                ))}
+              </div>
+            </div>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -266,7 +289,7 @@ export default function AICRMPage() {
                   <CardTitle className="text-2xl font-bold text-gray-900">{plan.name}</CardTitle>
                   <div className="py-4">
                     <div className="text-4xl font-bold text-gray-900">
-                      {typeof plan.pricing.USD === 'number' ? `$${plan.pricing.USD}` : plan.pricing.USD}
+                      {typeof plan.pricing.USD === 'number' ? formatPrice(plan.pricing as { USD: number; GBP: number; INR: number }).formatted : plan.pricing.USD}
                     </div>
                     {typeof plan.pricing.USD === 'number' && (
                       <p className="text-gray-600 mt-1">per month</p>
@@ -291,7 +314,7 @@ export default function AICRMPage() {
                         <Zap className="w-5 h-5 text-purple-600" />
                         <span className="text-gray-700">
                           {typeof plan.features.credits === 'object' && 'USD' in plan.features.credits 
-                            ? `${plan.features.credits.USD} credits/month`
+                            ? `${formatCredits(plan.features.credits as { USD: number; GBP: number; INR: number }).toLocaleString()} credits/month`
                             : `${plan.features.credits} credits`
                           }
                         </span>

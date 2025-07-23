@@ -10,12 +10,14 @@ import ContactModal from '@/components/ContactModal'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-import { ArrowLeft, CheckCircle, TrendingUp, Clock, Target, Zap, Users, Phone, MessageSquare, Star, AlertTriangle } from 'lucide-react'
+import { ArrowLeft, CheckCircle, TrendingUp, Clock, Target, Zap, Users, Phone, MessageSquare, Star, AlertTriangle, Globe } from 'lucide-react'
 import aiCrmIndustries from '@/data/ai-crm-industries.json'
 import aiCrmPricing from '@/data/ai-crm-pricing.json'
+import { useCurrency, Currency } from '@/hooks/use-currency'
 
 export default function IndustryPage() {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false)
+  const { currency, formatPrice, formatCredits, currencies, setCurrency } = useCurrency()
   const params = useParams()
   const industrySlug = params.industry as string
   const industry = aiCrmIndustries.find(ind => ind.slug === industrySlug)
@@ -264,9 +266,30 @@ export default function IndustryPage() {
                 Simple Pricing for 
                 <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> {industry.name} Businesses</span>
               </h2>
-              <p className="text-xl text-gray-600">
+              <p className="text-xl text-gray-600 mb-6">
                 Start small, scale as you grow. Pay for leads processed, not team size.
               </p>
+              
+              {/* Currency Selector */}
+              <div className="flex items-center justify-center gap-2 mb-8">
+                <Globe className="w-5 h-5 text-gray-500" />
+                <span className="text-sm text-gray-600 mr-3">Currency:</span>
+                <div className="flex bg-gray-100 rounded-lg p-1">
+                  {Object.entries(currencies).map(([code, info]) => (
+                    <button
+                      key={code}
+                      onClick={() => setCurrency(code as Currency)}
+                      className={`px-3 py-1 rounded-md text-sm font-medium transition-all ${
+                        currency === code 
+                          ? 'bg-blue-600 text-white shadow-sm' 
+                          : 'text-gray-600 hover:text-gray-900'
+                      }`}
+                    >
+                      {info.symbol} {code}
+                    </button>
+                  ))}
+                </div>
+              </div>
             </div>
             
             <div className="grid md:grid-cols-2 gap-8">
@@ -275,7 +298,7 @@ export default function IndustryPage() {
                   <CardTitle className="text-2xl font-bold text-gray-900">Starter</CardTitle>
                   <div className="py-4">
                     <div className="text-4xl font-bold text-gray-900">
-                      ${aiCrmPricing.plans.starter.pricing.USD}
+                      {formatPrice(aiCrmPricing.plans.starter.pricing).formatted}
                       <span className="text-lg font-normal text-gray-600">/month</span>
                     </div>
                   </div>
@@ -295,7 +318,7 @@ export default function IndustryPage() {
                     </div>
                     <div className="flex items-center gap-3">
                       <Zap className="w-5 h-5 text-purple-600" />
-                      <span className="text-gray-700">{aiCrmPricing.plans.starter.features.credits.USD} credits/month</span>
+                      <span className="text-gray-700">{formatCredits(aiCrmPricing.plans.starter.features.credits).toLocaleString()} credits/month</span>
                     </div>
                     <div className="flex items-center gap-3 text-gray-600">
                       <MessageSquare className="w-5 h-5" />
@@ -322,7 +345,7 @@ export default function IndustryPage() {
                   <CardTitle className="text-2xl font-bold text-gray-900">Professional</CardTitle>
                   <div className="py-4">
                     <div className="text-4xl font-bold text-gray-900">
-                      ${aiCrmPricing.plans.professional.pricing.USD}
+                      {formatPrice(aiCrmPricing.plans.professional.pricing).formatted}
                       <span className="text-lg font-normal text-gray-600">/month</span>
                     </div>
                   </div>
@@ -342,7 +365,7 @@ export default function IndustryPage() {
                     </div>
                     <div className="flex items-center gap-3">
                       <Zap className="w-5 h-5 text-purple-600" />
-                      <span className="text-gray-700">{aiCrmPricing.plans.professional.features.credits.USD} credits/month</span>
+                      <span className="text-gray-700">{formatCredits(aiCrmPricing.plans.professional.features.credits).toLocaleString()} credits/month</span>
                     </div>
                     <div className="flex items-center gap-3 text-gray-600">
                       <MessageSquare className="w-5 h-5" />
@@ -419,13 +442,7 @@ export default function IndustryPage() {
                 <Button 
                   size="lg" 
                   className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 text-lg font-semibold"
-                >
-                  Start 14-Day Free Trial
-                </Button>
-                <Button 
-                  size="lg" 
-                  variant="outline" 
-                  className="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 text-lg font-semibold"
+                  onClick={() => setIsContactModalOpen(true)}
                 >
                   Contact Us
                 </Button>
