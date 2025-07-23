@@ -154,22 +154,20 @@ export default function SimpleContactForm({
                 <SelectTrigger className="h-12 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all">
                   <SelectValue placeholder="Select your industry" />
                 </SelectTrigger>
-                <SelectContent className="rounded-xl border-2 border-gray-200">
+                <SelectContent className="rounded-xl border-2 border-gray-200 bg-white shadow-xl max-h-60 overflow-y-auto">
                   <SelectItem value="real-estate">🏠 Real Estate</SelectItem>
                   <SelectItem value="insurance">🛡️ Insurance</SelectItem>
-                  <SelectItem value="home-services">🔧 Home Services (HVAC, Plumbing, etc.)</SelectItem>
+                  <SelectItem value="home-services">🔧 Home Services</SelectItem>
                   <SelectItem value="saas-technology">💻 SaaS & Technology</SelectItem>
                   <SelectItem value="healthcare-wellness">🏥 Healthcare & Wellness</SelectItem>
                   <SelectItem value="automotive">🚗 Automotive & Dealerships</SelectItem>
                   <SelectItem value="finance-banking">🏦 Finance & Banking</SelectItem>
                   <SelectItem value="legal-services">⚖️ Legal Services</SelectItem>
                   <SelectItem value="education">🎓 Education & Training</SelectItem>
-                  <SelectItem value="construction">🏗️ Construction & Contracting</SelectItem>
+                  <SelectItem value="construction">🏗️ Construction</SelectItem>
                   <SelectItem value="manufacturing">🏭 Manufacturing</SelectItem>
                   <SelectItem value="retail-ecommerce">🛒 Retail & E-commerce</SelectItem>
-                  <SelectItem value="recruitment-staffing">👥 Recruitment & Staffing</SelectItem>
-                  <SelectItem value="hospitality-travel">🏨 Hospitality & Travel</SelectItem>
-                  <SelectItem value="consulting">💼 Professional Consulting</SelectItem>
+                  <SelectItem value="consulting">💼 Professional Services</SelectItem>
                   <SelectItem value="other">📋 Other</SelectItem>
                 </SelectContent>
               </Select>

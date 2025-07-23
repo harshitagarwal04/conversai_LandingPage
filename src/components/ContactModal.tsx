@@ -18,7 +18,7 @@ export default function ContactModal({
 }: ContactModalProps) {
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-md">
+      <DialogContent className="max-w-lg p-0 border-0 bg-transparent shadow-none">
         <DialogHeader>
           <DialogTitle className="sr-only">Contact Form</DialogTitle>
         </DialogHeader>
