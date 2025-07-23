@@ -71,23 +71,27 @@ export default function SimpleContactForm({
   }
 
   return (
-    <Card className="max-w-md mx-auto border-2 border-blue-200 bg-white shadow-lg">
-      <CardHeader className="text-center">
-        <div className="flex items-center justify-center gap-2 mb-2">
-          <Mail className="w-6 h-6 text-blue-600" />
-          <CardTitle className="text-xl font-bold text-gray-900">
+    <Card className="max-w-lg mx-auto border-0 bg-white shadow-2xl rounded-3xl overflow-hidden">
+      <CardHeader className="text-center bg-gradient-to-r from-blue-50 to-purple-50 p-8">
+        <div className="flex items-center justify-center gap-3 mb-3">
+          <div className="p-3 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full">
+            <Mail className="w-6 h-6 text-white" />
+          </div>
+          <CardTitle className="text-2xl font-bold text-gray-900">
             {title}
           </CardTitle>
         </div>
-        <p className="text-gray-600 text-sm">
+        <p className="text-gray-600 text-base leading-relaxed">
           {description}
         </p>
       </CardHeader>
       
-      <CardContent>
-        <form onSubmit={handleSubmit} className="space-y-4">
+      <CardContent className="p-8">
+        <form onSubmit={handleSubmit} className="space-y-6">
           <div>
-            <Label htmlFor="contact_email">Business Email *</Label>
+            <Label htmlFor="contact_email" className="text-sm font-semibold text-gray-700 mb-2 block">
+              Business Email *
+            </Label>
             <Input
               id="contact_email"
               type="email"
@@ -95,79 +99,104 @@ export default function SimpleContactForm({
               onChange={(e) => setFormData({...formData, email: e.target.value})}
               required
               placeholder="you@company.com"
+              className="h-12 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all"
             />
           </div>
 
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-2 gap-4">
             <div>
-              <Label htmlFor="contact_name">Name *</Label>
+              <Label htmlFor="contact_name" className="text-sm font-semibold text-gray-700 mb-2 block">
+                Name *
+              </Label>
               <Input
                 id="contact_name"
                 value={formData.name}
                 onChange={(e) => setFormData({...formData, name: e.target.value})}
                 required
                 placeholder="Your name"
+                className="h-12 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all"
               />
             </div>
             <div>
-              <Label htmlFor="contact_phone">Phone</Label>
+              <Label htmlFor="contact_phone" className="text-sm font-semibold text-gray-700 mb-2 block">
+                Phone
+              </Label>
               <Input
                 id="contact_phone"
                 type="tel"
                 value={formData.phone}
                 onChange={(e) => setFormData({...formData, phone: e.target.value})}
                 placeholder="Your phone"
+                className="h-12 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all"
               />
             </div>
           </div>
 
           <div>
-            <Label htmlFor="contact_company">Company Name</Label>
+            <Label htmlFor="contact_company" className="text-sm font-semibold text-gray-700 mb-2 block">
+              Company Name
+            </Label>
             <Input
               id="contact_company"
               value={formData.company}
               onChange={(e) => setFormData({...formData, company: e.target.value})}
               placeholder="Your company"
+              className="h-12 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all"
             />
           </div>
 
           {!industry && (
             <div>
-              <Label htmlFor="contact_industry">Industry</Label>
+              <Label htmlFor="contact_industry" className="text-sm font-semibold text-gray-700 mb-2 block">
+                Industry
+              </Label>
               <Select value={formData.industry} onValueChange={(value) => setFormData({...formData, industry: value})}>
-                <SelectTrigger>
+                <SelectTrigger className="h-12 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all">
                   <SelectValue placeholder="Select your industry" />
                 </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="real-estate">Real Estate</SelectItem>
-                  <SelectItem value="insurance">Insurance</SelectItem>
-                  <SelectItem value="home-services">Home Services</SelectItem>
-                  <SelectItem value="saas-technology">SaaS & Technology</SelectItem>
-                  <SelectItem value="healthcare-wellness">Healthcare & Wellness</SelectItem>
-                  <SelectItem value="other">Other</SelectItem>
+                <SelectContent className="rounded-xl border-2 border-gray-200">
+                  <SelectItem value="real-estate">🏠 Real Estate</SelectItem>
+                  <SelectItem value="insurance">🛡️ Insurance</SelectItem>
+                  <SelectItem value="home-services">🔧 Home Services (HVAC, Plumbing, etc.)</SelectItem>
+                  <SelectItem value="saas-technology">💻 SaaS & Technology</SelectItem>
+                  <SelectItem value="healthcare-wellness">🏥 Healthcare & Wellness</SelectItem>
+                  <SelectItem value="automotive">🚗 Automotive & Dealerships</SelectItem>
+                  <SelectItem value="finance-banking">🏦 Finance & Banking</SelectItem>
+                  <SelectItem value="legal-services">⚖️ Legal Services</SelectItem>
+                  <SelectItem value="education">🎓 Education & Training</SelectItem>
+                  <SelectItem value="construction">🏗️ Construction & Contracting</SelectItem>
+                  <SelectItem value="manufacturing">🏭 Manufacturing</SelectItem>
+                  <SelectItem value="retail-ecommerce">🛒 Retail & E-commerce</SelectItem>
+                  <SelectItem value="recruitment-staffing">👥 Recruitment & Staffing</SelectItem>
+                  <SelectItem value="hospitality-travel">🏨 Hospitality & Travel</SelectItem>
+                  <SelectItem value="consulting">💼 Professional Consulting</SelectItem>
+                  <SelectItem value="other">📋 Other</SelectItem>
                 </SelectContent>
               </Select>
             </div>
           )}
 
           <div>
-            <Label htmlFor="contact_notes">Tell us about your needs</Label>
+            <Label htmlFor="contact_notes" className="text-sm font-semibold text-gray-700 mb-2 block">
+              Tell us about your needs
+            </Label>
             <Textarea
               id="contact_notes"
               value={formData.notes}
               onChange={(e) => setFormData({...formData, notes: e.target.value})}
-              placeholder="What are you looking to automate?"
-              rows={3}
+              placeholder="What are you looking to automate? How many leads do you get per month?"
+              rows={4}
+              className="border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all resize-none"
             />
           </div>
 
           <Button 
             type="submit" 
-            className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
+            className="w-full h-14 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02]"
             disabled={isSubmitting}
           >
             {isSubmitting ? 'Sending...' : 'Get In Touch'}
-            <ArrowRight className="w-4 h-4 ml-2" />
+            <ArrowRight className="w-5 h-5 ml-2" />
           </Button>
 
           {error && (
