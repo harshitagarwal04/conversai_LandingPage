@@ -8,6 +8,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge'
 import { ArrowRight, CheckCircle, TrendingUp, Clock, Target, Zap, Users, Phone, MessageSquare, Mail, Star } from 'lucide-react'
 import aiCrmIndustries from '@/data/ai-crm-industries.json'
+import CreditCalculator from '@/components/CreditCalculator'
 import aiCrmPricing from '@/data/ai-crm-pricing.json'
 
 // Note: Metadata export removed due to 'use client' directive
@@ -240,6 +241,23 @@ export default function AICRMPage() {
               Contact Us for Custom Industry Setup
             </Button>
           </div>
+        </div>
+      </section>
+
+      {/* Credit Calculator */}
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              Calculate Your Perfect Plan
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Get a personalized quote based on your business needs. Our credit system 
+              gives you flexibility to use voice calls, WhatsApp, and other channels as needed.
+            </p>
+          </div>
+          
+          <CreditCalculator />
         </div>
       </section>
 
