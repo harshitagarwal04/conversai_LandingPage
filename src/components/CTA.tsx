@@ -1,13 +1,13 @@
 
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import {Play, Phone } from 'lucide-react';
-import { useRouter } from 'next/navigation';
+import ContactModal from './ContactModal';
 
 const CTA = () => {
-  const router = useRouter();
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   
   const handleConnectWithUs = () => {
     window.open('https://wa.me/918076018082', '_blank');
@@ -18,7 +18,7 @@ const CTA = () => {
   };
   
   const handleContactSales = () => {
-    router.push('/contact');
+    setIsContactModalOpen(true);
   };
 
   return (
@@ -68,6 +68,12 @@ const CTA = () => {
           </p>
         </div>
       </div>
+      
+      <ContactModal 
+        isOpen={isContactModalOpen}
+        onClose={() => setIsContactModalOpen(false)}
+        title="Get Started with AI Agents"
+      />
     </section>
   );
 };

@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { MessageSquare } from "lucide-react";
 import Link from "next/link";
+import ContactModal from "./ContactModal";
 
 const Footer = () => {
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+  
   const footerSections = [
     {
       title: "Product",
@@ -18,7 +21,7 @@ const Footer = () => {
       title: "Company",
       links: [
         { name: "About Us", path: "/about" },
-        { name: "Contact Us", path: "/contact" },
+        { name: "Contact Us", path: "#", onClick: () => setIsContactModalOpen(true) },
         { name: "Privacy Policy", path: "/policy" },
         { name: "Terms & Conditions", path: "/terms" },
       ],
@@ -64,9 +67,16 @@ const Footer = () => {
             <div key={index} className="mt-8 sm:mt-0">
               <h3 className="text-lg font-semibold mb-4">{section.title}</h3>
               <ul className="space-y-2">
-                {(section.links as { name: string; path: string }[]).map((linkObj, i) => (
+                {(section.links as { name: string; path: string; onClick?: () => void }[]).map((linkObj, i) => (
                   <li key={i}>
-                    {linkObj.path.startsWith('http') ? (
+                    {linkObj.onClick ? (
+                      <button
+                        onClick={linkObj.onClick}
+                        className="text-gray-400 hover:text-white transition-colors text-sm"
+                      >
+                        {linkObj.name}
+                      </button>
+                    ) : linkObj.path.startsWith('http') ? (
                       <a
                         href={linkObj.path}
                         target="_blank"
@@ -99,6 +109,12 @@ const Footer = () => {
           </div>
         </div>
       </div>
+      
+      <ContactModal 
+        isOpen={isContactModalOpen}
+        onClose={() => setIsContactModalOpen(false)}
+        title="Contact Us"
+      />
     </footer>
   );
 };

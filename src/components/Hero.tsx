@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowDown, Phone, MessageSquare, Users } from 'lucide-react';
+import ContactModal from './ContactModal';
 
 const Hero = () => {
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
   const handleSeeHowItWorks = () => {
     window.open('https://admin.conversailabs.com/', '_blank');
@@ -44,11 +46,11 @@ const Hero = () => {
               <Button 
                 variant="outline" 
                 size="lg" 
-                onClick={() => window.open('/schedule-demo', '_self')}
+                onClick={() => setIsContactModalOpen(true)}
                 className="border-2 border-gray-300 hover:border-blue-500 px-8 py-4 text-lg font-semibold text-black"
                 style={{ cursor: 'pointer' }}
               >
-                Schedule Live Demo
+                Contact Us
               </Button>
             </div>
             
@@ -125,6 +127,12 @@ const Hero = () => {
       <div className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
         <ArrowDown className="w-5 h-5 sm:w-6 sm:h-6 text-gray-400" />
       </div>
+      
+      <ContactModal 
+        isOpen={isContactModalOpen}
+        onClose={() => setIsContactModalOpen(false)}
+        title="Get Started with AI Agents"
+      />
     </section>
   );
 };

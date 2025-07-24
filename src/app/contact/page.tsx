@@ -3,6 +3,7 @@
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import SimpleContactForm from '@/components/SimpleContactForm';
 import { Mail, Phone, MapPin, Clock, MessageSquare } from 'lucide-react';
 
 const ContactPage: React.FC = () => {
@@ -28,8 +29,16 @@ const ContactPage: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {/* Contact Form */}
+            <div className="order-2 lg:order-1">
+              <SimpleContactForm 
+                title="Contact Us"
+                description="Get in touch with our team and we'll respond within 24 hours"
+              />
+            </div>
+
             {/* Contact Information */}
-            <div className="space-y-8">
+            <div className="order-1 lg:order-2 space-y-8">
               {/* Quick Contact Card */}
               <div className="bg-white rounded-2xl shadow-xl p-8">
                 <h2 className="text-2xl font-bold mb-6">Quick Contact</h2>

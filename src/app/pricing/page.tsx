@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Check, Star, MessageSquare, Phone, Zap, BarChart3, Shield } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import ContactModal from '@/components/ContactModal';
 
 interface PricingPlan {
   name: string;
@@ -19,6 +20,7 @@ interface PricingPlan {
 
 const PricingPage: React.FC = () => {
   const [isAnnual, setIsAnnual] = useState(false);
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
   const plans: PricingPlan[] = [
     {
@@ -106,7 +108,7 @@ const PricingPage: React.FC = () => {
   ];
 
   const handleContactSales = () => {
-    window.open('https://wa.me/918076018082', '_blank');
+    setIsContactModalOpen(true);
   };
 
   return (
@@ -311,6 +313,12 @@ const PricingPage: React.FC = () => {
         </div>
       </div>
       <Footer />
+      
+      <ContactModal 
+        isOpen={isContactModalOpen}
+        onClose={() => setIsContactModalOpen(false)}
+        title="Get Started with AI Agents"
+      />
     </div>
   );
 };

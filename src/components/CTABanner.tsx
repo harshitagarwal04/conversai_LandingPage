@@ -142,16 +142,10 @@ export function CTABanner({ industry, color }: CTABannerProps) {
          
             <Button
               size="lg"
-              onClick={() => {
-                const el = document.getElementById('agent-details-explorer');
-                if (el) {
-                  el.scrollIntoView({ behavior: 'smooth' });
-                }
-                // setIsModalOpen(true); // Remove or comment out if you don't want the modal
-              }}
+              onClick={() => setIsModalOpen(true)}
               className="bg-white text-gray-900 cursor-pointer hover:bg-gray-100 px-8 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-200 "
             >
-              Get Your Free Demo
+              Contact Us
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
         
