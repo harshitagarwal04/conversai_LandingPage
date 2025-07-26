@@ -46,8 +46,11 @@ const Footer = () => {
               <MessageSquare className="w-8 h-8 text-blue-400" />
               <span className="text-2xl font-bold">ConversAI Labs</span>
             </div>
-            <p className="text-gray-400 mb-6 text-sm">
+            <p className="text-gray-400 mb-4 text-sm">
               No-code AI agent builder. Create intelligent voice bots that qualify leads 24/7 across voice, WhatsApp, and email.
+            </p>
+            <p className="text-gray-400 mb-6 text-sm">
+              Email: connect@conversailabs.com
             </p>
             <div className="flex space-x-4 mb-6">
               <div className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 cursor-pointer transition-colors">

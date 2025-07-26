@@ -3,7 +3,7 @@
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { Mail, Phone, MapPin, Clock, MessageSquare } from 'lucide-react';
+import { Phone, MapPin, Clock, MessageSquare } from 'lucide-react';
 
 const ContactPage: React.FC = () => {
 
@@ -30,43 +30,26 @@ const ContactPage: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Options */}
             <div className="order-2 lg:order-1">
-              <div className="bg-white rounded-2xl shadow-xl p-8">
+              <div className="bg-white rounded-2xl shadow-xl p-8 text-center">
                 <h2 className="text-2xl font-bold mb-4">Get in Touch</h2>
-                <p className="text-gray-600 mb-8">Choose your preferred way to contact our team. We&apos;ll respond within 24 hours.</p>
+                <p className="text-gray-600 mb-8">Connect with our team instantly via WhatsApp. We&apos;ll respond within 24 hours.</p>
                 
-                <div className="space-y-4">
-                  <button
-                    onClick={handleWhatsApp}
-                    className="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-semibold py-4 px-6 rounded-lg flex items-center justify-center gap-3 transition-all duration-200 shadow-lg hover:shadow-xl"
-                  >
-                    <MessageSquare className="w-6 h-6" />
-                    Chat with us on WhatsApp
-                  </button>
-                  
-                  <a
-                    href="mailto:connect@conversailabs.com"
-                    className="w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-semibold py-4 px-6 rounded-lg flex items-center justify-center gap-3 transition-all duration-200 shadow-lg hover:shadow-xl block"
-                  >
-                    <Mail className="w-6 h-6" />
-                    Send us an Email
-                  </a>
-                </div>
+                <button
+                  onClick={handleWhatsApp}
+                  className="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-semibold py-4 px-6 rounded-lg flex items-center justify-center gap-3 transition-all duration-200 shadow-lg hover:shadow-xl"
+                >
+                  <MessageSquare className="w-6 h-6" />
+                  Chat with us on WhatsApp
+                </button>
                 
                 <div className="mt-8 pt-8 border-t border-gray-200">
-                  <h3 className="font-semibold mb-4">Direct Contact:</h3>
-                  <div className="space-y-3">
-                    <p className="flex items-center gap-2 text-gray-600">
-                      <Phone className="w-4 h-4" />
-                      <span>+91 8076 018 082</span>
-                    </p>
-                    <p className="flex items-center gap-2 text-gray-600">
-                      <Mail className="w-4 h-4" />
-                      <span>connect@conversailabs.com</span>
-                    </p>
+                  <div className="flex items-center justify-center gap-2 text-gray-600">
+                    <Phone className="w-5 h-5 text-green-600" />
+                    <span className="font-semibold">+91 8076 018 082</span>
                   </div>
                 </div>
                 
-                <p className="text-sm text-gray-500 mt-6 text-center">
+                <p className="text-sm text-gray-500 mt-6">
                   Available Monday - Friday: 10:00 AM - 6:00 PM IST
                 </p>
               </div>
@@ -76,46 +59,33 @@ const ContactPage: React.FC = () => {
             <div className="order-1 lg:order-2 space-y-8">
               {/* Quick Contact Card */}
               <div className="bg-white rounded-2xl shadow-xl p-8">
-                <h2 className="text-2xl font-bold mb-6">Quick Contact</h2>
+                <h2 className="text-2xl font-bold mb-6">Connect Instantly</h2>
                 <div className="space-y-4">
-                  <a
-                    href="mailto:connect@conversailabs.com"
-                    className="flex items-center gap-4 p-4 rounded-lg hover:bg-gray-50 transition"
-                  >
-                    <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                      <Mail className="w-6 h-6 text-blue-600" />
-                    </div>
-                    <div>
-                      <p className="font-semibold">Email Us</p>
-                      <p className="text-gray-600">connect@conversailabs.com</p>
-                    </div>
-                  </a>
-
-                  <a
-                    href="tel:+918076018082"
-                    className="flex items-center gap-4 p-4 rounded-lg hover:bg-gray-50 transition"
-                  >
-                    <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                      <Phone className="w-6 h-6 text-green-600" />
-                    </div>
-                    <div>
-                      <p className="font-semibold">Call Us</p>
-                      <p className="text-gray-600">+91-8076018082</p>
-                    </div>
-                  </a>
-
                   <button
                     onClick={handleWhatsApp}
-                    className="w-full flex items-center gap-4 p-4 rounded-lg hover:bg-gray-50 transition text-left"
+                    className="w-full flex items-center gap-4 p-4 rounded-lg bg-green-50 hover:bg-green-100 transition text-left"
                   >
                     <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
                       <MessageSquare className="w-6 h-6 text-green-600" />
                     </div>
                     <div>
-                      <p className="font-semibold">WhatsApp</p>
-                      <p className="text-gray-600">Chat with us instantly</p>
+                      <p className="font-semibold">WhatsApp Us</p>
+                      <p className="text-gray-600">+91 8076 018 082</p>
                     </div>
                   </button>
+
+                  <a
+                    href="tel:+918076018082"
+                    className="flex items-center gap-4 p-4 rounded-lg hover:bg-gray-50 transition"
+                  >
+                    <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                      <Phone className="w-6 h-6 text-blue-600" />
+                    </div>
+                    <div>
+                      <p className="font-semibold">Call Us</p>
+                      <p className="text-gray-600">+91 8076 018 082</p>
+                    </div>
+                  </a>
                 </div>
               </div>
 
