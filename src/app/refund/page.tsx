@@ -38,6 +38,10 @@ const RefundPolicy: React.FC = () => (
       To initiate a refund, please contact us at{" "}
       <a href="mailto:connect@conversailabs.com" className="text-blue-600 underline">
         connect@conversailabs.com
+      </a>
+      {" "}or WhatsApp us at{" "}
+      <a href="https://wa.me/918076018082" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">
+        +91 8076 018 082
       </a>{" "}
       with your registered email and payment details. We will review your request and respond within 3-5 business days.
     </p>

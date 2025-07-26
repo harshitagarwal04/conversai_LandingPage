@@ -47,6 +47,10 @@ const Policy: React.FC = () => (
       <a href="mailto:connect@conversailabs.com" className="text-blue-600 underline">
         connect@conversailabs.com
       </a>
+      {" "}or WhatsApp us at:{" "}
+      <a href="https://wa.me/918076018082" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">
+        +91 8076 018 082
+      </a>
     </p>
 
     <p className="mt-6 italic text-sm text-gray-600">Last updated: June 18, 2025</p>

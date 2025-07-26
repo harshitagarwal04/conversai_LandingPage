@@ -3,13 +3,12 @@
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import SimpleContactForm from '@/components/SimpleContactForm';
 import { Mail, Phone, MapPin, Clock, MessageSquare } from 'lucide-react';
 
 const ContactPage: React.FC = () => {
 
   const handleWhatsApp = () => {
-    window.open('https://wa.me/919953053281', '_blank');
+    window.open('https://wa.me/918076018082', '_blank');
   };
 
   return (
@@ -29,12 +28,48 @@ const ContactPage: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Contact Form */}
+            {/* Contact Options */}
             <div className="order-2 lg:order-1">
-              <SimpleContactForm 
-                title="Contact Us"
-                description="Get in touch with our team and we'll respond within 24 hours"
-              />
+              <div className="bg-white rounded-2xl shadow-xl p-8">
+                <h2 className="text-2xl font-bold mb-4">Get in Touch</h2>
+                <p className="text-gray-600 mb-8">Choose your preferred way to contact our team. We&apos;ll respond within 24 hours.</p>
+                
+                <div className="space-y-4">
+                  <button
+                    onClick={handleWhatsApp}
+                    className="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-semibold py-4 px-6 rounded-lg flex items-center justify-center gap-3 transition-all duration-200 shadow-lg hover:shadow-xl"
+                  >
+                    <MessageSquare className="w-6 h-6" />
+                    Chat with us on WhatsApp
+                  </button>
+                  
+                  <a
+                    href="mailto:connect@conversailabs.com"
+                    className="w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-semibold py-4 px-6 rounded-lg flex items-center justify-center gap-3 transition-all duration-200 shadow-lg hover:shadow-xl block"
+                  >
+                    <Mail className="w-6 h-6" />
+                    Send us an Email
+                  </a>
+                </div>
+                
+                <div className="mt-8 pt-8 border-t border-gray-200">
+                  <h3 className="font-semibold mb-4">Direct Contact:</h3>
+                  <div className="space-y-3">
+                    <p className="flex items-center gap-2 text-gray-600">
+                      <Phone className="w-4 h-4" />
+                      <span>+91 8076 018 082</span>
+                    </p>
+                    <p className="flex items-center gap-2 text-gray-600">
+                      <Mail className="w-4 h-4" />
+                      <span>connect@conversailabs.com</span>
+                    </p>
+                  </div>
+                </div>
+                
+                <p className="text-sm text-gray-500 mt-6 text-center">
+                  Available Monday - Friday: 10:00 AM - 6:00 PM IST
+                </p>
+              </div>
             </div>
 
             {/* Contact Information */}
