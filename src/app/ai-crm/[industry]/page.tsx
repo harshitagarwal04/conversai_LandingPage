@@ -73,10 +73,11 @@ export default function IndustryPage() {
             <div className="flex justify-center">
               <Button 
                 size="lg" 
-                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 text-lg font-semibold"
+                className="bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white px-8 py-4 text-lg font-semibold flex items-center gap-2"
                 onClick={() => setIsContactModalOpen(true)}
               >
-                Contact Us
+                <MessageSquare className="w-5 h-5" />
+                Chat on WhatsApp
               </Button>
             </div>
           </div>
@@ -330,7 +331,8 @@ export default function IndustryPage() {
                     variant="outline"
                     onClick={() => setIsContactModalOpen(true)}
                   >
-                    Contact Us
+                    <MessageSquare className="w-4 h-4 inline mr-2" />
+                    Chat on WhatsApp
                   </Button>
                 </CardContent>
               </Card>
@@ -376,7 +378,8 @@ export default function IndustryPage() {
                     className="w-full mt-8 py-3 text-lg font-semibold bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white"
                     onClick={() => setIsContactModalOpen(true)}
                   >
-                    Contact Us
+                    <MessageSquare className="w-4 h-4 inline mr-2" />
+                    Chat on WhatsApp
                   </Button>
                 </CardContent>
               </Card>

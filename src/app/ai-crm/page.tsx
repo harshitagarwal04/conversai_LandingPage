@@ -56,7 +56,8 @@ export default function AICRMPage() {
                   className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 text-lg font-semibold"
                   onClick={() => setIsContactModalOpen(true)}
                 >
-                  Contact Us
+                  <MessageSquare className="w-4 h-4 inline mr-2" />
+                  Chat on WhatsApp
                 </Button>
               </div>
               
@@ -236,7 +237,8 @@ export default function AICRMPage() {
           <div className="text-center mt-12">
             <p className="text-gray-600 mb-6">Need a custom solution for your industry?</p>
             <Button variant="outline" className="border-2 border-gray-300 hover:border-blue-500 px-8 py-3 text-lg font-semibold">
-              Contact Us for Custom Industry Setup
+              <MessageSquare className="w-4 h-4 inline mr-2" />
+              Chat for Custom Industry Setup
             </Button>
           </div>
         </div>
@@ -334,7 +336,8 @@ export default function AICRMPage() {
                     variant={plan.highlighted ? 'default' : 'outline'}
                     onClick={() => setIsContactModalOpen(true)}
                   >
-                    Contact Us
+                    <MessageSquare className="w-4 h-4 inline mr-2" />
+                  Chat on WhatsApp
                   </Button>
                 </CardContent>
               </Card>
@@ -402,7 +405,8 @@ export default function AICRMPage() {
                   className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 text-lg font-semibold"
                   onClick={() => setIsContactModalOpen(true)}
                 >
-                  Contact Us
+                  <MessageSquare className="w-4 h-4 inline mr-2" />
+                  Chat on WhatsApp
                 </Button>
               </div>
               
