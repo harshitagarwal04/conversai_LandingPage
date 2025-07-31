@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { ArrowDown, Phone, MessageSquare, Users } from 'lucide-react';
+import { ArrowDown, Phone } from 'lucide-react';
 import ContactModal from './ContactModal';
 
 const Hero = () => {
@@ -24,14 +24,14 @@ const Hero = () => {
           {/* Left: Text */}
           <div className="text-center lg:text-left">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
-              Build Custom AI Agents
+              Build AI Voice Agents
               <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> 
-                That Actually Convert Leads
+                That Sound Human & Convert
               </span>
             </h1>
             
             <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-6 sm:mb-8 leading-relaxed">
-              Create intelligent voice bots in minutes. Upload your script, pick a voice, and let AI qualify leads 24/7 across voice, WhatsApp, and email.
+              Create intelligent voice agents that handle phone calls like real humans. Upload your script, pick a professional voice, and let AI qualify leads 24/7 with natural conversations.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-6 sm:mb-8">
@@ -77,26 +77,26 @@ const Hero = () => {
                   <div className="flex items-center space-x-2 sm:space-x-3 p-2 sm:p-3 bg-blue-50 rounded-lg border border-blue-200 animate-fade-in">
                     <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600" />
                     <div className="flex-1">
-                      <p className="text-xs sm:text-sm font-medium text-gray-900">Lead Qualifier Bot</p>
-                      <p className="text-[10px] sm:text-xs text-gray-600">Professional voice • 47 calls today</p>
+                      <p className="text-xs sm:text-sm font-medium text-gray-900">Voice Lead Qualifier</p>
+                      <p className="text-[10px] sm:text-xs text-gray-600">Professional voice • 47 phone calls today</p>
                     </div>
                     <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
                   </div>
                   
                   <div className="flex items-center space-x-2 sm:space-x-3 p-2 sm:p-3 bg-green-50 rounded-lg border border-green-200 animate-fade-in delay-300">
-                    <MessageSquare className="w-4 h-4 sm:w-5 sm:h-5 text-green-600" />
+                    <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-green-600" />
                     <div className="flex-1">
-                      <p className="text-xs sm:text-sm font-medium text-gray-900">Support Assistant</p>
-                      <p className="text-[10px] sm:text-xs text-gray-600">WhatsApp • Hinglish • 23 resolved</p>
+                      <p className="text-xs sm:text-sm font-medium text-gray-900">Voice Support Agent</p>
+                      <p className="text-[10px] sm:text-xs text-gray-600">Phone • Multi-accent • 23 calls resolved</p>
                     </div>
                     <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
                   </div>
                   
                   <div className="flex items-center space-x-2 sm:space-x-3 p-2 sm:p-3 bg-purple-50 rounded-lg border border-purple-200 animate-fade-in delay-500">
-                    <Users className="w-4 h-4 sm:w-5 sm:h-5 text-purple-600" />
+                    <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-purple-600" />
                     <div className="flex-1">
-                      <p className="text-xs sm:text-sm font-medium text-gray-900">Appointment Scheduler</p>
-                      <p className="text-[10px] sm:text-xs text-gray-600">Email • 12 bookings today</p>
+                      <p className="text-xs sm:text-sm font-medium text-gray-900">Voice Appointment Setter</p>
+                      <p className="text-[10px] sm:text-xs text-gray-600">Phone bookings • 12 appointments set</p>
                     </div>
                     <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
                   </div>
@@ -108,15 +108,15 @@ const Hero = () => {
             {/* Floating Stats - hide on xs, show on sm+ */}
             <div className="hidden sm:block absolute -top-4 -right-4 bg-white rounded-lg shadow-lg p-4 border border-gray-200 animate-scale-in">
               <div className="text-center">
-                <div className="text-2xl font-bold text-blue-600">3.2x</div>
-                <div className="text-xs text-gray-600">Faster Response</div>
+                <div className="text-2xl font-bold text-blue-600">10x</div>
+                <div className="text-xs text-gray-600">Better Than Text</div>
               </div>
             </div>
             
             <div className="hidden sm:block absolute -bottom-4 -left-4 bg-white rounded-lg shadow-lg p-4 border border-gray-200 animate-scale-in delay-700">
               <div className="text-center">
                 <div className="text-2xl font-bold text-purple-600">85%</div>
-                <div className="text-xs text-gray-600">Lead Qualification</div>
+                <div className="text-xs text-gray-600">Voice Conversion Rate</div>
               </div>
             </div>
           </div>

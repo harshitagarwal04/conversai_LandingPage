@@ -19,54 +19,54 @@ const AgentTemplates = () => {
   const templates = [
     {
       icon: <Home className="w-8 h-8" />,
-      name: "Real Estate Lead Qualifier",
-      description: "Qualifies property inquiries, collects budget, location preferences, and timeline",
-      features: ["Budget qualification", "Location targeting", "Timeline assessment", "Lead scoring"],
+      name: "Real Estate Voice Qualifier",
+      description: "Handles property inquiry calls, qualifies budget over the phone, and schedules viewings",
+      features: ["Phone-based budget qualification", "Voice-driven property matching", "Viewing appointment calls", "Lead scoring from voice tone"],
       metrics: { qualified: "78%", avgTime: "2.3m", conversions: "34%" },
       industry: "Real Estate",
       color: "from-green-500 to-emerald-600"
     },
     {
       icon: <Stethoscope className="w-8 h-8" />,
-      name: "Healthcare Appointment Scheduler",
-      description: "Books appointments, handles insurance verification, and manages rescheduling",
-      features: ["Insurance check", "Appointment booking", "Reminder calls", "Cancellation handling"],
+      name: "Healthcare Voice Assistant",
+      description: "Handles patient phone calls for appointments, insurance verification, and medical inquiries",
+      features: ["Voice-based appointment booking", "Phone insurance verification", "Medical reminder calls", "Emergency call routing"],
       metrics: { qualified: "92%", avgTime: "1.8m", conversions: "67%" },
       industry: "Healthcare",
       color: "from-blue-500 to-cyan-600"
     },
     {
       icon: <ShoppingCart className="w-8 h-8" />,
-      name: "E-commerce Order Support",
-      description: "Handles order status, returns, product questions, and upselling opportunities",
-      features: ["Order tracking", "Return processing", "Product recommendations", "Issue resolution"],
+      name: "E-commerce Voice Support",
+      description: "Handles customer support calls for orders, returns, and product inquiries",
+      features: ["Phone order tracking", "Voice-based return processing", "Upselling during calls", "Call-based issue resolution"],
       metrics: { qualified: "85%", avgTime: "3.1m", conversions: "42%" },
       industry: "E-commerce",
       color: "from-purple-500 to-pink-600"
     },
     {
       icon: <Car className="w-8 h-8" />,
-      name: "Auto Dealership Assistant",
-      description: "Qualifies car buyers, schedules test drives, and handles financing inquiries",
-      features: ["Budget assessment", "Vehicle matching", "Test drive booking", "Financing pre-qual"],
+      name: "Auto Dealership Voice Agent",
+      description: "Handles incoming sales calls, qualifies buyers over the phone, and books test drives",
+      features: ["Phone budget assessment", "Voice-based vehicle matching", "Test drive phone booking", "Financing calls"],
       metrics: { qualified: "71%", avgTime: "4.2m", conversions: "28%" },
       industry: "Automotive",
       color: "from-red-500 to-orange-600"
     },
     {
       icon: <GraduationCap className="w-8 h-8" />,
-      name: "Education Enrollment Bot",
-      description: "Handles course inquiries, admission requirements, and enrollment assistance",
-      features: ["Course info", "Admission guidance", "Scholarship details", "Enrollment support"],
+      name: "Education Voice Counselor",
+      description: "Handles admission inquiry calls, guides through enrollment over the phone",
+      features: ["Phone course counseling", "Voice admission guidance", "Scholarship inquiry calls", "Enrollment phone support"],
       metrics: { qualified: "89%", avgTime: "2.7m", conversions: "56%" },
       industry: "Education",
       color: "from-indigo-500 to-purple-600"
     },
     {
       icon: <Briefcase className="w-8 h-8" />,
-      name: "B2B Lead Qualifier",
-      description: "Qualifies business prospects, identifies decision makers, and schedules demos",
-      features: ["Company sizing", "Decision maker ID", "Pain point discovery", "Demo scheduling"],
+      name: "B2B Voice Sales Agent",
+      description: "Qualifies enterprise leads through phone conversations and schedules demos",
+      features: ["Phone-based company qualification", "Voice decision maker discovery", "Pain point calls", "Demo booking calls"],
       metrics: { qualified: "82%", avgTime: "3.8m", conversions: "45%" },
       industry: "B2B SaaS",
       color: "from-teal-500 to-green-600"
@@ -85,10 +85,10 @@ const AgentTemplates = () => {
           {/* Header */}
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-6 text-gray-900">
-              Pre-Built Agent Templates
+              Voice-First Agent Templates
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Start with proven templates designed for your industry. Each template is optimized for maximum conversion based on thousands of real conversations.
+              Start with proven voice agent templates designed for phone conversations in your industry. Each template is optimized for natural dialogue and maximum phone conversion.
             </p>
           </div>
 
@@ -173,7 +173,7 @@ const AgentTemplates = () => {
                   <CheckCircle className="w-6 h-6 mr-2" />
                   <span className="text-3xl font-bold">85%</span>
                 </div>
-                <p className="text-blue-100">Avg Qualification Rate</p>
+                <p className="text-blue-100">Phone Qualification Rate</p>
               </div>
               <div>
                 <div className="flex items-center justify-center mb-2">
@@ -197,7 +197,7 @@ const AgentTemplates = () => {
             <div className="bg-gray-50 rounded-2xl p-8 max-w-2xl mx-auto">
               <h3 className="text-2xl font-bold mb-4 text-gray-900">Don&apos;t See Your Industry?</h3>
               <p className="text-gray-600 mb-6">
-                Our AI can create custom agents for any business. Upload your script or describe your process, and we&apos;ll build a template that fits your exact needs.
+                Our voice AI can create custom phone agents for any business. Upload your call script or describe your phone process, and we&apos;ll build a voice template that fits your exact needs.
               </p>
               <Button
                 size="lg"

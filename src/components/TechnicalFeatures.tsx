@@ -6,16 +6,16 @@ import { Brain, Database, Repeat, BarChart3, Upload, Mic, Settings, Target } fro
 const TechnicalFeatures = () => {
   const features = [
     {
-      icon: <Upload className="w-8 h-8" />,
-      title: "Multi-Source Agent Creation",
-      description: "Upload scripts, paste website content, or use call recordings to generate AI agents automatically with our YAML builder.",
-      highlight: "3 ways to build"
-    },
-    {
       icon: <Mic className="w-8 h-8" />,
       title: "Professional Voice Selection",
       description: "Choose from multiple languages and accents. US English, UK English, and Hinglish voices with male/female options.",
       highlight: "6+ voice options"
+    },
+    {
+      icon: <Upload className="w-8 h-8" />,
+      title: "Multi-Source Agent Creation",
+      description: "Upload scripts, paste website content, or use call recordings to generate AI agents automatically with our YAML builder.",
+      highlight: "3 ways to build"
     },
     {
       icon: <Database className="w-8 h-8" />,
@@ -63,7 +63,7 @@ const TechnicalFeatures = () => {
             Why ConversAI Labs is Different
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Unlike generic chatbots, we&apos;re built specifically for businesses that need real AI agents that convert leads and handle complex conversations.
+            Unlike generic chatbots, we&apos;re built specifically for voice-first AI agents that handle phone conversations and convert leads through natural dialogue.
           </p>
         </div>
 
@@ -105,7 +105,7 @@ const TechnicalFeatures = () => {
               <div className="w-8 h-8 bg-purple-500 rounded-full border-2 border-white"></div>
             </div>
             <span className="text-gray-700 font-medium">
-              Join 50+ businesses already using ConversAI Labs to automate their conversations
+              Join 50+ businesses already using ConversAI Labs to automate their phone calls
             </span>
           </div>
         </div>

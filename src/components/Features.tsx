@@ -13,13 +13,13 @@ const Features = () => {
   const features = [
     {
       icon: Phone,
-      title: "Conversational Voice AI",
+      title: "Human-Like Voice Conversations",
       items: [
-        "Outbound/inbound calling, fully automated by AI agent",
-        "Understands spoken answers, adapts in real time",
-        "Multilingual, accent-agnostic, sentiment detection",
-        "Logs calls, transcribes & summarizes key points",
-        "Auto-escalation for high-intent leads"
+        "Handles outbound/inbound phone calls with natural speech",
+        "Understands interruptions and context, responds like a human",
+        "Professional voices in 6+ languages with perfect accent matching",
+        "Real-time call transcription with sentiment analysis",
+        "Instantly transfers high-intent leads to your sales team"
       ]
     },
     {
@@ -34,21 +34,21 @@ const Features = () => {
     },
     {
       icon: Users,
-      title: "LLM-Powered Lead Scoring & Data Enrichment",
+      title: "Voice-Powered Lead Intelligence",
       items: [
-        "Analyzes all calls, chats, and emails to extract signals",
-        "Automatically segments leads: hot, warm, cold",
-        "Parses unstructured conversation to structured CRM fields",
+        "Analyzes voice tone and speech patterns for buying intent",
+        "Automatically scores leads based on call engagement quality",
+        "Extracts key data points from natural phone conversations",
       ]
     },
     {
       icon: FileText,
-      title: "CRM Sync, Smart Summarization & Analytics",
+      title: "Call Analytics & CRM Integration",
       items: [
-        "Summarizes every call, chat, and email automatically",
-        "Pushes all data, notes, and next steps to your CRM",
-        "Detects & flags incomplete data, nudges your team for gaps",
-        "Stores, indexes, and makes all transcripts searchable"
+        "AI-generated call summaries with key action items",
+        "Automatic CRM updates after every phone conversation",
+        "Voice analytics dashboard showing conversion metrics",
+        "Searchable call recordings with instant playback"
       ]
     }
   ];
@@ -61,7 +61,7 @@ const Features = () => {
             Deep Dive: Features
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Comprehensive AI-powered tools that transform how you manage leads
+            Voice-first AI technology that transforms phone conversations into qualified leads
           </p>
         </div>
         

@@ -38,30 +38,30 @@ const ProblemSolution = () => {
   const solutions = [
     {
       icon: <Zap className="w-8 h-8" />,
-      title: "Instant Response, Every Time",
-      description: "AI agents answer calls and messages within seconds, 24/7/365",
-      benefit: "Never miss another lead",
+      title: "Instant Voice Response",
+      description: "AI voice agents answer phone calls within seconds, 24/7/365",
+      benefit: "Never miss another call",
       color: "from-green-500 to-green-600"
     },
     {
       icon: <Target className="w-8 h-8" />,
-      title: "Perfect Qualification, Every Call",
-      description: "Consistent questioning and data collection across all interactions",
-      benefit: "Higher quality leads",
+      title: "Perfect Phone Qualification",
+      description: "Consistent voice conversations and data extraction from every phone call",
+      benefit: "Voice-qualified leads",
       color: "from-blue-500 to-blue-600"
     },
     {
       icon: <Users className="w-8 h-8" />,
-      title: "Scales with Your Business",
-      description: "Handle thousands of conversations simultaneously without hiring",
-      benefit: "Unlimited capacity",
+      title: "Voice Scales Infinitely",
+      description: "Handle thousands of phone calls simultaneously without hiring",
+      benefit: "Unlimited voice capacity",
       color: "from-purple-500 to-purple-600"
     },
     {
       icon: <Shield className="w-8 h-8" />,
-      title: "Cost-Effective Growth",
-      description: "One AI agent costs less than one part-time employee",
-      benefit: "90% cost reduction",
+      title: "Voice Agent ROI",
+      description: "One AI voice agent costs less than one part-time caller",
+      benefit: "90% phone cost reduction",
       color: "from-teal-500 to-teal-600"
     }
   ];
@@ -76,7 +76,7 @@ const ProblemSolution = () => {
               Stop Losing Leads to Slow Response Times
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              While you&apos;re sleeping, your competitors are capturing the leads you&apos;re missing. Here&apos;s how ConversAI Labs solves the biggest challenges in lead management.
+              While you&apos;re sleeping, your competitors are answering phone calls and capturing leads. Here&apos;s how ConversAI Labs voice agents solve the biggest challenges in phone-based lead management.
             </p>
           </div>
 
@@ -196,15 +196,15 @@ const ProblemSolution = () => {
                 <h4 className="text-xl font-bold text-green-800 mb-4">With ConversAI Labs</h4>
                 <div className="space-y-3">
                   <div className="flex justify-between">
-                    <span className="text-gray-700">ConversAI Labs Professional Plan</span>
+                    <span className="text-gray-700">ConversAI Voice Professional Plan</span>
                     <span className="font-semibold text-green-700">₹10,00,000/year</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-gray-700">24/7 availability</span>
+                    <span className="text-gray-700">24/7 phone availability</span>
                     <span className="font-semibold text-green-700">+₹1,68,00,000 captured revenue</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-gray-700">Perfect qualification</span>
+                    <span className="text-gray-700">Perfect voice qualification</span>
                     <span className="font-semibold text-green-700">+85% lead quality</span>
                   </div>
                   <div className="border-t pt-3 flex justify-between">

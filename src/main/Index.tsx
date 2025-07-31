@@ -2,7 +2,6 @@
 import React, { useEffect } from 'react';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
-import SmartDeskHero from '@/components/SmartDeskHero';
 import ProblemSolution from '@/components/ProblemSolution';
 import TechnicalFeatures from '@/components/TechnicalFeatures';
 import AgentTemplates from '@/components/AgentTemplates';
@@ -16,9 +15,9 @@ const Index = () => {
   useEffect(() => {
     // Update SEO metadata when component mounts
     updateSEO({
-      title: 'Build Custom AI Agents That Actually Convert Leads | ConversAI',
-      description: 'Create intelligent voice bots in minutes. Upload your script, pick a voice, and let AI qualify leads 24/7 across voice, WhatsApp, and email. No-code agent builder with proven templates.',
-      keywords: 'ai agent builder, conversational ai, voice bot, lead qualification, ai automation, no-code ai, voice ai, whatsapp ai, customer support automation',
+      title: 'Build AI Voice Agents That Sound Human & Convert | ConversAI',
+      description: 'Create intelligent voice agents that handle phone calls like real humans. Upload your script, pick a professional voice, and let AI qualify leads 24/7 with natural conversations. Voice-first AI agent builder.',
+      keywords: 'ai voice agent, voice bot, phone automation, voice ai, lead qualification calls, automated phone calls, conversational voice ai, voice agent builder, ai phone system',
       url: window.location.href,
     });
     
@@ -30,7 +29,6 @@ const Index = () => {
     <div className="w-full overflow-x-hidden">
       <Header />
       <Hero />
-      <SmartDeskHero />
       <ProblemSolution />
       <TechnicalFeatures />
       <AgentTemplates />

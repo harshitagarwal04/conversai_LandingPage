@@ -27,10 +27,10 @@ const PricingPage: React.FC = () => {
       name: 'Starter',
       price: isAnnual ? '₹9,999' : '₹12,499',
       priceMonthly: isAnnual ? 9999 : 12499,
-      description: 'Perfect for small businesses getting started with AI conversations',
+      description: 'Perfect for small businesses getting started with AI voice agents',
       features: [
-        'Up to 500 conversations/month',
-        '1 AI agent (Voice, WhatsApp, or Email)',
+        'Up to 500 voice calls/month',
+        '1 AI voice agent',
         'YAML prompt builder access',
         'Basic industry templates',
         'Voice selection (6 options)',
@@ -47,8 +47,8 @@ const PricingPage: React.FC = () => {
       priceMonthly: isAnnual ? 26999 : 33999,
       description: 'Ideal for growing businesses ready to scale with multiple AI agents',
       features: [
-        'Up to 2,500 conversations/month',
-        '3 AI agents (Voice + WhatsApp + Email)',
+        'Up to 2,500 voice calls/month',
+        '3 AI voice agents with different personas',
         'Full admin panel access',
         'All industry templates',
         'Advanced voice options',
@@ -68,8 +68,8 @@ const PricingPage: React.FC = () => {
       priceMonthly: isAnnual ? 83999 : 104999,
       description: 'Complete AI agent platform for established businesses',
       features: [
-        'Up to 10,000 conversations/month',
-        'Unlimited AI agents',
+        'Up to 10,000 voice calls/month',
+        'Unlimited AI voice agents',
         'White-label admin panel',
         'Custom agent templates',
         'Voice cloning & custom voices',
@@ -86,14 +86,14 @@ const PricingPage: React.FC = () => {
 
   const addOns = [
     {
-      name: 'Extra Conversations',
-      price: '₹21/conversation',
-      description: 'Pay only for conversations beyond your plan limit'
+      name: 'Extra Voice Calls',
+      price: '₹21/call',
+      description: 'Pay only for voice calls beyond your plan limit'
     },
     {
-      name: 'Additional Agent',
+      name: 'Additional Voice Agent',
       price: '₹8,299/month',
-      description: 'Add more AI agents with unique templates and voices'
+      description: 'Add more AI voice agents with unique voices and personas'
     },
     {
       name: 'Custom Voice Training',
@@ -103,7 +103,7 @@ const PricingPage: React.FC = () => {
     {
       name: 'Advanced Analytics',
       price: '₹6,599/month',
-      description: 'Detailed conversation analysis and ROI tracking'
+      description: 'Detailed voice call analytics and ROI tracking'
     }
   ];
 
@@ -122,7 +122,7 @@ const PricingPage: React.FC = () => {
               Simple, Transparent Pricing
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-              Choose the perfect plan for your business. All plans include our core AI conversation features with 14-day free trial.
+              Choose the perfect plan for your business. All plans include our core AI voice agent features with 14-day free trial.
             </p>
             
             {/* Billing Toggle */}
@@ -267,8 +267,8 @@ const PricingPage: React.FC = () => {
               </div>
               
               <div>
-                <h3 className="font-semibold mb-2">What happens if I exceed my conversation limit?</h3>
-                <p className="text-gray-600 text-sm">We&apos;ll notify you when you&apos;re approaching your limit. You can purchase additional conversations or upgrade your plan.</p>
+                <h3 className="font-semibold mb-2">What happens if I exceed my voice call limit?</h3>
+                <p className="text-gray-600 text-sm">We&apos;ll notify you when you&apos;re approaching your limit. You can purchase additional voice calls or upgrade your plan.</p>
               </div>
               
               <div>
@@ -287,7 +287,7 @@ const PricingPage: React.FC = () => {
           <div className="text-center bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-2xl p-12">
             <h2 className="text-3xl font-bold mb-4">Ready to get started?</h2>
             <p className="text-xl mb-8 opacity-90">
-              Join 50+ businesses already using ConversAI Labs to transform their customer interactions.
+              Join 50+ businesses already using ConversAI Labs to transform their phone conversations.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
