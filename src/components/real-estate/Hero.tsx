@@ -10,16 +10,6 @@ export default function RealEstateHero() {
     <section className="relative min-h-screen flex items-center justify-center bg-black">
       <div className="container relative z-10 mx-auto px-6">
         <div className="max-w-6xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="mb-8"
-          >
-            <span className="inline-flex items-center px-6 py-3 rounded-full border border-white/20 text-white font-medium">
-              For UK Property Companies
-            </span>
-          </motion.div>
 
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
