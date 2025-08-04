@@ -1,5 +1,5 @@
 import { Metadata } from 'next'
-import Header from '@/components/Header'
+import IndustryHeader from '@/components/IndustryHeader'
 import Footer from '@/components/Footer'
 import RealEstateHero from '@/components/real-estate/Hero'
 import CoreFeatures from '@/components/real-estate/CoreFeatures'
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 export default function RealEstatePage() {
   return (
     <>
-      <Header />
+      <IndustryHeader />
       <main className="bg-black">
         <RealEstateHero />
         <CoreFeatures />

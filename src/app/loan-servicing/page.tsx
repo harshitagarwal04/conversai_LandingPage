@@ -1,5 +1,5 @@
 import { Metadata } from 'next'
-import Header from '@/components/Header'
+import IndustryHeader from '@/components/IndustryHeader'
 import Footer from '@/components/Footer'
 import LoanServicingHero from '@/components/loan-servicing/Hero'
 import CoreFeatures from '@/components/loan-servicing/CoreFeatures'
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 export default function LoanServicingPage() {
   return (
     <>
-      <Header />
+      <IndustryHeader />
       <main className="bg-black">
         <LoanServicingHero />
         <CoreFeatures />
