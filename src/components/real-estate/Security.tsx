@@ -5,24 +5,24 @@ import { Shield, Lock, Eye, FileCheck, Server, Users } from 'lucide-react'
 
 const certifications = [
   {
-    title: 'RBI Compliant',
-    description: 'Adheres to RBI guidelines and Fair Practices Code',
-    icon: '🏛️'
+    title: 'GDPR Compliant',
+    description: 'Full compliance with UK data protection regulations',
+    icon: '🔒'
   },
   {
     title: 'ISO 27001',
     description: 'Information security management certification',
-    icon: '🔒'
+    icon: '✅'
   },
   {
     title: 'SOC 2 Type II',
     description: 'Audited security, availability, and confidentiality',
-    icon: '✅'
+    icon: '🛡️'
   },
   {
-    title: 'Data Residency',
-    description: 'All data stored within India as per regulations',
-    icon: '🇮🇳'
+    title: 'UK Data Residency',
+    description: 'All data stored within UK borders as required',
+    icon: '🇬🇧'
   }
 ]
 
@@ -30,12 +30,12 @@ const securityFeatures = [
   {
     icon: Shield,
     title: 'End-to-End Encryption',
-    description: 'All customer conversations and data encrypted in transit and at rest using AES-256'
+    description: 'All tenant conversations and data encrypted in transit and at rest using AES-256'
   },
   {
     icon: Lock,
     title: 'Zero Data Retention',
-    description: 'Customer PII is never stored permanently, only processed for active sessions'
+    description: 'Personal tenant data is never stored permanently, only processed for active sessions'
   },
   {
     icon: Eye,
@@ -44,18 +44,18 @@ const securityFeatures = [
   },
   {
     icon: FileCheck,
-    title: 'Compliance Checks',
-    description: 'Built-in validation for Fair Practices Code and debt collection regulations'
+    title: 'GDPR Compliance Checks',
+    description: 'Built-in validation for UK data protection and tenant privacy regulations'
   },
   {
     icon: Server,
-    title: 'Secure Infrastructure',
-    description: 'Hosted on RBI-approved cloud infrastructure with 99.9% uptime SLA'
+    title: 'Secure UK Infrastructure',
+    description: 'Hosted on UK-based cloud infrastructure with 99.9% uptime SLA'
   },
   {
     icon: Users,
     title: 'Role-based Access',
-    description: 'Granular permissions and multi-factor authentication for all admin users'
+    description: 'Granular permissions and multi-factor authentication for all property managers'
   }
 ]
 
@@ -72,11 +72,11 @@ export default function Security() {
             className="text-center mb-20"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: '#ffffff' }}>
-              Bank-Grade Security & Compliance
+              Enterprise Security & UK Compliance
             </h2>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-              Your customers&apos; data and privacy are protected with enterprise-level security measures 
-              and full regulatory compliance designed for the Indian financial sector.
+              Your tenants&apos; data and privacy are protected with enterprise-level security measures 
+              and full GDPR compliance designed for the UK property market.
             </p>
           </motion.div>
 

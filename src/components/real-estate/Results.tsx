@@ -6,59 +6,59 @@ import { TrendingUp, Clock, Users, Phone, CheckCircle } from 'lucide-react'
 const metrics = [
   {
     icon: TrendingUp,
-    value: '15-25%',
-    label: 'Average Collection Rate Improvement',
-    description: 'Increase in successful recoveries within 60 days'
+    value: '20-30%',
+    label: 'Increase in Occupancy Rates',
+    description: 'Faster lead qualification and viewing scheduling'
   },
   {
     icon: Clock,
-    value: '30-40%',
-    label: 'Reduction in Resolution Time',
-    description: 'Faster payment processing and customer queries'
+    value: '40-50%',
+    label: 'Reduction in Response Time',
+    description: 'Instant responses to tenant queries and maintenance requests'
   },
   {
     icon: Users,
-    value: '25-35%',
+    value: '35-45%',
     label: 'Lower Operational Costs',
-    description: 'Reduced dependency on large call center teams'
+    description: 'Reduced dependency on large customer service teams'
   },
   {
     icon: Phone,
     value: '24/7',
     label: 'Continuous Operations',
-    description: 'Round-the-clock customer engagement'
+    description: 'Round-the-clock tenant support and lead qualification'
   }
 ]
 
 const results = [
   {
-    category: 'Mid-size NBFC',
-    portfolio: '₹500 Cr Portfolio',
+    category: 'Student Accommodation Provider',
+    portfolio: '2,500 Beds Across London',
     improvements: [
-      'Collection rate improved from 65% to 75%',
-      'Monthly operational costs reduced by ₹5 Lakhs',
-      'Customer satisfaction scores up 20%',
-      '72-hour deployment timeline'
+      'Occupancy rate improved from 85% to 96%',
+      'Monthly operational costs reduced by £15,000',
+      'Tenant satisfaction scores up 25%',
+      '48-hour AI deployment timeline'
     ]
   },
   {
-    category: 'Regional Bank',
-    portfolio: '₹2000 Cr Portfolio',
+    category: 'Build-to-Rent Developer',
+    portfolio: '5,000 Units Nationwide',
     improvements: [
-      'NPA reduction of 12% in first quarter',
-      'Processing time for extensions cut by 50%',
-      'Compliance violations reduced by 90%',
-      'Multi-language support increased reach by 25%'
+      'Lead conversion rate increased by 35%',
+      'Viewing requests processed 80% faster',
+      'Maintenance requests handled in minutes',
+      'Multi-language support for international tenants'
     ]
   },
   {
-    category: 'Digital Lender',
-    portfolio: '₹150 Cr Portfolio',
+    category: 'Property Management Company',
+    portfolio: '1,200 Rental Properties',
     improvements: [
-      'Early intervention prevented ₹8 Cr in defaults',
-      'Customer retention improved by 30%',
-      'Real-time payment tracking reduced disputes',
-      'Seamless API integration with existing systems'
+      'Tenant retention improved by 30%',
+      'Rent collection efficiency up 20%',
+      'Emergency maintenance response automated',
+      'GDPR compliance maintained across all interactions'
     ]
   }
 ]
@@ -76,11 +76,11 @@ export default function Results() {
             className="text-center mb-20"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: '#ffffff' }}>
-              Proven Results Across Financial Institutions
+              Proven Results Across UK Property Companies
             </h2>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-              See how NBFCs, banks, and digital lenders are transforming their collection operations 
-              with AI-powered automation.
+              See how student accommodation providers, build-to-rent developers, and property managers 
+              are transforming their operations with AI-powered automation.
             </p>
           </motion.div>
 
@@ -153,7 +153,7 @@ export default function Results() {
             className="text-center mt-16"
           >
             <p className="text-gray-400 text-lg">
-              Results based on implementations across 15+ financial institutions in India
+              Results based on implementations across 25+ UK property companies
             </p>
           </motion.div>
         </div>
