@@ -46,7 +46,7 @@ export default function ValuePropositions() {
             transition={{ delay: 0.1 }}
             className="text-xl text-gray-600"
           >
-            Join India's leading financial institutions in revolutionizing loan servicing with AI
+            Join India&apos;s leading financial institutions in revolutionizing loan servicing with AI
           </motion.p>
         </div>
         

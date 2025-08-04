@@ -1,7 +1,6 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import Image from 'next/image'
 
 const testimonials = [
   {
@@ -58,7 +57,7 @@ export default function SocialProof() {
             viewport={{ once: true }}
             className="text-4xl font-bold mb-4"
           >
-            Trusted by India's Leading Financial Institutions
+            Trusted by India&apos;s Leading Financial Institutions
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -86,7 +85,7 @@ export default function SocialProof() {
                   <span className="text-sm font-semibold text-gray-600">{testimonial.company}</span>
                 </div>
               </div>
-              <p className="text-gray-700 mb-4 italic">"{testimonial.quote}"</p>
+              <p className="text-gray-700 mb-4 italic">&ldquo;{testimonial.quote}&rdquo;</p>
               <div className="border-t pt-4">
                 <p className="font-semibold">{testimonial.author}</p>
                 <p className="text-sm text-gray-600">{testimonial.role}</p>

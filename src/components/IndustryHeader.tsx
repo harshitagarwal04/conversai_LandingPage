@@ -21,15 +21,15 @@ export default function IndustryHeader() {
 
           {/* Navigation */}
           <nav className="hidden md:flex items-center gap-8">
-            <Link href="/features" className="text-gray-300 hover:text-white transition-colors">
+            <a href="#features" className="text-gray-300 hover:text-white transition-colors">
               Features
-            </Link>
-            <Link href="/about" className="text-gray-300 hover:text-white transition-colors">
-              About
-            </Link>
-            <Link href="/contact" className="text-gray-300 hover:text-white transition-colors">
-              Contact
-            </Link>
+            </a>
+            <a href="#results" className="text-gray-300 hover:text-white transition-colors">
+              Results
+            </a>
+            <a href="#faq" className="text-gray-300 hover:text-white transition-colors">
+              FAQ
+            </a>
           </nav>
 
           {/* CTA Button */}

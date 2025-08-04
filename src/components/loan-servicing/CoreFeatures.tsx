@@ -44,7 +44,7 @@ const channels = [
 
 export default function CoreFeatures() {
   return (
-    <section className="py-32 bg-black">
+    <section id="features" className="py-32 bg-black">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto mb-32">
           <motion.h2
