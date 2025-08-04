@@ -44,8 +44,8 @@ const Policy: React.FC = () => (
     <h2 className="text-xl font-semibold mt-6 mb-2">6. Contact Us</h2>
     <p className="mb-4">
       For any questions or concerns about this Privacy Policy or our data handling practices, please contact us at:{" "}
-      <a href="mailto:connect@conversailabs.com" className="text-blue-600 underline">
-        connect@conversailabs.com
+      <a href="mailto:contact@conversailabs.com" className="text-blue-600 underline">
+        contact@conversailabs.com
       </a>
       {" "}or WhatsApp us at:{" "}
       <a href="https://wa.me/918076018082" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">
