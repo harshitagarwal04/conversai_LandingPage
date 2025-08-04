@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from "react";
 import { MessageSquare } from "lucide-react";
 import Link from "next/link";
@@ -50,7 +52,7 @@ const Footer = () => {
               No-code AI agent builder. Create intelligent voice bots that qualify leads 24/7 across voice, WhatsApp, and email.
             </p>
             <p className="text-gray-400 mb-6 text-sm">
-              Email: connect@conversailabs.com
+              Email: contact@conversailabs.com
             </p>
             <div className="flex space-x-4 mb-6">
               <div className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 cursor-pointer transition-colors">

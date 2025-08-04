@@ -2,104 +2,118 @@
 
 import { motion } from 'framer-motion'
 import { 
-  FileText, 
-  Shield, 
-  Zap, 
-  Globe, 
-  BarChart3, 
-  Users,
-  CreditCard,
-  Bell,
-  CheckCircle2
+  Phone,
+  MessageSquare,
+  Mail,
+  Globe,
+  TrendingUp,
+  Clock,
+  Shield,
+  Users
 } from 'lucide-react'
 
-const features = [
+const problems = [
   {
-    icon: FileText,
-    title: 'Intelligent Document Processing',
-    description: 'Automated extraction and verification of loan documents with 99% accuracy using advanced OCR and AI.',
-    capabilities: ['Aadhaar e-KYC', 'PAN verification', 'Bank statement analysis', 'Income document processing']
+    icon: TrendingUp,
+    problem: 'Low Collection Rates',
+    solution: 'AI agents make personalized collection calls in native languages, improving recovery rates by 40%'
+  },
+  {
+    icon: Clock,
+    problem: 'Manual Operations',
+    solution: '24/7 automated handling of customer queries, payment reminders, and loan inquiries'
+  },
+  {
+    icon: Users,
+    problem: 'High Operational Costs',
+    solution: 'Replace expensive call center teams with AI agents that handle thousands of calls simultaneously'
   },
   {
     icon: Shield,
-    title: 'Risk Assessment & Scoring',
-    description: 'Real-time credit scoring and risk profiling using alternative data sources and ML models.',
-    capabilities: ['Bureau integration', 'Alternative data scoring', 'Fraud detection', 'Portfolio risk monitoring']
-  },
-  {
-    icon: Zap,
-    title: 'Automated Loan Origination',
-    description: 'Streamline the entire loan application process from lead capture to disbursement.',
-    capabilities: ['Digital application forms', 'Instant eligibility check', 'Auto-approval workflows', 'E-mandate registration']
-  },
-  {
-    icon: CreditCard,
-    title: 'Smart Collections',
-    description: 'AI-powered collection strategies with multichannel communication and payment options.',
-    capabilities: ['UPI collections', 'WhatsApp reminders', 'Voice AI calls', 'Settlement predictions']
-  },
-  {
-    icon: Globe,
-    title: 'Multi-language Support',
-    description: 'Communicate with customers in their preferred language across all channels.',
-    capabilities: ['12+ Indian languages', 'Voice & text support', 'Regional dialect handling', 'Real-time translation']
-  },
-  {
-    icon: BarChart3,
-    title: 'Analytics & Reporting',
-    description: 'Comprehensive dashboards with real-time insights into portfolio performance.',
-    capabilities: ['NPA tracking', 'Collection efficiency', 'Disbursement analytics', 'Custom reports']
+    problem: 'Compliance Issues',
+    solution: 'Built-in RBI compliance ensures all interactions follow Fair Practices Code and regulations'
   }
+]
+
+const channels = [
+  { icon: Phone, name: 'Voice Calls' },
+  { icon: MessageSquare, name: 'WhatsApp' },
+  { icon: Mail, name: 'Email' },
+  { icon: Globe, name: 'Web Chat' }
 ]
 
 export default function CoreFeatures() {
   return (
-    <section className="py-16 md:py-24 bg-white">
-      <div className="container mx-auto px-4">
-        <div className="max-w-3xl mx-auto text-center mb-12 md:mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Core Features
-          </h2>
-          <p className="text-lg text-gray-600">
-            Everything you need to modernize your loan servicing operations
-          </p>
-        </div>
-        
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {features.map((feature, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="group"
-            >
-              <div className="h-full p-6 md:p-8 rounded-2xl border border-gray-200 hover:border-gray-300 transition-all duration-200 bg-white hover:shadow-lg">
-                <div className="flex items-start gap-4 mb-4">
-                  <div className="p-2 rounded-lg bg-gray-100 group-hover:bg-gray-900 transition-colors">
-                    <feature.icon className="h-6 w-6 text-gray-700 group-hover:text-white transition-colors" />
+    <section className="py-32 bg-black">
+      <div className="container mx-auto px-6">
+        <div className="max-w-6xl mx-auto mb-32">
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-4xl md:text-5xl font-bold mb-16 text-center"
+            style={{ color: '#ffffff' }}
+          >
+            How AI Agents Transform Loan Servicing
+          </motion.h2>
+          
+          <div className="grid md:grid-cols-2 gap-12">
+            {problems.map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-gray-900 rounded-3xl p-8"
+              >
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center">
+                    <item.icon className="w-6 h-6 text-black" />
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 flex-1">
-                    {feature.title}
-                  </h3>
+                  <h3 className="text-xl font-bold"
+                  style={{ color: '#ffffff' }}>{item.problem}</h3>
                 </div>
                 
-                <p className="text-gray-600 mb-4">
-                  {feature.description}
+                <p className="text-gray-300 text-lg">
+                  {item.solution}
                 </p>
-                
-                <ul className="space-y-2">
-                  {feature.capabilities.map((capability, idx) => (
-                    <li key={idx} className="flex items-start gap-2 text-sm text-gray-600">
-                      <CheckCircle2 className="h-4 w-4 text-green-600 mt-0.5 flex-shrink-0" />
-                      <span>{capability}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        <div className="max-w-4xl mx-auto">
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-4xl md:text-5xl font-bold mb-16 text-center"
+            style={{ color: '#ffffff' }}
+          >
+            One Platform, All Channels
+          </motion.h2>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {channels.map((channel, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="text-center"
+              >
+                <div className="w-20 h-20 mx-auto bg-gray-900 rounded-3xl flex items-center justify-center mb-6">
+                  <channel.icon className="w-10 h-10 text-white" />
+                </div>
+                <h3 className="text-lg font-semibold"
+                style={{ color: '#ffffff' }}>{channel.name}</h3>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
