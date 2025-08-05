@@ -2,6 +2,7 @@
 import React, { useEffect } from 'react';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
+import DemoSection from '@/components/DemoSection';
 import ProblemSolution from '@/components/ProblemSolution';
 import TechnicalFeatures from '@/components/TechnicalFeatures';
 import AgentTemplates from '@/components/AgentTemplates';
@@ -29,6 +30,7 @@ const Index = () => {
     <div className="w-full overflow-x-hidden">
       <Header />
       <Hero />
+      <DemoSection />
       <ProblemSolution />
       <TechnicalFeatures />
       <AgentTemplates />
