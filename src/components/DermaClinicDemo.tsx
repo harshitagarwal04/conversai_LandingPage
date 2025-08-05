@@ -1,8 +1,7 @@
 'use client'
 
-import { VideoPlayer } from '@/components/VideoPlayer'
 import { motion } from 'framer-motion'
-import { Heart, Calendar, Phone, Users, FileText, DollarSign, MousePointer } from 'lucide-react'
+import { Heart, FileText, DollarSign, MousePointer } from 'lucide-react'
 
 interface DermaClinicDemoProps {
   onSwitchToPromptBuilder?: () => void
@@ -94,13 +93,11 @@ export default function DermaClinicDemo({ onSwitchToPromptBuilder, onSwitchToDeb
               
               {/* Video container */}
               <div className="bg-black rounded-b-2xl overflow-hidden">
-                <VideoPlayer
-                  src="/videos/derma-clinic-demo.mp4"
-                  className="w-full"
-                  autoPlay={false}
-                  muted={false}
-                  loop={false}
-                  controls={true}
+                <iframe
+                  src="https://www.youtube.com/embed/45wr1jqiWwc?rel=0&modestbranding=1"
+                  className="w-full h-[400px] md:h-[500px]"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
                 />
               </div>
             </div>

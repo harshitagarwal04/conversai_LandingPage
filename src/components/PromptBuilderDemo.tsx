@@ -1,8 +1,7 @@
 'use client'
 
-import { VideoPlayer } from '@/components/VideoPlayer'
 import { motion } from 'framer-motion'
-import { Sparkles, MousePointer, Zap, DollarSign, Heart } from 'lucide-react'
+import { Sparkles, MousePointer, DollarSign, Heart } from 'lucide-react'
 
 interface PromptBuilderDemoProps {
   onSwitchDemo?: () => void
@@ -95,13 +94,11 @@ export default function PromptBuilderDemo({ onSwitchDemo, onSwitchToDebtCollecti
               
               {/* Video container */}
               <div className="bg-black rounded-b-2xl overflow-hidden">
-                <VideoPlayer
-                  src="/videos/prompt-builder-demo.mp4"
-                  className="w-full"
-                  autoPlay={false}
-                  muted={false}
-                  loop={false}
-                  controls={true}
+                <iframe
+                  src="https://www.youtube.com/embed/2DDSNfK0w9o?rel=0&modestbranding=1"
+                  className="w-full h-[400px] md:h-[500px]"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
                 />
               </div>
             </div>

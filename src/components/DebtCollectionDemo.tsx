@@ -1,8 +1,7 @@
 'use client'
 
-import { VideoPlayer } from '@/components/VideoPlayer'
 import { motion } from 'framer-motion'
-import { DollarSign, TrendingUp, Shield, Clock, FileText, Heart, MousePointer } from 'lucide-react'
+import { DollarSign, FileText, Heart, MousePointer } from 'lucide-react'
 
 interface DebtCollectionDemoProps {
   onSwitchDemo?: () => void
@@ -95,13 +94,11 @@ export default function DebtCollectionDemo({ onSwitchDemo, onSwitchToPromptBuild
               
               {/* Video container */}
               <div className="bg-black rounded-b-2xl overflow-hidden">
-                <VideoPlayer
-                  src="/videos/debt-recovery-demo.mp4"
-                  className="w-full"
-                  autoPlay={false}
-                  muted={false}
-                  loop={false}
-                  controls={true}
+                <iframe
+                  src="https://www.youtube.com/embed/JyC-FR46SYs?rel=0&modestbranding=1"
+                  className="w-full h-[400px] md:h-[500px]"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
                 />
               </div>
             </div>
