@@ -55,9 +55,14 @@ const Footer = () => {
               Email: contact@conversailabs.com
             </p>
             <div className="flex space-x-4 mb-6">
-              <div className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 cursor-pointer transition-colors">
+              <a 
+                href="https://www.linkedin.com/company/conversailabs/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors"
+              >
                 <span className="text-sm font-semibold">Li</span>
-              </div>
+              </a>
               <div className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 cursor-pointer transition-colors">
                 <span className="text-sm font-semibold">Tw</span>
               </div>
