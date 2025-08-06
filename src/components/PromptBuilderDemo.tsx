@@ -95,7 +95,7 @@ export default function PromptBuilderDemo({ onSwitchDemo, onSwitchToDebtCollecti
               {/* Video container */}
               <div className="bg-black rounded-b-2xl overflow-hidden">
                 <iframe
-                  src="https://www.youtube.com/embed/2DDSNfK0w9o?rel=0&modestbranding=1"
+                  src="https://www.youtube.com/embed/lArWNymlnI4?rel=0&modestbranding=1"
                   className="w-full h-[400px] md:h-[500px]"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowFullScreen
