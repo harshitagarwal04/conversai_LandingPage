@@ -444,7 +444,7 @@ export default function EdTechPage() {
               </Link>
             </div>
             <p className="mt-6 text-purple-200 text-sm">
-              No credit card required • Setup in 24 hours • 30-day money-back guarantee
+              No credit card required • Setup in 24 hours • Full support included
             </p>
           </div>
         </section>
