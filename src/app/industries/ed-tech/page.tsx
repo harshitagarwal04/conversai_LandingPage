@@ -32,15 +32,15 @@ export default function EdTechPage() {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/demo">
+                <Link href="/contact">
                   <Button size="lg" className="bg-purple-600 hover:bg-purple-700">
-                    See AI Agents in Action
+                    Contact Us Today
                     <ArrowRight className="ml-2 w-5 h-5" />
                   </Button>
                 </Link>
                 <Link href="/schedule-demo">
                   <Button size="lg" variant="outline">
-                    Get Custom Demo
+                    Schedule Demo
                   </Button>
                 </Link>
               </div>
@@ -431,15 +431,15 @@ export default function EdTechPage() {
               improve student outcomes, and reduce operational costs by 70%.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/schedule-demo">
+              <Link href="/contact">
                 <Button size="lg" className="bg-white text-purple-600 hover:bg-gray-100">
-                  Get Personalized Demo
+                  Get Started Now
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </Link>
-              <Link href="/demo">
+              <Link href="/schedule-demo">
                 <Button size="lg" variant="outline" className="text-white border-white hover:bg-white/10">
-                  Try Interactive Demo
+                  Schedule Demo
                 </Button>
               </Link>
             </div>
