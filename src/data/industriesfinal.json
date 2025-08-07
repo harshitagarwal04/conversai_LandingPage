@@ -455,6 +455,68 @@
         "answer": "Voice bots can schedule maintenance, provide update guidance, and help prevent potential system issues through proactive monitoring."
       }
     ]
+  },
+  "ed-tech": {
+    "name": "EdTech",
+    "description": "Transform educational technology platforms with AI agents that provide personalized learning support, automate enrollment processes, and deliver 24/7 student assistance.",
+    "color": "purple",
+    "icon": "🚀",
+    "features": [
+      "Student Enrollment Automation",
+      "Personalized Learning Path Guidance",
+      "Live Tutoring Support Coordination",
+      "Course Recommendation Engine",
+      "Assignment Help & Submission Tracking",
+      "Parent-Teacher Communication Bridge",
+      "Adaptive Learning Assessment",
+      "Multi-language Learning Support"
+    ],
+    "useCases": [
+      {
+        "title": "EduAssist - Learning Platform Assistant",
+        "description": "Guide students through course selection, track progress, and provide instant homework help across all subjects",
+        "impact": "85% improvement in student engagement and 70% reduction in dropout rates"
+      },
+      {
+        "title": "EnrollBot - Enrollment Specialist",
+        "description": "Automate the complete enrollment process from inquiry to registration, including document verification and payment processing",
+        "impact": "90% faster enrollment processing with 95% accuracy in document handling"
+      },
+      {
+        "title": "TutorMatch - Smart Tutor Coordinator",
+        "description": "Match students with appropriate tutors based on learning style, subject expertise, and availability in real-time",
+        "impact": "80% better tutor-student matching leading to 65% improvement in learning outcomes"
+      },
+      {
+        "title": "ParentConnect - Parent Engagement Bot",
+        "description": "Keep parents informed about student progress, upcoming assignments, and facilitate teacher communication",
+        "impact": "75% increase in parent engagement and satisfaction"
+      }
+    ],
+    "stats": [
+      { "number": "85%", "label": "Student Engagement Increase" },
+      { "number": "24/7", "label": "Learning Support Available" },
+      { "number": "70%", "label": "Reduced Dropout Rate" },
+      { "number": "92%", "label": "Student Satisfaction Score" }
+    ],
+    "faqs": [
+      {
+        "question": "How do AI agents personalize learning experiences for each student?",
+        "answer": "Our AI agents analyze learning patterns, assessment results, and engagement metrics to create customized learning paths. They adapt content difficulty, suggest relevant resources, and provide targeted support based on individual student needs and learning styles."
+      },
+      {
+        "question": "Can AI agents handle technical support for online learning platforms?",
+        "answer": "Yes, AI agents provide comprehensive technical support including login assistance, platform navigation, troubleshooting video/audio issues, and guiding students through assignment submissions. They can also detect common technical problems and provide instant solutions."
+      },
+      {
+        "question": "How do AI agents ensure data privacy for student information?",
+        "answer": "Our AI agents are FERPA and COPPA compliant, using enterprise-grade encryption for all student data. They implement strict access controls, data anonymization techniques, and regular security audits to protect sensitive educational information."
+      },
+      {
+        "question": "Can AI agents integrate with existing Learning Management Systems (LMS)?",
+        "answer": "Absolutely. Our AI agents seamlessly integrate with popular LMS platforms like Canvas, Moodle, Blackboard, and Google Classroom through APIs, allowing them to access course materials, grades, and assignments while maintaining a unified student experience."
+      }
+    ]
   }
 
 

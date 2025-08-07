@@ -29,8 +29,9 @@ export function generateStaticParams() {
 }
 
 // ----------- Metadata for SEO
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const industry = getIndustryFromSlug(params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const industry = getIndustryFromSlug(slug);
   if (!industry) return {};
 
   return {
@@ -50,7 +51,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
       type: 'website',
       images: [
         {
-          url: `/images/industries/${params.slug}-og.jpg`,
+          url: `/images/industries/${slug}-og.jpg`,
           width: 1200,
           height: 630,
           alt: `${industry.name} Voice Bot Solutions`,
@@ -61,14 +62,15 @@ export async function generateMetadata({ params }: { params: { slug: string } })
       card: 'summary_large_image',
       title: `${industry.name} Voice Bot Solutions`,
       description: `Enhance your ${industry.name.toLowerCase()} services with AI voice automation.`,
-      images: [`/images/industries/${params.slug}-twitter.jpg`],
+      images: [`/images/industries/${slug}-twitter.jpg`],
     },
   };
 }
 
 // ----------- Main Page Component
-export default async function IndustryPage({ params }: { params: { slug: string } }) {
-  const industry = getIndustryFromSlug(params.slug);
+export default async function IndustryPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const industry = getIndustryFromSlug(slug);
   if (!industry) return notFound();
 
   return (
@@ -85,10 +87,12 @@ export default async function IndustryPage({ params }: { params: { slug: string 
           features={industry.features}
           color={industry.color}
         />
-        <UseCaseSection
-          industry={industry.name}
-          useCases={industry.useCases}
-        />
+        {slug !== 'education' && slug !== 'ed-tech' && (
+          <UseCaseSection
+            industry={industry.name}
+            useCases={industry.useCases}
+          />
+        )}
         <StatsSection
           industry={industry.name}
           color={industry.color as 'blue' | 'purple' | 'green' | 'indigo' | 'orange' | 'default'}
