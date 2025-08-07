@@ -25,7 +25,10 @@ type IndustryData = {
 
 // ----------- Static Slug Generation
 export function generateStaticParams() {
-  return Object.keys(industriesData).map((slug) => ({ slug }));
+  // Exclude ed-tech since it has its own static page
+  return Object.keys(industriesData)
+    .filter(slug => slug !== 'ed-tech')
+    .map((slug) => ({ slug }));
 }
 
 // ----------- Metadata for SEO
