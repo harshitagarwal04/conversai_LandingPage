@@ -129,21 +129,7 @@ export default function CTASection() {
             </motion.div>
           </div>
 
-          {/* Trust Badges */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="mt-20 text-center"
-          >
-            <p className="text-gray-400 mb-6">Trusted by leading companies worldwide</p>
-            <div className="flex flex-wrap gap-8 justify-center items-center opacity-50">
-              {[1, 2, 3, 4, 5, 6].map((i) => (
-                <div key={i} className="w-28 h-10 bg-gray-800 rounded-lg" />
-              ))}
-            </div>
-          </motion.div>
+        
         </div>
       </div>
 

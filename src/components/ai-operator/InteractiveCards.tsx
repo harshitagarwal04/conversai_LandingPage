@@ -1,9 +1,8 @@
 "use client"
 
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Phone, PlayCircle, PauseCircle, Home, User, Bot, Clock, CheckCircle, Loader2 } from 'lucide-react'
-import { supabase } from '@/lib/supabase'
+import { Phone, PlayCircle, PauseCircle, Home, User, Bot, Clock, CheckCircle } from 'lucide-react'
 
 const scenarios = [
   {
@@ -13,8 +12,7 @@ const scenarios = [
     description: 'Initial prospect inquiry and tour scheduling',
     duration: '2:49',
     color: 'blue',
-    audioPath: 'reception.wav', // Path in Supabase bucket
-    audioUrl: '', // Will be populated from Supabase
+    audioUrl: 'https://kbwtnhujnskomqwryfhy.supabase.co/storage/v1/object/public/demo-audios/reception.wav',
     outcomes: [
       'Tour scheduled for Thursday at 10:30 AM',
       'Email confirmation sent to prospect',
@@ -51,8 +49,7 @@ const scenarios = [
     description: 'Emergency lockout assistance',
     duration: '1:35',
     color: 'purple',
-    audioPath: 'triage.wav', // Path in Supabase bucket
-    audioUrl: '', // Will be populated from Supabase
+    audioUrl: 'https://kbwtnhujnskomqwryfhy.supabase.co/storage/v1/object/public/demo-audios/triage.wav',
     outcomes: [
       'Technician dispatched in 20 minutes',
       '$75 after-hours fee confirmed',
@@ -82,8 +79,7 @@ const scenarios = [
     description: 'Emergency lockout outside business hours',
     duration: '1:38',
     color: 'green',
-    audioPath: 'afterhours edit.wav', // Path in Supabase bucket
-    audioUrl: '', // Will be populated from Supabase
+    audioUrl: 'https://kbwtnhujnskomqwryfhy.supabase.co/storage/v1/object/public/demo-audios/afterhours%20edit.wav',
     outcomes: [
       'On-call technician dispatched immediately',
       'Resident safety confirmed',
@@ -112,8 +108,7 @@ const scenarios = [
     description: 'Coordinating maintenance contractors',
     duration: '0:23',
     color: 'orange',
-    audioPath: 'dispatch edit.wav', // Path in Supabase bucket
-    audioUrl: '', // Will be populated from Supabase
+    audioUrl: 'https://kbwtnhujnskomqwryfhy.supabase.co/storage/v1/object/public/demo-audios/dispatch%20edit.wav',
     outcomes: [
       'Contractor dispatched within 90 minutes',
       'Tenant notified of arrival time',
@@ -136,51 +131,10 @@ export default function InteractiveCards() {
   const [activeScenario, setActiveScenario] = useState(scenarios[0])
   const [isPlaying, setIsPlaying] = useState(false)
   const [currentTime, setCurrentTime] = useState(0)
-  const [isLoading, setIsLoading] = useState(false)
-  const [audioUrls, setAudioUrls] = useState<Record<string, string>>({})
   const audioRef = useRef<HTMLAudioElement | null>(null)
 
-  // Fetch audio URLs from Supabase on component mount
-  useEffect(() => {
-    const fetchAudioUrls = async () => {
-      setIsLoading(true)
-      const urls: Record<string, string> = {}
-      
-      for (const scenario of scenarios) {
-        if (scenario.audioPath) {
-          try {
-            const { data } = supabase.storage
-              .from('demo-audios')
-              .getPublicUrl(scenario.audioPath)
-            
-            if (data?.publicUrl) {
-              urls[scenario.id] = data.publicUrl
-            }
-          } catch (error) {
-            console.error(`Error fetching audio for ${scenario.id}:`, error)
-          }
-        }
-      }
-      
-      setAudioUrls(urls)
-      setIsLoading(false)
-    }
-
-    fetchAudioUrls()
-  }, [])
-
-  // Handle audio cleanup
-  useEffect(() => {
-    return () => {
-      if (audioRef.current) {
-        audioRef.current.pause()
-        audioRef.current.src = ''
-      }
-    }
-  }, [])
-
   const handlePlayPause = async () => {
-    const audioUrl = audioUrls[activeScenario.id]
+    const audioUrl = activeScenario.audioUrl
     
     if (!audioUrl) {
       // If no audio file, simulate playing through messages
@@ -201,18 +155,20 @@ export default function InteractiveCards() {
     }
 
     // Handle actual audio playback
-    if (!audioRef.current) {
-      const newAudio = new Audio()
+    if (!audioRef.current || audioRef.current.src !== audioUrl) {
+      // Create new audio or update source if scenario changed
+      const newAudio = audioRef.current || new Audio()
       newAudio.src = audioUrl
       newAudio.preload = 'metadata'
       audioRef.current = newAudio
       
-      newAudio.addEventListener('ended', () => {
+      // Remove old listeners if they exist
+      newAudio.onended = () => {
         setIsPlaying(false)
         setCurrentTime(0)
-      })
+      }
 
-      newAudio.addEventListener('timeupdate', () => {
+      newAudio.ontimeupdate = () => {
         // Sync conversation display with audio time
         const audioTime = newAudio.currentTime
         const conversationIndex = activeScenario.conversation.findIndex((msg, idx) => {
@@ -225,7 +181,7 @@ export default function InteractiveCards() {
         if (conversationIndex !== -1) {
           setCurrentTime(conversationIndex)
         }
-      })
+      }
     }
 
     if (isPlaying) {
@@ -364,15 +320,9 @@ export default function InteractiveCards() {
                       </div>
                       <button
                         onClick={handlePlayPause}
-                        disabled={isLoading}
-                        className="group flex items-center gap-2 px-5 py-2.5 rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 !text-white font-medium hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
+                        className="group flex items-center gap-2 px-5 py-2.5 rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 !text-white font-medium hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl"
                       >
-                        {isLoading ? (
-                          <>
-                            <Loader2 className="w-4 h-4 animate-spin" />
-                            <span className="text-sm">Loading...</span>
-                          </>
-                        ) : isPlaying ? (
+                        {isPlaying ? (
                           <>
                             <PauseCircle className="w-4 h-4" />
                             <span className="text-sm">Pause</span>
