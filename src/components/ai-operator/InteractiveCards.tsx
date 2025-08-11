@@ -1,8 +1,9 @@
 "use client"
 
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Phone, PlayCircle, PauseCircle, Home, User, Bot, Clock, CheckCircle } from 'lucide-react'
+import { Phone, PlayCircle, PauseCircle, Home, User, Bot, Clock, CheckCircle, Loader2 } from 'lucide-react'
+import { supabase } from '@/lib/supabase'
 
 const scenarios = [
   {
@@ -12,8 +13,8 @@ const scenarios = [
     description: 'Initial prospect inquiry and tour scheduling',
     duration: '2:49',
     color: 'blue',
-    // Google Drive direct download URL - replace FILE_ID with your actual file ID
-    audioUrl: '', // Example: https://drive.google.com/uc?export=download&id=1ABC123def456...
+    audioPath: 'reception.wav', // Path in Supabase bucket
+    audioUrl: '', // Will be populated from Supabase
     outcomes: [
       'Tour scheduled for Thursday at 10:30 AM',
       'Email confirmation sent to prospect',
@@ -50,7 +51,8 @@ const scenarios = [
     description: 'Emergency lockout assistance',
     duration: '1:35',
     color: 'purple',
-    audioUrl: '', // Google Drive: https://drive.google.com/uc?export=download&id=FILE_ID
+    audioPath: 'triage.wav', // Path in Supabase bucket
+    audioUrl: '', // Will be populated from Supabase
     outcomes: [
       'Technician dispatched in 20 minutes',
       '$75 after-hours fee confirmed',
@@ -80,7 +82,8 @@ const scenarios = [
     description: 'Emergency lockout outside business hours',
     duration: '1:38',
     color: 'green',
-    audioUrl: '', // Google Drive: https://drive.google.com/uc?export=download&id=FILE_ID
+    audioPath: 'afterhours edit.wav', // Path in Supabase bucket
+    audioUrl: '', // Will be populated from Supabase
     outcomes: [
       'On-call technician dispatched immediately',
       'Resident safety confirmed',
@@ -109,7 +112,8 @@ const scenarios = [
     description: 'Coordinating maintenance contractors',
     duration: '0:23',
     color: 'orange',
-    audioUrl: '', // Google Drive: https://drive.google.com/uc?export=download&id=FILE_ID
+    audioPath: 'dispatch edit.wav', // Path in Supabase bucket
+    audioUrl: '', // Will be populated from Supabase
     outcomes: [
       'Contractor dispatched within 90 minutes',
       'Tenant notified of arrival time',
@@ -132,10 +136,53 @@ export default function InteractiveCards() {
   const [activeScenario, setActiveScenario] = useState(scenarios[0])
   const [isPlaying, setIsPlaying] = useState(false)
   const [currentTime, setCurrentTime] = useState(0)
-  const [audio, setAudio] = useState<HTMLAudioElement | null>(null)
+  const [isLoading, setIsLoading] = useState(false)
+  const [audioUrls, setAudioUrls] = useState<Record<string, string>>({})
+  const audioRef = useRef<HTMLAudioElement | null>(null)
 
-  const handlePlayPause = () => {
-    if (!activeScenario.audioUrl) {
+  // Fetch audio URLs from Supabase on component mount
+  useEffect(() => {
+    const fetchAudioUrls = async () => {
+      setIsLoading(true)
+      const urls: Record<string, string> = {}
+      
+      for (const scenario of scenarios) {
+        if (scenario.audioPath) {
+          try {
+            const { data } = supabase.storage
+              .from('demo-audios')
+              .getPublicUrl(scenario.audioPath)
+            
+            if (data?.publicUrl) {
+              urls[scenario.id] = data.publicUrl
+            }
+          } catch (error) {
+            console.error(`Error fetching audio for ${scenario.id}:`, error)
+          }
+        }
+      }
+      
+      setAudioUrls(urls)
+      setIsLoading(false)
+    }
+
+    fetchAudioUrls()
+  }, [])
+
+  // Handle audio cleanup
+  useEffect(() => {
+    return () => {
+      if (audioRef.current) {
+        audioRef.current.pause()
+        audioRef.current.src = ''
+      }
+    }
+  }, [])
+
+  const handlePlayPause = async () => {
+    const audioUrl = audioUrls[activeScenario.id]
+    
+    if (!audioUrl) {
       // If no audio file, simulate playing through messages
       setIsPlaying(!isPlaying)
       if (!isPlaying) {
@@ -153,29 +200,52 @@ export default function InteractiveCards() {
       return
     }
 
-    // Handle actual audio playback - lazy load on demand
-    if (!audio) {
+    // Handle actual audio playback
+    if (!audioRef.current) {
       const newAudio = new Audio()
-      newAudio.src = activeScenario.audioUrl
-      newAudio.preload = 'none' // Don't preload, wait for user action
-      setAudio(newAudio)
+      newAudio.src = audioUrl
+      newAudio.preload = 'metadata'
+      audioRef.current = newAudio
       
       newAudio.addEventListener('ended', () => {
         setIsPlaying(false)
         setCurrentTime(0)
       })
-      
-      newAudio.play()
-      setIsPlaying(true)
+
+      newAudio.addEventListener('timeupdate', () => {
+        // Sync conversation display with audio time
+        const audioTime = newAudio.currentTime
+        const conversationIndex = activeScenario.conversation.findIndex((msg, idx) => {
+          const msgTime = parseTime(msg.time)
+          const nextMsgTime = idx < activeScenario.conversation.length - 1 
+            ? parseTime(activeScenario.conversation[idx + 1].time) 
+            : Infinity
+          return audioTime >= msgTime && audioTime < nextMsgTime
+        })
+        if (conversationIndex !== -1) {
+          setCurrentTime(conversationIndex)
+        }
+      })
+    }
+
+    if (isPlaying) {
+      audioRef.current?.pause()
+      setIsPlaying(false)
     } else {
-      if (isPlaying) {
-        audio.pause()
-        setIsPlaying(false)
-      } else {
-        audio.play()
+      try {
+        await audioRef.current?.play()
         setIsPlaying(true)
+      } catch (error) {
+        console.error('Error playing audio:', error)
+        setIsPlaying(false)
       }
     }
+  }
+
+  // Helper function to parse time string to seconds
+  const parseTime = (timeStr: string) => {
+    const parts = timeStr.split(':').map(Number)
+    return parts[0] * 60 + parts[1]
   }
 
   return (
@@ -218,14 +288,14 @@ export default function InteractiveCards() {
                       <button
                         onClick={() => {
                           // Stop current audio if playing
-                          if (audio) {
-                            audio.pause()
-                            audio.currentTime = 0
+                          if (audioRef.current) {
+                            audioRef.current.pause()
+                            audioRef.current.currentTime = 0
+                            audioRef.current = null
                           }
                           setActiveScenario(scenario)
                           setIsPlaying(false)
                           setCurrentTime(0)
-                          setAudio(null) // Reset audio for new scenario
                         }}
                         className={`relative flex items-center gap-2 px-5 py-2.5 rounded-lg transition-all duration-300 ${
                           activeScenario.id === scenario.id
@@ -294,9 +364,15 @@ export default function InteractiveCards() {
                       </div>
                       <button
                         onClick={handlePlayPause}
-                        className="group flex items-center gap-2 px-5 py-2.5 rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 !text-white font-medium hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl"
+                        disabled={isLoading}
+                        className="group flex items-center gap-2 px-5 py-2.5 rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 !text-white font-medium hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
                       >
-                        {isPlaying ? (
+                        {isLoading ? (
+                          <>
+                            <Loader2 className="w-4 h-4 animate-spin" />
+                            <span className="text-sm">Loading...</span>
+                          </>
+                        ) : isPlaying ? (
                           <>
                             <PauseCircle className="w-4 h-4" />
                             <span className="text-sm">Pause</span>
@@ -304,7 +380,7 @@ export default function InteractiveCards() {
                         ) : (
                           <>
                             <PlayCircle className="w-4 h-4 group-hover:animate-pulse" />
-                            <span className="text-sm">Play</span>
+                            <span className="text-sm">Play Audio</span>
                           </>
                         )}
                       </button>

@@ -6,6 +6,7 @@ import HowItWorks from '@/components/ai-operator/HowItWorks'
 import Integrations from '@/components/ai-operator/Integrations'
 import InteractiveCards from '@/components/ai-operator/InteractiveCards'
 import FeatureCards from '@/components/ai-operator/FeatureCards'
+import Testimonial from '@/components/ai-operator/Testimonial'
 import ResultsMetrics from '@/components/ai-operator/ResultsMetrics'
 import CTASection from '@/components/ai-operator/CTASection'
 import DarkHeader from '@/components/ai-operator/DarkHeader'
@@ -20,6 +21,7 @@ export default function AIOperatorPage() {
       <InteractiveCards />
       <FeatureCards />
       <HowItWorks />
+      <Testimonial />
       <Integrations />
       <ResultsMetrics />
       <CTASection />
