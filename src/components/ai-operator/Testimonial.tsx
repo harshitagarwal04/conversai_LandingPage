@@ -60,9 +60,9 @@ export default function Testimonial() {
                 {/* Quote text */}
                 <blockquote className="relative z-10">
                   <p className="text-xl lg:text-2xl font-light !text-white leading-relaxed mb-6 italic">
-                    <span className="text-3xl font-serif text-blue-400 mr-2">"</span>
-                    AI has completely transformed how we handle support. Our users get faster responses, and our team can actually focus on the problems that matter. I honestly couldn't imagine doubling in size without it.
-                    <span className="text-3xl font-serif text-blue-400 ml-2">"</span>
+                    <span className="text-3xl font-serif text-blue-400 mr-2">&ldquo;</span>
+                    AI has completely transformed how we handle support. Our users get faster responses, and our team can actually focus on the problems that matter. I honestly couldn&apos;t imagine doubling in size without it.
+                    <span className="text-3xl font-serif text-blue-400 ml-2">&rdquo;</span>
                   </p>
                   
                   {/* Attribution (optional - you can customize this) */}
