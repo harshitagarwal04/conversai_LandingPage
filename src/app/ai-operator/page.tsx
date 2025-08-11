@@ -3,7 +3,6 @@
 import React from 'react'
 import AIOperatorHero from '@/components/ai-operator/Hero'
 import HowItWorks from '@/components/ai-operator/HowItWorks'
-import Integrations from '@/components/ai-operator/Integrations'
 import InteractiveCards from '@/components/ai-operator/InteractiveCards'
 import FeatureCards from '@/components/ai-operator/FeatureCards'
 import Testimonial from '@/components/ai-operator/Testimonial'
@@ -22,7 +21,6 @@ export default function AIOperatorPage() {
       <FeatureCards />
       <HowItWorks />
       <Testimonial />
-      <Integrations />
       <ResultsMetrics />
       <CTASection />
       <Footer />

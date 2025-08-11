@@ -36,19 +36,19 @@ const testimonials = [
     quote: "ConversAI transformed our customer service. We're handling 10x more inquiries with the same team size.",
     author: "Sarah Chen",
     role: "VP of Operations",
-    company: "TechCorp Solutions"
+    company: "Keller Williams Realty"
   },
   {
     quote: "The AI sounds so natural, customers often don't realize they're not talking to a human. It's incredible.",
     author: "Michael Rodriguez",
     role: "Customer Success Director",
-    company: "RetailPlus"
+    company: "CBRE Group"
   },
   {
     quote: "We saw ROI within the first month. Setup was surprisingly simple and the results exceeded expectations.",
     author: "Emily Thompson",
     role: "CEO",
-    company: "ServiceFirst"
+    company: "Cushman & Wakefield"
   }
 ]
 

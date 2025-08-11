@@ -23,15 +23,15 @@ export default function Testimonial() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="relative"
+              className="relative h-full"
             >
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl h-full min-h-[400px] lg:min-h-[450px]">
                 <Image
                   src="/gen img.png"
                   alt="Customer testimonial"
                   width={600}
-                  height={400}
-                  className="w-full h-auto object-cover"
+                  height={450}
+                  className="w-full h-full object-cover"
                 />
                 {/* Gradient overlay for depth */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
@@ -48,17 +48,14 @@ export default function Testimonial() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="relative"
+              className="relative h-full"
             >
               {/* Quote box with stylish design */}
-              <div className="relative bg-gradient-to-br from-gray-900 via-gray-900 to-gray-800 rounded-2xl p-8 lg:p-10 border border-gray-800 shadow-2xl">
+              <div className="relative bg-gradient-to-br from-gray-900 via-gray-900 to-gray-800 rounded-2xl p-8 lg:p-10 border border-gray-800 shadow-2xl h-full min-h-[400px] lg:min-h-[450px] flex flex-col justify-center">
                 {/* Quote icon */}
                 <div className="absolute -top-4 -left-2 w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center shadow-lg">
                   <Quote className="w-6 h-6 text-white rotate-180" />
                 </div>
-                
-                {/* Gradient accent line */}
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-t-2xl" />
                 
                 {/* Quote text */}
                 <blockquote className="relative z-10">
@@ -73,7 +70,7 @@ export default function Testimonial() {
                     <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full" />
                     <div>
                       <p className="font-semibold !text-white">Customer Success Leader</p>
-                      <p className="text-sm text-gray-400">Leading Tech Company</p>
+                      <p className="text-sm text-gray-400">Santhosh Vishwanathan</p>
                     </div>
                   </div>
                 </blockquote>
