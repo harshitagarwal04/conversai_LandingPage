@@ -373,7 +373,7 @@ export default function InteractiveCards() {
                       </div>
 
                       {/* Messages */}
-                      <div className="space-y-4 max-h-[400px] overflow-y-auto mb-6">
+                      <div className="space-y-4 max-h-[400px] overflow-y-auto mb-6 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
                         {activeScenario.conversation.map((message, index) => (
                           <motion.div
                             key={`${activeScenario.id}-${index}`}

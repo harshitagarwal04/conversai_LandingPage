@@ -155,7 +155,7 @@ const DarkHeader = () => {
                     Our AI Products
                   </div>
                   <Link
-                    href="/leadresponder"
+                    href="/lead-responder"
                     className="block px-4 py-3 text-sm text-gray-300 hover:bg-gradient-to-r hover:from-green-950/50 hover:to-blue-950/50 hover:text-green-400 border-l-2 border-transparent hover:border-green-500 transition-all"
                   >
                     <div className="font-medium">LeadResponder</div>

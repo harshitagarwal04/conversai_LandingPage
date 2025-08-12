@@ -52,7 +52,7 @@ const Footer = () => {
               No-code AI agent builder. Create intelligent voice bots that qualify leads 24/7 across voice, WhatsApp, and email.
             </p>
             <p className="text-gray-400 mb-6 text-sm">
-              Email: contact@conversailabs.com
+              Email: connect@conversailabs.com
             </p>
             <div className="flex space-x-4 mb-6">
               <a 
