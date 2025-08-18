@@ -130,17 +130,17 @@ const CallIQPage = () => {
             >
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 via-orange-400 to-red-400 rounded-2xl blur-xl opacity-20 animate-pulse"></div>
-                <div className="relative bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-6 border border-gray-700 shadow-2xl">
+                <div className="relative bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-6 border border-purple-200 shadow-2xl">
                   <div className="flex items-start gap-4">
                     <div className="flex-shrink-0">
                       <div className="w-12 h-12 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center animate-bounce">
                         <Star className="w-6 h-6 text-white" />
                       </div>
                     </div>
-                    <p className="text-lg sm:text-xl text-white font-medium leading-relaxed">
-                      Every sales team has that <span className="text-yellow-400 font-bold">ONE rep who crushes it</span>. 
+                    <p className="text-lg sm:text-xl text-gray-800 font-medium leading-relaxed">
+                      Every sales team has that <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-yellow-500 font-bold">ONE rep who crushes it</span>. 
                       We&apos;re building an AI tool that analyzes sales calls to decode their 
-                      <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 font-bold"> winning patterns</span> - 
+                      <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 font-bold"> winning patterns</span> - 
                       helping entire teams close like top performers.
                     </p>
                   </div>
@@ -186,7 +186,7 @@ const CallIQPage = () => {
               </h2>
             </motion.div>
             
-            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16">
+            <div className="grid md:grid-cols-2 gap-5 max-w-4xl mx-auto mb-9">
               {/* Top Performer Card */}
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
@@ -197,7 +197,7 @@ const CallIQPage = () => {
                 className="relative group"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-green-400 to-emerald-400 rounded-3xl blur-xl opacity-20 group-hover:opacity-30 transition-opacity"></div>
-                <div className="relative bg-white rounded-3xl p-8 shadow-xl border border-green-100">
+                <div className="relative bg-white rounded-3xl p-4 shadow-xl border border-green-100">
                   <div className="flex items-center justify-center mb-4">
                     <motion.div
                       animate={{ rotate: [0, 10, -10, 0] }}
@@ -225,7 +225,7 @@ const CallIQPage = () => {
                 className="relative group"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-red-400 to-pink-400 rounded-3xl blur-xl opacity-20 group-hover:opacity-30 transition-opacity"></div>
-                <div className="relative bg-white rounded-3xl p-8 shadow-xl border border-red-100">
+                <div className="relative bg-white rounded-3xl p-4 shadow-xl border border-red-100">
                   <div className="flex items-center justify-center mb-4">
                     <motion.div
                       animate={{ y: [0, -5, 0] }}
@@ -253,7 +253,7 @@ const CallIQPage = () => {
               className="relative"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl blur-2xl opacity-10"></div>
-              <div className="relative bg-gradient-to-br from-white to-purple-50 rounded-3xl p-10 shadow-2xl border border-purple-100 max-w-3xl mx-auto">
+              <div className="relative bg-gradient-to-br from-white to-purple-50 rounded-3xl p-5 shadow-2xl border border-purple-100 max-w-3xl mx-auto">
                 <motion.div
                   initial={{ scale: 0 }}
                   whileInView={{ scale: 1 }}
