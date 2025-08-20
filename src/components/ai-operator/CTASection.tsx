@@ -3,7 +3,7 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { ArrowRight, Phone, Calendar, CheckCircle } from 'lucide-react'
-import ContactModal from '@/components/ContactModal'
+import ContactModal from '@/components/forms/ContactModal'
 
 export default function CTASection() {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false)

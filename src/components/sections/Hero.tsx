@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowDown, Phone } from 'lucide-react';
-import ContactModal from './ContactModal';
+import ContactModal from '../forms/ContactModal';
 
 const Hero = () => {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
