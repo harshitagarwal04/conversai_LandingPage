@@ -2,8 +2,8 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
+import Header from '@/components/layout/Header'
+import Footer from '@/components/layout/Footer'
 import { Button } from '@/components/ui/button'
 import { ExternalLink, Users, Target, Lightbulb, Heart } from 'lucide-react'
 

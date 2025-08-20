@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react'
 import { Phone, MessageSquare, ArrowRight, Sparkles } from 'lucide-react'
-import ContactModal from '@/components/ContactModal'
+import ContactModal from '@/components/forms/ContactModal'
 import { motion } from 'framer-motion'
 
 export default function AIOperatorHero() {

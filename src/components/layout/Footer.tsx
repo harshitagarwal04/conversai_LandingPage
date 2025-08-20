@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { MessageSquare } from "lucide-react";
 import Link from "next/link";
-import ContactModal from "./ContactModal";
+import ContactModal from "../forms/ContactModal";
 
 const Footer = () => {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
