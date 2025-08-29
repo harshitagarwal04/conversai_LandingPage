@@ -16,7 +16,7 @@ const Footer = () => {
         { name: "Pricing", path: "/pricing" },
         { name: "Industries", path: "/industries" },
         { name: "Schedule Demo", path: "/schedule-demo" },
-        { name: "Admin Panel", path: "https://admin.conversailabs.com/" },
+        { name: "Admin Panel", path: "https://dashboard.conversailabs.com/" },
       ],
     },
     {

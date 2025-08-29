@@ -242,7 +242,7 @@ export default function AboutPage() {
             >
               <Button 
                 size="lg"
-                onClick={() => window.open('https://admin.conversailabs.com/', '_blank')}
+                onClick={() => window.open('https://dashboard.conversailabs.com/', '_blank')}
                 className="bg-white text-blue-600 hover:bg-gray-100"
               >
                 Start Building Today
