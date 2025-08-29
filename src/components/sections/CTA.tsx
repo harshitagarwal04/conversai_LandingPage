@@ -14,7 +14,7 @@ const CTA = () => {
   };
   
   const handleTryDemo = () => {
-    window.open('https://admin.conversailabs.com/', '_blank');
+    window.open('https://dashboard.conversailabs.com/', '_blank');
   };
   
   const handleContactSales = () => {

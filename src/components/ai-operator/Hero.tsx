@@ -85,7 +85,7 @@ export default function AIOperatorHero() {
               <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 blur-lg opacity-50 group-hover:opacity-75 transition-opacity" />
             </button>
             <button 
-              onClick={() => window.open('https://admin.conversailabs.com/', '_blank')}
+              onClick={() => window.open('https://dashboard.conversailabs.com/', '_blank')}
               className="relative border-2 border-gray-600 hover:border-gray-500 bg-gray-900/50 backdrop-blur-sm !text-white px-8 py-3 text-base font-semibold group hover:bg-gray-800/50 transition-all duration-300 shadow-xl hover:shadow-2xl rounded-lg"
             >
               <span className="flex items-center justify-center">

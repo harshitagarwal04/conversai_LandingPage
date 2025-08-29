@@ -7,7 +7,7 @@ const Hero = () => {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
   const handleSeeHowItWorks = () => {
-    window.open('https://admin.conversailabs.com/', '_blank');
+    window.open('https://dashboard.conversailabs.com/', '_blank');
   };
 
   return (
